@@ -1,5 +1,5 @@
-Vagrant LAMP with Craft CMS
-===========================
+Vagrant LAMP with Craft CMS and Grunt
+=====================================
 Based on [mattandersen/vagrant-lamp](https://github.com/mattandersen/vagrant-lamp).
 
 This project provides a LAMP stack with Craft CMS installed. You can use this to develop for Craft CMS with version control, or just test something locally without having to worry about setting up a LAMP installation for Craft.
