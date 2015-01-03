@@ -1,8 +1,7 @@
 {
   "name": "craft-npm",
   "version": "0.0.1",
-  "private": true,
-  "description": "a set of frontend tools to assist website development with craft cms.",
+  "description": "a set of frontend tools to assist website development with craft cms",
   "main": "index.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,11 +12,12 @@
   },
   "author": "Christoph Minixhofer",
   "license": "ISC",
+  "private": true,
   "bugs": {
     "url": "https://github.com/MiniXC/vagrant-lamp-craft-npm/issues"
   },
   "homepage": "https://github.com/MiniXC/vagrant-lamp-craft-npm",
-  "dependencies": {
+  "devDependencies": {
     "grunt": "^0.4.5",
     "bower": "^1.3.12"
   }

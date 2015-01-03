@@ -1,0 +1,18 @@
+{
+  "name": "craft-npm",
+  "version": "0.0.1",
+  "description": "a set of frontend tools to assist website development with craft cms",
+  "main": "index.php",
+  "authors": [
+    "Christoph Minixhofer"
+  ],
+  "license": "ICS",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
