@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "lamp-craft"
 
 	# Forward ports to Apache and MySQL
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 80, host: 80
   config.vm.network "forwarded_port", guest: 3306, host: 8484
 
   config.vm.network "private_network", ip: "192.168.42.42"
@@ -23,10 +23,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "mysql", "/home/vagrant/mysql"
   config.vm.synced_folder "scripts", "/home/vagrant/scripts"
 
-	config.vm.provision "shell", path: "provision.sh"
-
   # Fix tty Error
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+
+	config.vm.provision "shell", path: "provision.sh"
 
   # config.vm.provider "virtualbox" do |vb|
   #   # Don't boot with headless mode

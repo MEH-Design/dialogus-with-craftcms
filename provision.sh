@@ -94,3 +94,19 @@ apt-get -y install imagemagick php5-imagick &> /dev/null
 echo "Restarting Services..."
 service apache2 restart > /dev/null
 service mysql restart > /dev/null
+
+# Install Git (bower needs it)
+echo "Installing git..."
+apt-get install git > /dev/null
+
+# Install Node.js and update NPM
+echo "Installing Node.js..."
+curl -sL https://deb.nodesource.com/setup | bash - > /dev/null
+apt-get install -y nodejs > /dev/null
+echo "Updating npm..."
+npm install npm -g > /dev/null
+
+# Install Packages
+echo "Installing Packages..."
+cd /var/www/html
+npm install
