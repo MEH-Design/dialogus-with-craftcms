@@ -116,9 +116,11 @@ npm install -g bower > /dev/null
 npm install -g grunt-cli > /dev/null
 
 # Install Bower Components
-echo "Installing Bower Components"
+echo "Installing Bower Components..."
+cd app
 bower install --allow-root > /dev/null
 
 # Run Grunt Tasks
 echo "Running Grunt Tasks..."
+cd ..
 grunt bower > /dev/null

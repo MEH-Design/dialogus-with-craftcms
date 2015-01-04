@@ -1,4 +1,8 @@
-define(function (require) {
+define(function(require) {
   require('jquery');
-  console.log($);
+  require('modernizr');
+  require('gsap');
+  //console.log($);
+  //console.log(Modernizr);
+  //console.log(TweenMax);
 });
