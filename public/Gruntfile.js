@@ -4,15 +4,17 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     bower: {
       target: {
-        rjsConfig: 'config.js'
+        rjsConfig: 'js/config.js',
+        options: {
+          baseUrl: './'
+        }
       }
     },
     requirejs: {
       compile: {
         options: {
-          baseUrl: "js",
           mainConfigFile: "js/main.js",
-          include: "main",
+          include: "js/main",
           out: "js/<%= pkg.name %>.js",
           done: function(done, output) {
             var duplicates = require('rjs-build-analysis').duplicates(output);

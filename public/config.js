@@ -1,7 +1,4 @@
-require.config({
-  shim: {
-
-  },
+requirejs.config({
   paths: {
     gsap: "bower_components/gsap/src/uncompressed/TweenMax",
     jquery: "bower_components/jquery/dist/jquery",

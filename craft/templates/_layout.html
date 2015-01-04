@@ -10,12 +10,12 @@
  #}
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<html>
 <head>
 	<meta charset="utf-8" />
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
-
+  <script data-main="app/main" src="node_modules/requirejs/require.js"></script>
 	<style type="text/css">
 		body { margin: 50px; font-family: sans-serif; background: #fff; }
 		#container { margin: 0 auto; width: 700px;
@@ -46,7 +46,7 @@
 	</style>
 </head>
 
-<body>
+<body class="no-js">
 	<div id="container">
 		<header id="header">
 			<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
