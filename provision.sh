@@ -110,8 +110,8 @@ npm install npm -g > /dev/null
 # Install Packages
 echo "Installing npm Packages..."
 cd /var/www/craft/templates
-npm install
+npm install --no-bin-links
 
 # Install Bower Components
 echo "Installing Bower Components"
-bower install
+bower install --allow-root

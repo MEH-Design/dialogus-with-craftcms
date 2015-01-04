@@ -2,7 +2,7 @@
   "name": "craft-npm",
   "version": "0.0.1",
   "description": "a set of frontend tools to assist website development with craft cms",
-  "main": "index.php",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
