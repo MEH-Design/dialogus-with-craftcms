@@ -98,6 +98,7 @@ service mysql restart > /dev/null
 # Install Git (bower needs it)
 echo "Installing git..."
 apt-get install git > /dev/null
+git config --global url."https://".insteadOf git:// #use https instead of git
 
 # Install Node.js and update NPM
 echo "Installing Node.js..."
@@ -107,6 +108,10 @@ echo "Updating npm..."
 npm install npm -g > /dev/null
 
 # Install Packages
-echo "Installing Packages..."
-cd /var/www/html
+echo "Installing npm Packages..."
+cd /var/www/craft/templates
 npm install
+
+# Install Bower Components
+echo "Installing Bower Components"
+bower install
