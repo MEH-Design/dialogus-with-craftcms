@@ -98,7 +98,8 @@ service mysql restart > /dev/null
 # Install Git (bower needs it)
 echo "Installing git..."
 apt-get install git > /dev/null
-git config --global url."https://".insteadOf git:// #use https instead of git
+#use https instead of git
+git config --global url."https://".insteadOf git://
 
 # Install Node.js and update NPM
 echo "Installing Node.js..."
@@ -109,9 +110,15 @@ npm install npm -g > /dev/null
 
 # Install Packages
 echo "Installing npm Packages..."
-cd /var/www/craft/templates
-npm install --no-bin-links
+cd /var/www/html
+npm install --no-bin-links > /dev/null
+npm install -g bower > /dev/null
+npm install -g grunt-cli > /dev/null
 
 # Install Bower Components
 echo "Installing Bower Components"
-bower install --allow-root
+bower install --allow-root > /dev/null
+
+# Run Grunt Tasks
+echo "Running Grunt Tasks..."
+grunt bower > /dev/null

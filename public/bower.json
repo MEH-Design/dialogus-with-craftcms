@@ -2,7 +2,7 @@
   "name": "craft-npm",
   "version": "0.0.1",
   "description": "a set of frontend tools to assist website development with craft cms",
-  "main": "index.html",
+  "main": "index.php",
   "authors": [
     "Christoph Minixhofer"
   ],
@@ -13,5 +13,6 @@
     "gsap": "~1.15.0",
     "modernizr": "~2.8.3",
     "normalize.css": "~3.0.2"
-  }
+  },
+  "ignore": {}
 }
