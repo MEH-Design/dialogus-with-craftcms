@@ -46,14 +46,8 @@ module.exports = function(grunt) {
         preset: 'google'
       }
     },
-    sassFormat: {
-      options: {
-        indentChar: ' ',
-        indentStep: 4
-      },
-      files: {
-        src: ['app/sass/**/*.scss']
-      }
+    scsslint: {
+      allFiles: ['app/sass/**/*.scss']
     }
   });
 
@@ -61,8 +55,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-sass-format');
   grunt.loadNpmTasks('grunt-jscs');
+  grunt.loadNpmTasks('grunt-scss-lint');
 
   grunt.registerTask('default', ['bower']);
 

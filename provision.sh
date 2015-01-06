@@ -124,3 +124,7 @@ bower install --allow-root > /dev/null
 echo "Running Grunt Tasks..."
 cd ..
 grunt bower > /dev/null
+
+# Install scss-lint gem
+echo "Installing scss-lint Gem..."
+gem install scss-lint > /dev/null
