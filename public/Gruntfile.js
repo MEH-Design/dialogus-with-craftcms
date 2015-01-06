@@ -13,9 +13,9 @@ module.exports = function(grunt) {
     requirejs: {
       compile: {
         options: {
-          mainConfigFile: 'js/main.js',
-          include: 'js/main',
-          out: 'js/<%= pkg.name %>.js',
+          mainConfigFile: 'app/js/main.js',
+          include: 'app/js/main',
+          out: 'app/js/<%= pkg.name %>.js',
           done: function(done, output) {
             var duplicates = require('rjs-build-analysis').duplicates(output);
 
@@ -37,13 +37,22 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'app/*.js']
+      all: ['Gruntfile.js', 'app/js/**/*.js']
     },
     jscs: {
-      app: 'app/*.js',
+      app: 'app/js/**/*.js',
       gruntfile: 'Gruntfile.js',
       options: {
         preset: 'google'
+      }
+    },
+    sassFormat: {
+      options: {
+        indentChar: ' ',
+        indentStep: 4
+      },
+      files: {
+        src: ['app/sass/**/*.scss']
       }
     }
   });
@@ -51,6 +60,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bower-requirejs');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass-format');
   grunt.loadNpmTasks('grunt-jscs');
 
   grunt.registerTask('default', ['bower']);
