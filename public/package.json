@@ -25,6 +25,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-jscs": "^1.1.0",
     "grunt-contrib-sass": "^0.8.1",
-    "grunt-scss-lint": "^0.3.4"
+    "grunt-scss-lint": "^0.3.4",
+    "sassdown": "^0.2.7"
   }
 }

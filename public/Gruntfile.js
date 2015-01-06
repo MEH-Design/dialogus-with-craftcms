@@ -48,6 +48,33 @@ module.exports = function(grunt) {
     },
     scsslint: {
       allFiles: ['app/sass/**/*.scss']
+    },
+    sass: {
+      dist: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          'app/css/main.css': 'app/sass/main.scss'
+        }
+      }
+    },
+    sassdown: {
+      defaultStyleguide: {
+        options: {
+          assets: [
+            'app/css/*.css'
+          ],
+          highlight: 'github',
+          excludeMissing: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'app/sass',
+          src: ['*.scss'],
+          dest: 'styleguide/'
+        }]
+      }
     }
   });
 
@@ -55,8 +82,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-scss-lint');
+  grunt.loadNpmTasks('grunt-jscs');
+  grunt.loadNpmTasks('sassdown');
 
   grunt.registerTask('default', ['bower']);
 
