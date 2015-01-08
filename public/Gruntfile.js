@@ -75,17 +75,30 @@ module.exports = function(grunt) {
           dest: 'styleguide/'
         }]
       }
+    },
+    autoprefixer: {
+
+      options: {
+        browsers: ['last 2 versions', 'ie 8', 'ie 9']
+      },
+
+      all: {
+        flatten: true,
+        src: 'app/css/*.css',
+        dest: 'app/css/main.css'
+      }
     }
   });
 
-  grunt.loadNpmTasks('grunt-bower-requirejs');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-bower-requirejs');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('sassdown');
 
   grunt.registerTask('default', ['bower']);
-
+  grunt.registerTask('prefix', ['autoprefixer']);
 };

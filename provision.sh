@@ -115,6 +115,10 @@ npm install --no-bin-links > /dev/null
 npm install -g bower > /dev/null
 npm install -g grunt-cli > /dev/null
 
+# Update CanIUse Data
+echo "Updating CanIUse Database..."
+npm update caniuse-db
+
 # Install Bower Components
 echo "Installing Bower Components..."
 cd app

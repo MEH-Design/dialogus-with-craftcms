@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MiniXC/vagrant-lamp-craft-npm",
   "devDependencies": {
+    "grunt": "^0.4.5",
     "requirejs": "^2.1.15",
     "rjs-build-analysis": "^0.0.3",
     "grunt-bower-requirejs": "^1.1.1",
@@ -26,6 +27,7 @@
     "grunt-jscs": "^1.1.0",
     "grunt-contrib-sass": "^0.8.1",
     "grunt-scss-lint": "^0.3.4",
+    "grunt-autoprefixer": "^2.1.0",
     "sassdown": "^0.2.7"
   }
 }
