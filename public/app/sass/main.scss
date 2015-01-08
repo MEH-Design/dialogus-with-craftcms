@@ -11,7 +11,7 @@ Testy test test
 
 */
 .test {
-  test-style: test;
+  font-weight: bold;
   /*
 
   Test2
@@ -23,6 +23,6 @@ Testy test test
 
   */
   .test2 {
-    test-style2: test;
+    text-decoration: underline;
   }
 }

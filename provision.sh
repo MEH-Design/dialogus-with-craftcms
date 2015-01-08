@@ -137,4 +137,4 @@ gem install scss-lint > /dev/null
 
 # Create Symlink
 echo "Creating Symlink to Bower Components..."
-ln -s /var/www/html/app/bower_components /var/www/html/app/js/bower_components
+ln -s /var/www/html/app/bower_components /var/www/html/app/js/bower_components &> /dev/null

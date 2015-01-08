@@ -37,17 +37,20 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'app/js/**/*.js']
+      all: ['Gruntfile.js', 'app/js/*.js']
     },
     jscs: {
-      app: 'app/js/**/*.js',
+      app: 'app/js/*.js',
       gruntfile: 'Gruntfile.js',
       options: {
         preset: 'google'
       }
     },
     scsslint: {
-      allFiles: ['app/sass/**/*.scss']
+      allFiles: ['app/sass/**/*.scss'],
+      options: {
+        config: '.scss-lint.yml'
+      }
     },
     sass: {
       dist: {
@@ -87,18 +90,35 @@ module.exports = function(grunt) {
         src: 'app/css/*.css',
         dest: 'app/css/main.css'
       }
+    },
+    watch: {
+
+      all: {
+        files: ['app/sass/*.scss', 'app/js/*.js'],
+        tasks: ['default'],
+        options: {
+          livereload: true
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-bower-requirejs');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('sassdown');
 
-  grunt.registerTask('default', ['bower']);
-  grunt.registerTask('prefix', ['autoprefixer']);
+  grunt.registerTask('default', [
+    'scsslint',
+    'jscs',
+    'jshint',
+    'sassdown',
+    'sass',
+    'autoprefixer'
+  ]);
 };
