@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       target: {
         rjsConfig: 'config.js',
         options: {
-          baseUrl: './'
+          baseUrl: '/app/js'
         }
       }
     },
