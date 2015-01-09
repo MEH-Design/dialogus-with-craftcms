@@ -93,9 +93,17 @@ module.exports = function(grunt) {
     },
     watch: {
 
-      all: {
-        files: ['app/sass/*.scss', 'app/js/*.js'],
-        tasks: ['default'],
+      styles: {
+        files: ['app/sass/*.scss'],
+        tasks: ['styles'],
+        options: {
+          livereload: true
+        }
+      },
+
+      scripts: {
+        files: ['app/js/*.js'],
+        tasks: ['scripts'],
         options: {
           livereload: true
         }
@@ -120,5 +128,17 @@ module.exports = function(grunt) {
     'sassdown',
     'sass',
     'autoprefixer'
+  ]);
+
+  grunt.registerTask('styles', [
+  'scsslint',
+  'sassdown',
+  'sass',
+  'autoprefixer'
+  ]);
+
+  grunt.registerTask('scripts', [
+  'jscs',
+  'jshint'
   ]);
 };
