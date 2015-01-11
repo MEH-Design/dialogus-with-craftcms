@@ -50,7 +50,7 @@ sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" ${mysql_config_f
 
 # Create craft database
 echo "Creating database with name $mysql_db..."
-echo "create database ${mysql_db}" | mysql -u root --password=${mysql_pass} &> /dev/null
+echo "create database ${mysql_db} IF NOT EXISTS" | mysql -u root --password=${mysql_pass} > /dev/null
 
 # Allow root access from any host
 echo "Granting access to database..."
@@ -78,7 +78,7 @@ chmod 777 /var/www/craft/storage
 
 # AllowOverride
 sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
-echo "Enablind module rewrite..."
+echo "Enabling module rewrite..."
 a2enmod rewrite > /dev/null
 
 # Install Mcrypt
@@ -127,9 +127,14 @@ bower install --allow-root > /dev/null
 # Run Grunt Tasks
 echo "Running Grunt Tasks..."
 cd ..
+echo "-> bower"
 grunt bower > /dev/null
+echo "-> sass"
 grunt sass > /dev/null
+echo "-> sassdown"
 grunt sassdown > /dev/null
+echo "-> watch"
+grunt watch > watch.log &
 
 # Install scss-lint gem
 echo "Installing scss-lint Gem..."
@@ -137,4 +142,4 @@ gem install scss-lint > /dev/null
 
 # Create Symlink
 echo "Creating Symlink to Bower Components..."
-ln -s /var/www/html/app/bower_components /var/www/html/app/js/bower_components &> /dev/null
+ln -sf /var/www/html/app/bower_components /var/www/html/app/js/bower_components

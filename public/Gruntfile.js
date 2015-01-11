@@ -131,14 +131,14 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('styles', [
-  'scsslint',
-  'sassdown',
-  'sass',
-  'autoprefixer'
+    'scsslint',
+    'sassdown',
+    'sass',
+    'autoprefixer'
   ]);
 
   grunt.registerTask('scripts', [
-  'jscs',
-  'jshint'
+    'jscs',
+    'jshint'
   ]);
 };
