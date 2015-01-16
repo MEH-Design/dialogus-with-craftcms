@@ -1,6 +1,9 @@
-Vagrant LAMP with Craft CMS and NPM [![build](https://api.travis-ci.org/MiniXC/vagrant-lamp-craft-npm.svg)](https://travis-ci.org/MiniXC/vagrant-lamp-craft-npm)
+Vagrant LAMP with Craft CMS and NPM
+=================================== 
+
+[![build](https://api.travis-ci.org/MiniXC/vagrant-lamp-craft-npm.svg)](https://travis-ci.org/MiniXC/vagrant-lamp-craft-npm)
 ![npm](https://img.shields.io/badge/npm-v2.2.0-blue.svg?style=flat)
-===================================
+
 Just [MiniXC/vagrant-lamp-craft](https://github.com/MiniXC/vagrant-lamp-craft) with a bunch of frontend tools.
 
 Commands
