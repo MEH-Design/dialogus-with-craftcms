@@ -2,14 +2,6 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    bower: {
-      target: {
-        rjsConfig: 'config.js',
-        options: {
-          baseUrl: '/app/js'
-        }
-      }
-    },
     requirejs: {
       compile: {
         options: {
@@ -112,7 +104,6 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.loadNpmTasks('grunt-bower-requirejs');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
