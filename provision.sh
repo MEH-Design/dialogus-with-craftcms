@@ -140,9 +140,11 @@ grunt sassdown > /dev/null
 echo "-> watch"
 grunt server > watch.log &
 
-# Install scss-lint gem
+# Install gems
 echo "Installing scss-lint Gem..."
 gem install scss-lint > /dev/null
+echo "Installing susy Gem..."
+
 
 # Create Symlink
 link=/var/www/html/app/js/bower_components

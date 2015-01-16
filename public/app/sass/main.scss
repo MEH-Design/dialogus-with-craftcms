@@ -1,28 +1,39 @@
+@import "susy";
 @import 'alerts';
 
 /*
 
-Test
+Grid
 ====
 
-Testy test test
+As simple grid with Susy.
 
-    <div class="test">testy</div>
+    <div class="container">
+      <div class="container__column">1st Column</div>
+      <div class="container__column container__column--narrow">2nd Column</div>
+      <div class="container__column container__column--indent">3rd Column</div>
+    </div>
 
 */
-.test {
-  font-weight: bold;
-  /*
+$susy: (
+  columns: 4,
+  gutters: 1/4,
+  math: fluid
+);
 
-  Test2
-  ====
+.container {
+  @include container(4);
 
-  Testy test test
+  &__column {
+    @include span(2);
+    border: 1px solid #000;
 
-      <div class="test2">testy2</div>
+    &--narrow {
+      @include span(1);
+    }
 
-  */
-  .test2 {
-    text-decoration: underline;
+    &--indent {
+      @include span(1 at 4);
+    }
   }
 }

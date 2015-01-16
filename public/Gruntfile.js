@@ -47,7 +47,8 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: 'expanded'
+          style: 'expanded',
+          require: 'susy'
         },
         files: {
           'app/css/main.css': 'app/sass/main.scss'
