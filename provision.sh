@@ -23,7 +23,7 @@ echo $IPADDR ubuntu.localhost >> /etc/hosts			# Just to quiet down some error me
 echo "Updating Server..."
 apt-get update > /dev/null
 echo "Upgrading Software..."
-apt-get -y upgrade > /dev/null
+apt-get -y dist-upgrade > /dev/null
 
 # Install basic tools
 echo "Installing basic tools..."
@@ -141,5 +141,8 @@ echo "Installing scss-lint Gem..."
 gem install scss-lint > /dev/null
 
 # Create Symlink
-echo "Creating Symlink to Bower Components..."
-ln -sf /var/www/html/app/bower_components /var/www/html/app/js/bower_components
+link=/var/www/html/app/js/bower_components
+if [ ! -L $link ]; then
+  echo "Creating Symlink to Bower Components..."
+  ln -sf /var/www/html/app/bower_components $link
+fi
