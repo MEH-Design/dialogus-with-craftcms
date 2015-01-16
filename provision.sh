@@ -144,6 +144,7 @@ grunt server > watch.log &
 echo "Installing scss-lint Gem..."
 gem install scss-lint > /dev/null
 echo "Installing susy Gem..."
+gem install susy > /dev/null
 
 
 # Create Symlink
