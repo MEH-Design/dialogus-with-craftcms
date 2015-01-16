@@ -20,10 +20,15 @@ IPADDR=$(/sbin/ifconfig eth0 | awk '/inet / { print $2 }' | sed 's/addr://')
 echo $IPADDR ubuntu.localhost >> /etc/hosts			# Just to quiet down some error messages
 
 # Update the server
+echo "Getting ip address..."
+dhclient eth0 &> /dev/null
+echo "Removing lock files..."
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
 echo "Updating Server..."
-apt-get update > /dev/null
+apt-get -y update > /dev/null
 echo "Upgrading Software..."
-apt-get -y dist-upgrade > /dev/null
+apt-get -y dist-upgrade &> /dev/null
 
 # Install basic tools
 echo "Installing basic tools..."
@@ -50,7 +55,7 @@ sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" ${mysql_config_f
 
 # Create craft database
 echo "Creating database with name $mysql_db..."
-echo "create database ${mysql_db} IF NOT EXISTS" | mysql -u root --password=${mysql_pass} > /dev/null
+echo "create database ${mysql_db}" | mysql -u root --password=${mysql_pass} > /dev/null
 
 # Allow root access from any host
 echo "Granting access to database..."
@@ -70,7 +75,6 @@ echo "Removing old files..."
 rm /var/www/html/.htaccess
 rm -r craft/config && rm -r craft/plugins && rm -r craft/templates
 rsync -r --ignore-existing craft /var/www && rsync -a public/ /var/www/html/
-rm /var/www/html/.htaccess 2> /dev/null
 mv /var/www/html/htaccess /var/www/html/.htaccess
 rm -r craft && rm -r public && rm -r /var/www/html/web.config && rm -r /var/www/html/index.html 2> /dev/null
 #Give craft writing permission for the storage folder
