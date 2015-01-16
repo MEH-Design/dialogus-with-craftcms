@@ -138,7 +138,7 @@ grunt sass > /dev/null
 echo "-> sassdown"
 grunt sassdown > /dev/null
 echo "-> watch"
-grunt watch > watch.log &
+grunt server > watch.log &
 
 # Install scss-lint gem
 echo "Installing scss-lint Gem..."

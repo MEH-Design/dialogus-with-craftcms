@@ -1,3 +1,3 @@
-requirejs(['/config.js'], function() {
+requirejs(['config'], function() {
   requirejs(['test']);
 });

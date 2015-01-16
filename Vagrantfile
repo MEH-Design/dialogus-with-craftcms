@@ -12,6 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	# Forward ports to Apache and MySQL
   config.vm.network "forwarded_port", guest: 80, host: 80
   config.vm.network "forwarded_port", guest: 3306, host: 8484
+  config.vm.network "forwarded_port", guest: 35729, host: 35729
 
   config.vm.network "private_network", ip: "192.168.42.42"
 

@@ -60,6 +60,10 @@ module.exports = function(grunt) {
           assets: [
             'app/css/*.css'
           ],
+          scripts: [
+            'node_modules/sassdown/tasks/data/scripts.js',
+            'http://craft.dev:35729/livereload.js'
+          ],
           highlight: 'github',
           excludeMissing: true
         },
@@ -91,16 +95,8 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         }
-      },
-
-      scripts: {
-        files: ['app/js/*.js'],
-        tasks: ['scripts'],
-        options: {
-          livereload: true
-        }
       }
-    }
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-requirejs');
@@ -122,14 +118,18 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('styles', [
-    'scsslint',
     'sassdown',
     'sass',
     'autoprefixer'
   ]);
 
-  grunt.registerTask('scripts', [
+  grunt.registerTask('test', [
     'jscs',
-    'jshint'
+    'jshint',
+    'scsslint'
+  ]);
+
+  grunt.registerTask('server', [
+    'watch'
   ]);
 };
