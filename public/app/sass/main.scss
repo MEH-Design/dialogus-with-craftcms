@@ -18,22 +18,24 @@ As simple grid with Susy.
 $susy: (
   columns: 4,
   gutters: 1/4,
+  gutter-position: inside,
+  output: isolate,
   math: fluid
 );
 
 .container {
-  @include container(4);
+  @include container;
 
   &__column {
-    @include span(2);
+    @include span(1);
     border: 1px solid #000;
 
     &--narrow {
-      @include span(1);
+      @include span(3);
     }
 
     &--indent {
-      @include span(1 at 4);
+      @include span(1);
     }
   }
 }
