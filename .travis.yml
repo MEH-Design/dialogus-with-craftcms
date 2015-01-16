@@ -3,4 +3,4 @@ node_js:
   - "0.10"
 before_install: npm install -g grunt-cli && gem install sass && gem install susy
 install: cd public && npm install
-before_script: cd public && grunt test
+before_script: grunt test
