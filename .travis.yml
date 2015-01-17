@@ -3,4 +3,3 @@ node_js:
   - "0.10"
 before_install: npm install -g grunt-cli && gem install scss-lint && gem install susy
 install: cd public && npm install
-before_script: grunt test
