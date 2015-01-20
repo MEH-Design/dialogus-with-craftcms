@@ -131,12 +131,8 @@ bower install --allow-root > /dev/null
 # Run Grunt Tasks
 echo "Running Grunt Tasks..."
 cd ..
-echo "-> bower"
-grunt bower > /dev/null
-echo "-> sass"
-grunt sass > /dev/null
-echo "-> sassdown"
-grunt sassdown > /dev/null
+echo "-> styles"
+grunt styles > /dev/null
 echo "-> watch"
 grunt server > watch.log &
 
