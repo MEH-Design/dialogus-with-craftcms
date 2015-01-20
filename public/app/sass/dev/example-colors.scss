@@ -1,0 +1,18 @@
+/*
+for styleguide only, remove for production
+*/
+.example-colors {
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+@each $name, $color in $colors {
+  .example-colors__cell--#{$name}-color {
+    background: $color;
+    @if (lightness($color) < 50) {
+      color: white;
+    } @else {
+      color: black;
+    }
+  }
+}
