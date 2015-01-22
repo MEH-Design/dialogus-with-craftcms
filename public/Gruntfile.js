@@ -72,7 +72,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'app/sass',
             src: [
-            '**/*.scss'
+              '**/*.scss'
             ],
             dest: 'styleguide/'
           }]
@@ -135,4 +135,3 @@ module.exports = function(grunt) {
     'watch'
     ]);
   };
-  
