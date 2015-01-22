@@ -4,42 +4,4 @@
 
 //dev
 @import 'dev/example-colors';
-
-/*
-
-Grid
-====
-
-As simple grid with Susy.
-
-    <div class="container">
-      <div class="container__column">1st Column</div>
-      <div class="container__column container__column--narrow">2nd Column</div>
-      <div class="container__column container__column--indent">3rd Column</div>
-    </div>
-
-*/
-$susy: (
-  columns: 4,
-  gutters: 1/4,
-  gutter-position: inside,
-  output: isolate,
-  math: fluid
-);
-
-.container {
-  @include container;
-
-  &__column {
-    @include span(1);
-    border: 1px solid #000;
-
-    &--narrow {
-      @include span(3);
-    }
-
-    &--indent {
-      @include span(1);
-    }
-  }
-}
+@import 'dev/example-grid';

@@ -3,61 +3,42 @@
 Colors
 ======
 
-The dialogus color palette. Always use colors by their 'use-names', e.g. `$primary` instead of `$blue`.
+the dialogus color palette. Always use colors by their 'use-names', e.g. `$primary` instead of `$blue`.
 
-    <table class="example-colors">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Usage</th>
-          <th>Example</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="example-colors__cell">Lima</th>
-          <td class="example-colors__cell">Primary Color</th>
-          <td class="example-colors__cell example-colors__cell--primary-color">#78be20</th>
-        </tr>
-        <tr>
-          <td class="example-colors__cell">Kidnapper</th>
-          <td class="example-colors__cell">Decent Background</th>
-          <td class="example-colors__cell example-colors__cell--decent-background-color">#e1e9d7</th>
-        </tr>
-        <tr>
-          <td class="example-colors__cell">Lima</th>
-          <td class="example-colors__cell">Primary Color</th>
-          <td class="example-colors__cell example-colors__cell--strong-background-color">#ebe5de</th>
-        </tr>
-        <tr>
-          <td class="example-colors__cell">Gray</th>
-          <td class="example-colors__cell">Text, Lines</th>
-          <td class="example-colors__cell example-colors__cell--cell-background-color">#909090</th>
-        </tr>
-        <tr>
-        <td class="example-colors__cell">Blumine</th>
-        <td class="example-colors__cell">Secondary</th>
-        <td class="example-colors__cell example-colors__cell--secondary-color">#909090</th>
-        </tr>
-      </tbody>
-    </table>
+    <div class="example-colors">
+          <div class="example-colors__cell">
+            <div class="example-colors__cell__color example-colors__cell__color--lima">#78be20 - Lima</div>
+          </div>
+          <div class="example-colors__cell">
+            <div class="example-colors__cell__color example-colors__cell__color--blumine">#1f5f80 - Blumine</div>
+          </div>
+          <div class="example-colors__cell">
+            <div class="example-colors__cell__color example-colors__cell__color--kidnapper">#e1e9d7 - Kidnapper</div>
+          </div>
+          <div class="example-colors__cell">
+            <div class="example-colors__cell__color example-colors__cell__color--pearl-bush">#ebe5de - Pearl-Bush</div>
+          </div>
+          <div class="example-colors__cell">
+            <div class="example-colors__cell__color example-colors__cell__color--gray">#909090 - Gray</div>
+          </div>
+    </div>
 
 */
 
 
-//color names
-$lima: #78be20;
-$kidnapper: #e1e9d7;
-$pearl-bush: #ebe5de;
-$gray: #909090;
-$blumine: #1f5f80;
-
-//color map
-$colors: (
-  primary: $lima,
-  secondary: $blumine,
-  decent-background: $kidnapper,
-  strong-background: $pearl-bush,
-  cell-background: $gray,
-  text: $gray,
+//brand colors
+$brand-colors: (
+  'lima': #78be20,
+  'kidnapper': #e1e9d7,
+  'pearl-bush': #ebe5de,
+  'gray': #909090,
+  'blumine': #1f5f80
 );
+
+//usage
+$primary: map-get($brand-colors, 'lima');
+$secondary: map-get($brand-colors, 'blumine');
+$decent-background: map-get($brand-colors, 'kidnapper');
+$strong-background: map-get($brand-colors, 'peal-bush');
+$cell-background: map-get($brand-colors, 'gray');
+$text: map-get($brand-colors, 'gray');
