@@ -1,0 +1,34 @@
+$susy: (
+  columns: 2,
+  gutters: 1/2,
+  gutter-position: inside
+);
+
+.example-colors {
+  @include container;
+
+  &__cell {
+    @include span(1);
+    margin: .5em 0;
+
+    &__color {
+      border-radius: 1em;
+      padding: .5em;
+    }
+
+    &--text {
+      text-align: center;
+    }
+  }
+}
+
+@each $name, $color in $brand-colors {
+  .example-colors__cell__color--#{$name} {
+    background: $color;
+    @if (lightness($color) < 50) {
+      color: lighten($color, 40%);
+    } @else {
+      color: darken($color, 40%);
+    }
+  }
+}
