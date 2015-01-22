@@ -71,7 +71,9 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'app/sass',
-          src: ['*.scss'],
+          src: [
+            '**/*.scss'
+          ],
           dest: 'styleguide/'
         }]
       }
@@ -89,7 +91,6 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-
       styles: {
         files: ['app/sass/**/*.scss'],
         tasks: ['styles'],
