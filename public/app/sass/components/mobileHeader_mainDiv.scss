@@ -1,0 +1,21 @@
+/*
+
+Header
+====
+Plain white Header (color:decent) on mobile devices, position is fixed as it stays on<br/>
+screen all the time.
+  <iframe>
+    <div class="header">
+      <div class="">Content goes here</div>
+
+    </div>
+  </iframe>
+*/
+
+.header{
+  background-color: $decent-background;
+  position: fixed;
+  height:10%;
+  @include shadow()
+  width:100%;
+}
