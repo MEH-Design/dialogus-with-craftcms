@@ -1,3 +1,3 @@
 requirejs(['config'], function() {
-  requirejs(['test']);
+  requirejs(['modernizr']);
 });
