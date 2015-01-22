@@ -1,3 +1,13 @@
+/*
+Breakpoints
+===========
+
+Use `@include bp-up($name) {}` to make certain styles only effective for a certain screen width.
+You shouldn't rely on the logical order of css to be effective, please don't use "overrides" for breakpoints.
+This has two main reasons:
+  * makes code easier to understand
+  * doesn't rely on sass processing order
+*/
 $breakpoints: (
   'small-min'  : 0,
   'small-max'  : 40em,
