@@ -1,9 +1,11 @@
 @import 'susy';
 @import 'alerts';
+@import 'colors';
 
 //modules
-@import 'modules/colors';
+@import 'modules/breakpoints';
 
 //dev
 @import 'dev/example-colors';
 @import 'dev/example-grid';
+@import 'dev/example-breakpoints';
