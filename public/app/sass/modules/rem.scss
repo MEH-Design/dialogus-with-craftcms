@@ -1,0 +1,16 @@
+/*
+REM Fallback
+============
+The `@include rem($property, $value)` mixin automatically creates a rem fallback, assuming a base font size of 16px.
+    <p>This</p>
+    <code>@include rem('width', 2);</code>
+    <p>Compiles to..</p>
+    <code class="test">width: 32px;
+    <br>
+    width: 2rem;</code>
+*/
+
+@mixin rem($property, $value) {
+  #{$property}: $value*16px;
+  #{$property}: $value*1rem;
+}
