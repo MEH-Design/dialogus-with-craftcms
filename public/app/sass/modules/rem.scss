@@ -5,7 +5,7 @@ The `@include rem($property, $value)` mixin automatically creates a rem fallback
     <p>This</p>
     <code>@include rem('width', 2);</code>
     <p>Compiles to..</p>
-    <code class="test">width: 32px;
+    <code>width: 32px;
     <br>
     width: 2rem;</code>
 */
