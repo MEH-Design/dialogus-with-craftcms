@@ -1,0 +1,61 @@
+/*
+Breakpoints
+===========
+
+Use `@include bp-up($name) {}` to make certain styles only effective for a certain screen width.
+You shouldn't rely on the logical order of css to be effective, please don't use "overrides" for breakpoints.
+This has two main advantages:
+  * makes code easier to understand
+  * doesn't rely on sass processing order
+
+    <div class="example-breakpoints">
+       <div class="example-breakpoints__cell">
+         <div class="example-breakpoints__cell__breakpoint example-breakpoints__cell__breakpoint--small">small</div>
+       </div>
+       <div class="example-breakpoints__cell">
+         <div class="example-breakpoints__cell__breakpoint example-breakpoints__cell__breakpoint--medium">medium</div>
+       </div>
+       <div class="example-breakpoints__cell">
+         <div class="example-breakpoints__cell__breakpoint example-breakpoints__cell__breakpoint--large">large</div>
+       </div>
+       <div class="example-breakpoints__cell">
+         <div class="example-breakpoints__cell__breakpoint example-breakpoints__cell__breakpoint--xlarge">xlarge</div>
+       </div>
+       <div class="example-breakpoints__cell">
+         <div class="example-breakpoints__cell__breakpoint example-breakpoints__cell__breakpoint--xxlarge">xxlarge</div>
+       </div>
+    </div>
+*/
+$breakpoints: (
+  'small-min'  : 0,
+  'small-max'  : 40em,
+  'medium-min' : 40.063em,
+  'medium-max' : 67em,
+  'large-min'  : 67.063em,
+  'large-max'  : 100em,
+  'xlarge-min' : 100.063em,
+  'xlarge-max' : 120em,
+  'xxlarge-min': 120.063em,
+);
+
+@mixin bp-up($breakpoint) {
+  $value: map-get($breakpoints, #{$breakpoint}-min);
+  @media (min-width: $value) {
+    @content;
+  }
+}
+
+@mixin bp-down($breakpoint) {
+  $value: map-get($breakpoints, #{$breakpoint}-max);
+  @media (max-width: $value) {
+    @content;
+  }
+}
+
+@mixin bp($breakpoint) {
+  $value-min: map-get($breakpoints, #{$breakpoint}-min);
+  $value-max: map-get($breakpoints, #{$breakpoint}-max);
+  @media (min-width: $value-min) and (max-width: $value-max) {
+    @content;
+  }
+}

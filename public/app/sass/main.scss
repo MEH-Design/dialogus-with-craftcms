@@ -1,7 +1,11 @@
+//grid-system
 @import 'susy';
-@import 'colors';
-@import 'alerts';
+
+//modules
+@import 'modules/breakpoints';
+@import 'modules/colors';
 
 //dev
 @import 'dev/example-colors';
 @import 'dev/example-grid';
+@import 'dev/example-breakpoints';
