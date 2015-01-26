@@ -28,10 +28,14 @@ screen all the time.
   @include shadow-thin();
   width:100%;
   .header_headline{
+    text-decoration:none;
+    font-weight:normal;
     color:$primary;
     @include rem("font-size", 1.5);
   }
   .header_subline{
+    text-decoration:none;
+    font-weight:normal;
     color:$text;
     @include rem("font-size", 1.1);
   }

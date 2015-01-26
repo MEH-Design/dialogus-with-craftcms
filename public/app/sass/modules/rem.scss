@@ -10,7 +10,16 @@ The `@include rem($property, $value)` mixin automatically creates a rem fallback
     width: 2rem;</code>
 */
 
-@mixin rem($property, $value) {
-  #{$property}: $value*16px;
-  #{$property}: $value*1rem;
+@function listrem($mult,$einheit,$args...){
+  $out: "";
+  @each $argument in $args{
+   $var: #{$argument}*$mult;
+   $out: #{$out}+ #{$var};
+   }
+  @return unquote(#{$out});
+}
+
+@mixin rem($property, $values...) {
+  #{$property}: listrem(16px,$values);
+  #{$property}: listrem(1rem,$values);
 }
