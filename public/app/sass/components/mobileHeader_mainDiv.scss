@@ -23,7 +23,7 @@ screen all the time.
 */
 
 .header{
-  background-color: $decent-background;
+  background-color: white;
   position: fixed;
   @include headershadow();
   width:100%;

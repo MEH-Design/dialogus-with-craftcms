@@ -1,4 +1,6 @@
 @mixin headershadow() {
   box-shadow: 0 2px 0 $cell-background;
-  box-shadow: 0 .25rem 0 $cell-background;
+}
+@mixin shadow-strong(){
+  box-shadow: 0 5px 0 $text;
 }

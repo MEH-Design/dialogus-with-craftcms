@@ -1,9 +1,24 @@
 /*
 HeaderButton
-====
-<input type="button"></input>
+============
+MJAMJAMJAMJAMJAM... Hamburger
+    <a type="button" class="hamburgerbutton"><div class="hamburger"></div></a>
 */
 
-.hamburger{
-
+.hamburgerbutton{
+  display:block;
+  width: 20vw;
+  height: 20vw;
+  border: 1px $decent-background solid;
+  border-radius: 2rem;
+  @include shadow-strong();
+  .hamburger{
+    position: relative;
+    width: 80%;
+    height: 80%;
+    left:10%;
+    top:10%;
+    background-image: url(../svg/menu.svg);
+    background-color: $strong-background;
+  }
 }
