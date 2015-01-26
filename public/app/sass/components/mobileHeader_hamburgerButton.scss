@@ -1,16 +1,18 @@
 /*
 HeaderButton
 ============
-MJAMJAMJAMJAMJAM... Hamburger
-    <a type="button" class="hamburgerbutton"><div class="hamburger"></div></a>
+MJAMJAMJAMJAMJAM... Hamburger (JS yet missing)
+
+    <a href="#" type="button" class="hamburgerbutton"><div class="hamburger"></div></a>
+    <hr/>
 */
 
 .hamburgerbutton{
   display:block;
-  width: 20vw;
-  height: 20vw;
+  width: 15vw;
+  height: 15vw;
   border: 1px $decent-background solid;
-  border-radius: 2rem;
+  @include rem("border-radius", 2);
   @include shadow-strong();
   .hamburger{
     position: relative;
@@ -18,7 +20,13 @@ MJAMJAMJAMJAMJAM... Hamburger
     height: 80%;
     left:10%;
     top:10%;
-    background-image: url(../svg/menu.svg);
     background-color: $strong-background;
+    background-image: url(../svg/menu.svg);
+  }
+  .hamburger .hitted{
+    background-image: url(../svg/menu.svg);
+  }
+  .hamburger .nothitted{
+  background-image: url(../svg/menu.svg);
   }
 }

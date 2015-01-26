@@ -5,8 +5,8 @@ Plain white Header (color:decent) on mobile devices, position is fixed as it sta
 screen all the time.
 
       <div class="header">
-        <h1 class="header_headline">Content goes here</h1>
-        <h2 class="header_subline">Another text here</h2>
+        <h1 class="header_headline">Christine Minixhofer, Msc</h1>
+        <h2 class="header_subline">Training | Coaching | Lebensberatung</h2>
       </div>
       <p>I'm a text<br/>
       I'm a text<br/>
@@ -25,14 +25,14 @@ screen all the time.
 .header{
   background-color: white;
   position: fixed;
-  @include headershadow();
+  @include shadow-thin();
   width:100%;
   .header_headline{
     color:$primary;
-    font-size:1.5rem;
+    @include rem("font-size", 1.5);
   }
   .header_subline{
     color:$text;
-    font-size:1.1rem;
+    @include rem("font-size", 1.1);
   }
 }

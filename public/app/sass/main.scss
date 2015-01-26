@@ -1,6 +1,5 @@
 //(Do not)Drop dad "Base" ಠ_ಠ
 @import 'susy';
-@import 'alerts';
 //normalize
 @import '/app/bower_components/normalize.css/normalize.css';
 
@@ -12,6 +11,7 @@
 //components
 @import 'components/mobileHeader_mainDiv';
 @import 'components/mobileHeader_hamburgerButton';
+@import 'components/mobileHeader_menuElement';
 //dev
 @import 'dev/example-colors';
 @import 'dev/example-grid';
