@@ -1,3 +1,9 @@
 linters:
   Comment:
     enabled: false
+  SelectorFormat:
+    enabled: true
+    convention: BEM
+  NestingDepth:
+    enabled: true
+    max_depth: 4

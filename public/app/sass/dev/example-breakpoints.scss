@@ -1,0 +1,60 @@
+$susy: (
+  columns: 2,
+  gutters: 1/2,
+  gutter-position: inside
+);
+
+.example-breakpoints {
+  @include container;
+
+  &__cell {
+    @include span(1);
+    margin: .5em 0;
+
+    &__breakpoint {
+      background-color: $decent-background;
+      border-radius: 1em;
+      padding: .5em;
+
+      &--small {
+        opacity: .5;
+
+        @include bp('small') {
+          opacity: 1;
+        }
+      }
+
+      &--medium {
+        opacity: .5;
+
+        @include bp('medium') {
+          opacity: 1;
+        }
+      }
+
+      &--large {
+        opacity: .5;
+
+        @include bp('large') {
+          opacity: 1;
+        }
+      }
+
+      &--xlarge {
+        opacity: .5;
+
+        @include bp('xlarge') {
+          opacity: 1;
+        }
+      }
+
+      &--xxlarge {
+        opacity: .5;
+
+        @include bp-up('xxlarge') {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
