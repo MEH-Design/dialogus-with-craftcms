@@ -18,7 +18,7 @@ Usally used for a simple welcome text.
 */
 
 $susy: (
-  columns: 3,
+  columns: 4,
   gutters: 1/2,
   gutter-position: inside
 );
@@ -28,15 +28,15 @@ $susy: (
 
   &__profile {
     @include span(1);
-    padding: .5em;
+    @include rem('padding', .5rem);
 
     &__image {
-      @include rem('border-radius', 2);
-      box-shadow: 0px to-px(.5rem) 0px 0px $shadow;
+      @include rem('border-radius', 2rem);
+      @include rem('box-shadow', 0 .3rem 0 0 $shadow);
     }
   }
 
   &__text {
-    @include span(2);
+    @include span(3);
   }
 }
