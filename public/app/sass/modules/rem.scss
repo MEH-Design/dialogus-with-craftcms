@@ -16,9 +16,9 @@ The `@include rem($property, $value)` mixin automatically creates a rem fallback
 }
 
 @function to-px($value) {
-  @return $rem-value*1px;
+  @return $value*1px;
 }
 
 @function to-rem($value) {
-  @return $px-value*1rem;
+  @return $value*1rem;
 }
