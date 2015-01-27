@@ -33,13 +33,15 @@ $brand-colors: (
   'pearl-bush': #ebe5de,
   'gray': #909090,
   'blumine': #1f5f80,
-  'swiss-coffee': #e2dfdd
+  'swiss-coffee': #e2dfdd,
+  'spring-wood': #f9f6f4
 );
 
 //usage
 $primary: map-get($brand-colors, 'lima');
 $secondary: map-get($brand-colors, 'blumine');
-$decent-background: map-get($brand-colors, 'kidnapper');
+$decent-primary-background: map-get($brand-colors, 'spring-wood');
+$decent-secondary-background: map-get($brand-colors, 'kidnapper');
 $strong-background: map-get($brand-colors, 'pearl-bush');
 $cell-background: map-get($brand-colors, 'gray');
 $text: map-get($brand-colors, 'gray');

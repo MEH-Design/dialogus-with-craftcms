@@ -25,6 +25,7 @@ $susy: (
 
 .welcome-block {
   @include container;
+  @include rem('min-width', 34rem);
 
   &__profile {
     @include span(1);
