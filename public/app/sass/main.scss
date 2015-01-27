@@ -9,10 +9,11 @@
 @import 'modules/colors';
 @import 'modules/rem';
 
+//components
+@import 'components/main-container';
+
 //dev
 @import 'dev/example-colors';
 @import 'dev/example-grid';
 @import 'dev/example-breakpoints';
-
-//components
-@import 'components/main';
+@import 'dev/main-container__block';

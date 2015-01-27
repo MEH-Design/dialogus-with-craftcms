@@ -32,7 +32,8 @@ $brand-colors: (
   'kidnapper': #e1e9d7,
   'pearl-bush': #ebe5de,
   'gray': #909090,
-  'blumine': #1f5f80
+  'blumine': #1f5f80,
+  'granny-smith': #8f9d9d
 );
 
 //usage
@@ -42,3 +43,4 @@ $decent-background: map-get($brand-colors, 'kidnapper');
 $strong-background: map-get($brand-colors, 'pearl-bush');
 $cell-background: map-get($brand-colors, 'gray');
 $text: map-get($brand-colors, 'gray');
+$shadow: map-get($brand-colors, 'granny-smith');
