@@ -1,0 +1,50 @@
+/*
+Main Container
+==============
+Contains all page content except header and footer.
+The container contains blocks, which have a certain width.
+
+    <main class="main-container">
+      <section class="main-container__block main-container__block--span-1">
+        <h1>Section 1</h1>
+        <p>Some text goes here.</p>
+      </section>
+      <section class="main-container__block main-container__block--span-2">
+        <h1>Section 2</h1>
+        <p>Some text goes here.</p>
+      </section>
+      <section class="main-container__block main-container__block--span-3">
+        <h1>Section 3</h1>
+        <p>Some text goes here.</p>
+      </section>
+    </main>
+
+*/
+
+$mobile-header-height: 20%;
+
+$susy: (
+  columns: 3,
+  gutters: 1/4,
+  gutter-position: inside,
+  output: isolate
+);
+
+.main-container {
+  @include container;
+
+  background-color: $strong-background;
+  padding-top: $mobile-header-height;
+  width: 100%;
+  min-height: 100%;
+
+  &__block {
+    @include bp-up('medium') {
+      @for $i from 1 through map-get($susy, columns) {
+        &--span-#{$i} {
+          @include span($i);
+        }
+      }
+    }
+  }
+}
