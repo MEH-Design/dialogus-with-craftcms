@@ -10,29 +10,42 @@ A block containing three circles with content.
         <h1 class="circle-block__head__heading">Heading Dos</h1>
       </div>
       <div class="circle-block__element">
-        <img class="circle-block__element__image" width="200" height="200"/>
-        <h1>Circle 1</h1>
-        <p>This is an awesome, round circle with about zero corners</p>
+        <img class="circle-block__element__image" src="http://lorempixel.com/200/200/nature" width="200" height="200"/>
+        <div class="circle-block__element__text">
+        <h1 class="circle-block__element__text__heading">Circle 1</h1>
+        <p class="circle-block__element__text__paragraph">This is an awesome, round circle.</p>
+        </div>
       </div>
       <div class="circle-block__element">
-        <img class="circle-block__element__image" width="200" height="200"/>
-        <h1>Circle 2</h1>
-        <p>This is an awesome, round circle with about zero corners</p>
+        <img class="circle-block__element__image" src="http://lorempixel.com/200/200/animals" width="200" height="200"/>
+        <div class="circle-block__element__text">
+        <h1 class="circle-block__element__text__heading">Circle 2</h1>
+        <p class="circle-block__element__text__paragraph">This is another awesome, round circle.</p>
+        </div>
       </div>
       <div class="circle-block__element">
-        <img class="circle-block__element__image" width="200" height="200"/>
-        <h1>Circle 3</h1>
-        <p>This is an awesome, round circle with about zero corners</p>
+        <img class="circle-block__element__image" src="http://lorempixel.com/200/200/cats" width="200" height="200"/>
+        <div class="circle-block__element__text">
+        <h1 class="circle-block__element__text__heading">Circle 3</h1>
+        <p class="circle-block__element__text__paragraph">This is the third awesome, round circle.</p>
+        </div>
       </div>
     </section>
 
 */
 
+$susy: (
+  gutters: 1/16,
+  gutter-position: split
+);
+
 .circle-block {
   @include container;
+  @include rem('padding-bottom', 1rem);
 
   &__head {
     @include span(4 at 1);
+    text-align: center;
 
     &__heading {
       @include span(2 of 4 at 1);
@@ -40,19 +53,33 @@ A block containing three circles with content.
   }
 
   &__element {
-    @include span(1 of 3 at 2);
+    @include span(1 of 3 at 2 split);
     @include rem('box-shadow', 0 .3rem 0 0 $shadow);
 
     position: relative;
+    border-radius: 100%;
     background-color: $decent-primary-background;
-    border-radius: 999px;
-    height: to-vw(span(1 of 3));
+    padding-bottom: span(1 of 3 split);
+    height: 0;
+    text-align: center;
 
     &__image {
       position: absolute;
       left: 0;
+      border-radius: 100%;
       width: 100%;
-      border-radius: 999px;
+      clip-path: inset(0 0 45% 0);
+    }
+
+    &__text {
+      @include rem('padding', 0 1.5rem);
+      margin-top: 50%;
+      border-top: .3rem solid $shadow;
+
+      &__heading,
+      &__paragraph {
+        margin: 0;
+      }
     }
   }
 }
