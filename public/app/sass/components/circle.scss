@@ -10,17 +10,17 @@ A block containing three circles with content.
         <h1 class="circle-block__head__heading">Heading Dos</h1>
       </div>
       <div class="circle-block__element">
-        <img class="circle-block__element__image"/>
+        <img class="circle-block__element__image" width="200" height="200"/>
         <h1>Circle 1</h1>
         <p>This is an awesome, round circle with about zero corners</p>
       </div>
       <div class="circle-block__element">
-        <img class="circle-block__element__image"/>
+        <img class="circle-block__element__image" width="200" height="200"/>
         <h1>Circle 2</h1>
         <p>This is an awesome, round circle with about zero corners</p>
       </div>
       <div class="circle-block__element">
-        <img class="circle-block__element__image"/>
+        <img class="circle-block__element__image" width="200" height="200"/>
         <h1>Circle 3</h1>
         <p>This is an awesome, round circle with about zero corners</p>
       </div>
@@ -43,8 +43,16 @@ A block containing three circles with content.
     @include span(1 of 3 at 2);
     @include rem('box-shadow', 0 .3rem 0 0 $shadow);
 
+    position: relative;
     background-color: $decent-primary-background;
     border-radius: 999px;
-    height: parse-int(span(1 of 3))*1vw;
+    height: to-vw(span(1 of 3));
+
+    &__image {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      border-radius: 999px;
+    }
   }
 }
