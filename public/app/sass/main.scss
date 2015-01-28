@@ -8,10 +8,12 @@
 @import 'modules/breakpoints';
 @import 'modules/colors';
 @import 'modules/rem';
+@import 'modules/vw';
 
 //components
 @import 'components/main-container';
 @import 'components/welcome';
+@import 'components/circle';
 
 //dev
 @import 'dev/example-colors';

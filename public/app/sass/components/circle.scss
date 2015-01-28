@@ -1,0 +1,50 @@
+/*
+Circle Block
+============
+
+A block containing three circles with content.
+
+    <section class="circle-block">
+      <div class="circle-block__head">
+        <h1 class="circle-block__head__heading">Heading Uno</h1>
+        <h1 class="circle-block__head__heading">Heading Dos</h1>
+      </div>
+      <div class="circle-block__element">
+        <img class="circle-block__element__image"/>
+        <h1>Circle 1</h1>
+        <p>This is an awesome, round circle with about zero corners</p>
+      </div>
+      <div class="circle-block__element">
+        <img class="circle-block__element__image"/>
+        <h1>Circle 2</h1>
+        <p>This is an awesome, round circle with about zero corners</p>
+      </div>
+      <div class="circle-block__element">
+        <img class="circle-block__element__image"/>
+        <h1>Circle 3</h1>
+        <p>This is an awesome, round circle with about zero corners</p>
+      </div>
+    </section>
+
+*/
+
+.circle-block {
+  @include container;
+
+  &__head {
+    @include span(4 at 1);
+
+    &__heading {
+      @include span(2 of 4 at 1);
+    }
+  }
+
+  &__element {
+    @include span(1 of 3 at 2);
+    @include rem('box-shadow', 0 .3rem 0 0 $shadow);
+
+    background-color: $decent-primary-background;
+    border-radius: 999px;
+    height: parse-int(span(1 of 3))*1vw;
+  }
+}
