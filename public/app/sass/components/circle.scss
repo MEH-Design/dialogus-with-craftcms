@@ -87,7 +87,7 @@ $susy: (
 
       &__heading,
       &__paragraph {
-        margin: .5rem 0;
+        @include rem('margin', .1rem 0);
       }
     }
   }
