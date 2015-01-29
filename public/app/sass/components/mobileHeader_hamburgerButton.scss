@@ -3,30 +3,32 @@ HeaderButton
 ============
 MJAMJAMJAMJAMJAM... Hamburger (JS yet missing)
 
-    <a href="#" type="button" class="hamburgerbutton"><div class="hamburger"></div></a>
+    <a href="#" type="button" class="header__hamburger"><div class="header__hamburger__image"></div></a>
     <hr/>
 */
 
-.hamburgerbutton{
-  display:block;
+.header__hamburger {
+  @include rem("border-radius", 1rem);
+  @include shadow-light();
+
+  display: block;
+  border: 1px solid $strong-background;
+  background-color: $strong-background;
   width: 15vw;
   height: 15vw;
-  border: 1px $decent-background solid;
-  @include rem("border-radius", 2);
-  @include shadow-strong();
-  .hamburger{
+
+  &__image {
     position: relative;
+    top: 10%;
+    left: 10%;
+    background-color: $strong-background;
+    background-image: url('../svg/menu.svg');
     width: 80%;
     height: 80%;
-    left:10%;
-    top:10%;
-    background-color: $strong-background;
-    background-image: url(../svg/menu.svg);
   }
-  .hamburger .hitted{
-    background-image: url(../svg/menu.svg);
+
+  &__image--hit {
+    background-image: url('../svg/logo.svg');
   }
-  .hamburger .nothitted{
-  background-image: url(../svg/menu.svg);
-  }
+
 }

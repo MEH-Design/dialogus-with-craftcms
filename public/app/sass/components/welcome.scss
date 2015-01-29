@@ -33,7 +33,7 @@ $susy: (
 
     &__image {
       @include rem('border-radius', 2rem);
-      @include rem('box-shadow', 0 .3rem 0 0 $shadow);
+      @include rem('box-shadow', 0 .3rem 0 0 $shadow-light);
     }
   }
 
