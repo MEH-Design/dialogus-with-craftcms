@@ -12,22 +12,22 @@ A block containing three circles with content.
       <div class="circle-block__element">
         <img class="circle-block__element__image" src="http://lorempixel.com/200/200/nature" width="200" height="200"/>
         <div class="circle-block__element__text">
-        <h1 class="circle-block__element__text__heading">Circle 1</h1>
         <p class="circle-block__element__text__paragraph">This is an awesome, round circle.</p>
+        <h1 class="circle-block__element__text__heading">Circle 1</h1>
         </div>
       </div>
       <div class="circle-block__element">
         <img class="circle-block__element__image" src="http://lorempixel.com/200/200/animals" width="200" height="200"/>
         <div class="circle-block__element__text">
-        <h1 class="circle-block__element__text__heading">Circle 2</h1>
         <p class="circle-block__element__text__paragraph">This is another awesome, round circle.</p>
+        <h1 class="circle-block__element__text__heading">Circle 2</h1>
         </div>
       </div>
       <div class="circle-block__element">
         <img class="circle-block__element__image" src="http://lorempixel.com/200/200/cats" width="200" height="200"/>
         <div class="circle-block__element__text">
-        <h1 class="circle-block__element__text__heading">Circle 3</h1>
         <p class="circle-block__element__text__paragraph">This is the third awesome, round circle.</p>
+        <h1 class="circle-block__element__text__heading">Circle 3</h1>
         </div>
       </div>
     </section>
@@ -87,7 +87,7 @@ $susy: (
 
       &__heading,
       &__paragraph {
-        margin: 0;
+        margin: .5rem 0;
       }
     }
   }
