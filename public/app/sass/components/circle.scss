@@ -60,8 +60,12 @@ $susy: (
     position: relative;
     border-radius: 100%;
     background-color: $decent-primary-background;
+
+    //dirty hack, but works:
+    //http://www.cameronalcorn.com/maintain-element-aspect-ratio-using-css-only/
     padding-bottom: span(1 of 3 split);
     height: 0;
+
     text-align: center;
 
     &__image {
