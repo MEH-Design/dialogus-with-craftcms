@@ -1,25 +1,48 @@
 /*
 REM Fallback
 ============
-The `@include rem($property, $value)` mixin automatically creates a rem fallback, assuming a base font size of 16px.
+The `@include rem($property, $values)` mixin automatically creates a rem fallback, assuming a base font size of 16px.
+[Made by Hugo Giraudel.](http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/)
     <p>This</p>
-    <code>@include rem('width', 2);</code>
+    <code>@include rem(padding, 1rem 2rem);</code>
     <p>Compiles to..</p>
-    <code>width: 32px;
-    <br>
-    width: 2rem;</code>
+    <code>padding: 16px 32px;<br>
+    padding: 1rem 2rem;</code>
 */
 
-@function listrem($mult,$einheit,$args...){
-  $out: "";
-  @each $argument in $args{
-   $var: #{$argument}*$mult;
-   $out: #{$out}+ #{$var};
-   }
-  @return unquote(#{$out});
+@function parse-int($n) {
+  @return $n / ($n * 0 + 1);
 }
 
-@mixin rem($property, $values...) {
-  #{$property}: listrem(16px,$values);
-  #{$property}: listrem(1rem,$values);
+@mixin rem($property, $values) {
+  $px : ();
+  $rem: ();
+
+  @each $value in $values {
+
+    @if $value == 0 or $value == auto or type-of($value) != number {
+      $px: append($px , $value);
+      $rem: append($rem, $value);
+    } @else {
+      $unit: unit($value);
+      $val: parse-int($value);
+
+      @if $unit == 'px' {
+        $px: append($px, $value);
+        $rem: append($rem, ($val / 16 + rem));
+      }
+
+      @if $unit == 'rem' {
+        $px: append($px, ($val * 16 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
 }

@@ -7,3 +7,5 @@ linters:
   NestingDepth:
     enabled: true
     max_depth: 4
+  PropertySortOrder:
+    order: concentric

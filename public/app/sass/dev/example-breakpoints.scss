@@ -12,8 +12,8 @@ $susy: (
     margin: .5em 0;
 
     &__breakpoint {
-      background-color: $decent-background;
       border-radius: 1em;
+      background-color: $decent-primary-background;
       padding: .5em;
 
       &--small {

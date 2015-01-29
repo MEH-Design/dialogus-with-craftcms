@@ -1,6 +1,18 @@
-@mixin shadow-thin() {
-  box-shadow: 0 2px 0 $cell-background;
-}
-@mixin shadow-strong(){
-  box-shadow: 0 5px 0 $text;
+/*
+Shadow
+======
+The `@include shadow();` automatically applies a box-shadow on the current element.
+
+    <p>This</p>
+    <code>@include shadow();</code>
+    <p>Returns...</p>
+    <code>@include rem('box-shadow', 0 .3rem 0 0 $shadow);</code>
+    <p>Which compiles to...</p>
+    <code>box-shadow: 0 4px 0 0 #e2dfdd;
+    box-shadow: 0 .3rem 0 0 #e2dfdd;</code>
+
+*/
+
+@mixin shadow() {
+  @include rem('box-shadow', 0 .3rem 0 0 $shadow);
 }
