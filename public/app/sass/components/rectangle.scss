@@ -52,15 +52,15 @@ $susy: (
       @include shadow-light();
       @include span(1);
       float: right;
-      height: auto;
       border-radius: 20%;
+      height: auto;
     }
 
     &__text {
-      width: span(3);
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      width: span(3);
     }
   }
 }
