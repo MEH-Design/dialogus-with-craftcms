@@ -40,14 +40,14 @@ $button-size: 3.5rem;
     @include shadow-light();
     @include rem('width', $button-size);
     @include rem('height', $button-size);
+    display: block;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    display: block;
     border-radius: 100%;
     background-color: $decent-primary-background;
-    background-size: 80%;
     background-position: center;
+    background-size: 80%;
 
     &--left {
       left: 0;
