@@ -1,0 +1,66 @@
+/*
+Rectangle Block
+===============
+
+A block containing a rectangle with content and image.
+
+    <section class="rectangle-block">
+      <div class="rectangle-block__head">
+        <h1>Heading Uno</h1>
+      </div>
+      <div class="rectangle-block__element">
+        <div class="rectangle-block__element__text"><p>This is an awesome, rounded rectangle. This still is an awesome, rounded rectangle.</p></div>
+        <img class="rectangle-block__element__image" src="http://lorempixel.com/100/120/nature" width="100" height="120"/>
+      </div>
+    </section>
+
+    <section class="rectangle-block" style="width:20rem">
+      <div class="rectangle-block__head">
+        <h1>Heading Dos</h1>
+      </div>
+      <div class="rectangle-block__element">
+        <div class="rectangle-block__element__text"><p>This is an awesome, rounded rectangle. This still is an awesome, rounded rectangle.</p></div>
+        <img class="rectangle-block__element__image" src="http://lorempixel.com/100/121/nature" width="100" height="120"/>
+      </div>
+    </section>
+
+*/
+
+$susy: (
+  columns: 4,
+  gutters: 1/2,
+  gutter-position: split
+);
+
+.rectangle-block {
+  @include rem('padding-bottom', 1rem);
+
+  &__head {
+    text-align: center;
+  }
+
+  &__element {
+    @include container;
+    @include rem('border-radius', 2rem);
+    @include rem('padding', 1rem);
+    @include shadow-light();
+
+    position: relative;
+    background-color: $decent-primary-background;
+
+    &__image {
+      @include shadow-light();
+      @include span(1);
+      float: right;
+      height: auto;
+      border-radius: 20%;
+    }
+
+    &__text {
+      width: span(3);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

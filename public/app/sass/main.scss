@@ -2,6 +2,7 @@
 @import 'susy';
 //normalize
 @import '/app/bower_components/normalize.css/normalize.css';
+@import 'modules/border-box';
 
 //modules
 @import 'modules/rem';
@@ -16,6 +17,7 @@
 @import 'components/main-container';
 @import 'components/callout';
 @import 'components/circle';
+@import 'components/rectangle';
 
 //dev
 @import 'dev/example-colors';
