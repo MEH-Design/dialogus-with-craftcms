@@ -55,7 +55,7 @@ $susy: (
 
   &__element {
     @include span(1 of 3 at 2 split);
-    @include shadow();
+    @include shadow-light();
 
     position: relative;
     border-radius: 100%;
@@ -82,7 +82,7 @@ $susy: (
       position: absolute;
       bottom: 0;
       z-index: 1;
-      border-top: .3rem solid $shadow;
+      border-top: .3rem solid $shadow-light;
       height: 49%; //1% for border
 
       &__heading,

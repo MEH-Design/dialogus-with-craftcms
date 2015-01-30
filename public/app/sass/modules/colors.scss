@@ -47,4 +47,5 @@ $strong-primary-background: map-get($brand-colors, 'pearl-bush');
 $strong-secondary-background: map-get($brand-colors, 'white');
 $cell-background: map-get($brand-colors, 'gray');
 $text: map-get($brand-colors, 'gray');
-$shadow: map-get($brand-colors, 'swiss-coffee');
+$shadow-dark: map-get($brand-colors, 'gray');
+$shadow-light: map-get($brand-colors, 'swiss-coffee');

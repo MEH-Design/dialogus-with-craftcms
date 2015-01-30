@@ -1,0 +1,48 @@
+/*
+Header
+====
+Plain white Header (color:decent) on mobile devices, position is fixed as it stays on<br/>
+screen all the time.
+
+      <div class="header">
+        <h1 class="header__headline">Christine Minixhofer, Msc</h1>
+        <h2 class="header__subline">Training | Coaching | Lebensberatung</h2>
+      </div>
+      <p>I'm a text<br/>
+      I'm a text<br/>
+      I'm a text<br/>
+      I'm a text<br/>
+      I'm a text<br/>
+      I'm a text<br/></p>
+      <p>I'm a text<br/>
+      I'm a text<br/>
+      I'm a text<br/>
+      I'm a text<br/>
+      I'm a text<br/>
+      I'm a text<br/></p>
+*/
+
+.header {
+  @include shadow-light();
+
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+
+  &__headline {
+    @include rem("font-size", 1.5rem);
+
+    text-decoration: none;
+    color: $primary;
+    font-weight: normal;
+  }
+
+  &__subline {
+    @include rem("font-size", 1.1rem);
+
+    text-decoration: none;
+    color: $text;
+    font-weight: normal;
+  }
+
+}

@@ -1,0 +1,34 @@
+/*
+HeaderButton
+============
+MJAMJAMJAMJAMJAM... Hamburger (JS yet missing)
+
+    <a href="#" type="button" class="header__hamburger"><div class="header__hamburger__image"></div></a>
+    <hr/>
+*/
+
+.header__hamburger {
+  @include rem("border-radius", 1rem);
+  @include shadow-light();
+
+  display: block;
+  border: 1px solid $strong-primary-background;
+  background-color: $strong-primary-background;
+  width: 15vw;
+  height: 15vw;
+
+  &__image {
+    position: relative;
+    top: 10%;
+    left: 10%;
+    background-color: $strong-primary-background;
+    background-image: url('../svg/menu.svg');
+    width: 80%;
+    height: 80%;
+  }
+
+  &__image--hit {
+    background-image: url('../svg/logo.svg');
+  }
+
+}
