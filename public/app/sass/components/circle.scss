@@ -54,7 +54,7 @@ $susy: (
 
   &__element {
     @include span(1 of 3 at 2 split);
-    @include rem('box-shadow', 0 .3rem 0 0 $shadow);
+    @include rem('box-shadow', 0 .3rem 0 0 $shadow-light);
 
     position: relative;
     border-radius: 100%;
@@ -74,7 +74,7 @@ $susy: (
     &__text {
       @include rem('padding', 0 1.5rem);
       margin-top: 50%;
-      border-top: .3rem solid $shadow;
+      border-top: .3rem solid $shadow-light;
 
       &__heading,
       &__paragraph {
