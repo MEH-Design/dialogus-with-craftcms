@@ -2,7 +2,7 @@
 Callout Block
 =============
 
-A block with an image, a simple heading and text.
+A block with an image, a simple heading and text. To place the image on the right, `callout-block__profile` and `callout-block__text` have to be swapped.
 Usally used for a simple welcome text.
 
     <section class="callout-block">
