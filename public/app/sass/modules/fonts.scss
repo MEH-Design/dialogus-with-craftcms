@@ -14,29 +14,29 @@ Our brand font is **Champagne & Limousines**, our standard font **Open Sans**.
   font-family: 'Champagne & Limousines';
   font-style: normal;
   font-weight: normal;
-  src: local('Champagne & Limousines'), url('/app/fonts/Champagne & Limousines.woff') format('woff');
+  src: local('Champagne & Limousines'), url('/app/fonts/Champagne-Limousines.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Open Sans';
-    font-weight: normal;
-    font-weight: 400;
-    font-style: normal;
-    src: local('Open Sans Regular'), url('/app/fonts/OpenSans-Regular.woff') format('woff');
+  font-family: 'Open Sans';
+  font-weight: normal;
+  font-weight: 400;
+  font-style: normal;
+  src: local('Open Sans Regular'), url('/app/fonts/OpenSans-Regular.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Open Sans';
-    src: local('Open Sans Light'), url('/app/fonts/OpenSans-Light.woff') format('woff');
-    font-weight: 200;
-    font-style: normal;
+  font-family: 'Open Sans';
+  src: local('Open Sans Light'), url('/app/fonts/OpenSans-Light.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Open Sans';
-    src: local('Open Sans Semibold'), url('/app/fonts/OpenSans-Semibold.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
+  font-family: 'Open Sans';
+  src: local('Open Sans Semibold'), url('/app/fonts/OpenSans-Semibold.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
 }
 
 $heading-font: 'Champagne & Limousines', 'Helvetica Neue', sans-serif;
@@ -60,7 +60,7 @@ $text-font: 'Open Sans', 'Arial', sans-serif;
   font-weight: 500;
 }
 
-@mixin subheading {
+@mixin sub-heading {
   font-family: $text-font;
   font-weight: 200;
 }

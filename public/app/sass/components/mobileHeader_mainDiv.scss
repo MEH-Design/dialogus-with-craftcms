@@ -27,26 +27,23 @@ $mobile-header-height: 22vw;
 .header {
   @include shadow-light();
 
-  padding-left: $mobile-header-height * 0.2;
   position: fixed;
-  background-color: #fff;
+  background-color: $strong-secondary-background;
+  padding-left: $mobile-header-height / 5;
   width: 100%;
   height: $mobile-header-height;
 
   &__headline {
-    font-size: $mobile-header-height / 2.8;
+    @include primary-heading();
+
     margin-bottom: - $mobile-header-height / 6;
-    text-decoration: none;
-    color: $primary;
-    font-weight: normal;
+    font-size: $mobile-header-height / 2.8;
   }
 
   &__subline {
+    @include sub-heading();
+    
     font-size: $mobile-header-height / 6.5;
-    font-family: $text-font;
-    text-decoration: none;
-    color: $text;
-    font-weight: 200;
   }
 
 }

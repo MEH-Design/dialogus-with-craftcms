@@ -71,10 +71,7 @@ $susy: (
 
     &__heading {
       @include rem("font-size", 1.5rem);
-
-      font-family: $heading-font;
-      font-color: $secondary;
-      font-weight: 500;
+      @include secondary-heading();
     }
   }
 

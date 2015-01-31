@@ -12,13 +12,13 @@ MJAMJAMJAMJAMJAM... Hamburger (JS yet missing)
   @include shadow-light();
 
   display: block;
-  border: 1px solid $strong-primary-background;
-  background-color: $strong-primary-background;
-  width: $mobile-header-height * .5;
-  height: $mobile-header-height * .5;
   position: absolute;
   top: $mobile-header-height * .3;
-  right: $mobile-header-height * .2;
+  right: $mobile-header-height / 5;
+  border: 1px solid $strong-primary-background;
+  background-color: $strong-primary-background;
+  width: $mobile-header-height / 2;
+  height: $mobile-header-height / 2;
 
   &__image {
     position: relative;
