@@ -31,18 +31,19 @@ $mobile-header-height: 22vw;
   position: fixed;
   top: 0;
   background-color: $strong-secondary-background;
-  padding-left: $mobile-header-height / 5;
   width: 100%;
   height: $mobile-header-height;
 
   &__headline {
     @include primary-heading();
+    margin-left: $mobile-header-height / 5;
     margin-bottom: - $mobile-header-height / 6;
     font-size: $mobile-header-height / 2.8;
   }
 
   &__subline {
     @include sub-heading();
+    margin-left: $mobile-header-height / 5;
     font-size: $mobile-header-height / 6.5;
   }
 
