@@ -36,7 +36,7 @@ Usally used for a simple welcome text.
 
     <section class="callout-block">
       <div class="callout-block__text">
-        <h1>Welcome</h1>
+        <h1 class="callout-block__text__heading">Welcome</h1>
         <p>Thanks for visiting this awesome styleguide. This is a simple welcome message with rounded corners and a light background.</p>
       </div>
       <div class="callout-block__profile">
@@ -48,20 +48,27 @@ Usally used for a simple welcome text.
 
 $susy: (
   columns: 4,
-  gutters: 1/2,
-  gutter-position: inside
+  gutters: 1/4,
+  gutter-position: split
 );
 
 .callout-block {
   @include container;
+  position: relative;
 
   &__profile {
     @include span(1);
     @include rem('padding', .5rem);
+    overflow: hidden;
 
     &__image {
       @include rem('border-radius', 2rem);
       @include shadow-light();
+      position: absolute;
+      top: 50%;
+      height: auto;
+      transform: translateY(-50%);
+      width: span(1 of map-get($susy, columns));
     }
   }
 
@@ -70,7 +77,7 @@ $susy: (
 
     &__heading {
       @include rem("font-size", 1.5rem);
-      @include secondary-heading();
+      @include tertiary-heading();
     }
   }
 

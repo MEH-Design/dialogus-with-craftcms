@@ -78,22 +78,4 @@ $susy: (
     margin-top: $mobile-header-height;
     padding-top: $shadow-width;
   }
-
-  &__block__heading--primary {
-    @include primary-heading;
-    font-size: 1.8rem;
-  }
-
-  &__block__heading--secondary {
-    @include secondary-heading;
-  }
-
-  &__block__heading--tertiary {
-    @include tertiary-heading;
-  }
-
-  &__block__heading--sub {
-    @include sub-heading;
-  }
-
 }
