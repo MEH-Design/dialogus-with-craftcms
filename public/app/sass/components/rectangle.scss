@@ -50,9 +50,9 @@ $susy: (
 
     &__image {
       @include shadow-light();
-      width: span(1);
       float: right;
       border-radius: 20%;
+      width: span(1);
       height: auto;
     }
 
