@@ -14,8 +14,11 @@ MJAMJAMJAMJAMJAM... Hamburger (JS yet missing)
   display: block;
   border: 1px solid $strong-primary-background;
   background-color: $strong-primary-background;
-  width: 15vw;
-  height: 15vw;
+  width: $mobile-header-height * .5;
+  height: $mobile-header-height * .5;
+  position: absolute;
+  top: $mobile-header-height * .3;
+  right: $mobile-header-height * .2;
 
   &__image {
     position: relative;

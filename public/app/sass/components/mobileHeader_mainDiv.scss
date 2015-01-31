@@ -22,27 +22,31 @@ screen all the time.
       I'm a text<br/></p>
 */
 
+$mobile-header-height: 22vw;
+
 .header {
   @include shadow-light();
 
+  padding-left: $mobile-header-height * 0.2;
   position: fixed;
   background-color: #fff;
   width: 100%;
+  height: $mobile-header-height;
 
   &__headline {
-    @include rem("font-size", 1.5rem);
-
+    font-size: $mobile-header-height / 2.8;
+    margin-bottom: - $mobile-header-height / 6;
     text-decoration: none;
     color: $primary;
     font-weight: normal;
   }
 
   &__subline {
-    @include rem("font-size", 1.1rem);
-
+    font-size: $mobile-header-height / 6.5;
+    font-family: $text-font;
     text-decoration: none;
     color: $text;
-    font-weight: normal;
+    font-weight: 200;
   }
 
 }
