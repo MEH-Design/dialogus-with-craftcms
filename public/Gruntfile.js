@@ -58,8 +58,7 @@ module.exports = function(grunt) {
     csslint: {
       strict: {
         options: {
-          floats: false,
-          box-sizing: false
+          csslintrc: '.csslintrc'
         },
         src: ['app/css/main.css']
       }
@@ -135,6 +134,7 @@ module.exports = function(grunt) {
     'jshint',
     'scsslint',
     'sass',
+    'autoprefixer',
     'csslint'
   ]);
 

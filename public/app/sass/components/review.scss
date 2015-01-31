@@ -67,22 +67,22 @@ $button-size: 3.5rem;
       @include span(1);
       @include rem('height', 1rem);
 
-      background: url('../svg/star.svg') 0% 0% no-repeat, url('../svg/star.svg') 20% 0% no-repeat, url('../svg/star.svg') 40% 0% no-repeat, url('../svg/star.svg') 60% 0% no-repeat, url('../svg/star.svg') 80% 0% no-repeat;
+      background: url('../svg/star.svg') 0 0 no-repeat, url('../svg/star.svg') 20% 0 no-repeat, url('../svg/star.svg') 40% 0 no-repeat, url('../svg/star.svg') 60% 0 no-repeat, url('../svg/star.svg') 80% 0 no-repeat;
 
       &--1-star {
-        background: url('../svg/star.svg') 0% 0% no-repeat;
+        background: url('../svg/star.svg') 0 0 no-repeat;
       }
 
       &--2-star {
-        background: url('../svg/star.svg') 0% 0% no-repeat, url('../svg/star.svg') 20% 0% no-repeat;
+        background: url('../svg/star.svg') 0 0 no-repeat, url('../svg/star.svg') 20% 0 no-repeat;
       }
 
       &--3-star {
-        background: url('../svg/star.svg') 0% 0% no-repeat, url('../svg/star.svg') 20% 0% no-repeat, url('../svg/star.svg') 40% 0% no-repeat;
+        background: url('../svg/star.svg') 0 0 no-repeat, url('../svg/star.svg') 20% 0 no-repeat, url('../svg/star.svg') 40% 0 no-repeat;
       }
 
       &--4-star {
-        background: url('../svg/star.svg') 0% 0% no-repeat, url('../svg/star.svg') 20% 0% no-repeat, url('../svg/star.svg') 40% 0% no-repeat, url('../svg/star.svg') 60% 0% no-repeat;
+        background: url('../svg/star.svg') 0 0 no-repeat, url('../svg/star.svg') 20% 0 no-repeat, url('../svg/star.svg') 40% 0 no-repeat, url('../svg/star.svg') 60% 0 no-repeat;
       }
     }
 
