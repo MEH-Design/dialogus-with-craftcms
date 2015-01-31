@@ -1,0 +1,47 @@
+/*
+Typography
+==========
+Our brand font is **Champagne & Limousines**, our standard font **Open Sans**.
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h2>
+    <p>This is normal body text.</p>
+
+*/
+
+@font-face {
+  font-family: 'Champagne & Limousines';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Champagne & Limousines'), url('../../fonts/Champagne & Limousines.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: normal;
+    font-weight: 400;
+    font-style: normal;
+    src: local('Open Sans Regular'), url('fonts/OpenSans-Regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Light'), url('fonts/OpenSans-Light-webfont.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+$heading-font: 'Champagne & Limousines', 'Helvetica Neue', sans-serif;
+$text-font: 'Open Sans', 'Arial', sans-serif;
+
+h1, h2, h3 {
+  font-family: $heading-font;
+  color: $primary;
+  font-weight: lighter;
+}
+
+html {
+  font-family: $text-font;
+  font-weight: 200;
+}
