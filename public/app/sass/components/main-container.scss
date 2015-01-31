@@ -56,14 +56,10 @@ $susy: (
   background-color: $decent-primary-background;
   padding-top: $mobile-header-height;
   width: 100%;
+  overflow: hidden;
   min-height: 100%;
   margin-top: $shadow-width;
 
-  /*TODO
-    1. Padding prozentual
-    2. --primary/--secondary (color)
-    3. shadows (thin)
-    4. Strich weglassen*/
   &__block {
     @include bp-up('medium') {
       @for $i from 1 through map-get($susy, columns) {

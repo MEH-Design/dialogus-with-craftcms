@@ -13,7 +13,8 @@
 <html class="no-js">
 <head>
 	<meta charset="utf-8" />
-	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+  <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
   <!-- build:script requirejs -->
   <script data-main="/app/js/main" src="/node_modules/requirejs/require.js"></script>
