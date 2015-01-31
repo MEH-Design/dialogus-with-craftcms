@@ -27,6 +27,7 @@ $mobile-header-height: 22vw;
 .header {
   @include shadow-light();
 
+  z-index: 1;
   padding-left: $mobile-header-height * 0.2;
   position: fixed;
   background-color: #fff;
