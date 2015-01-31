@@ -10,7 +10,7 @@ requirejs(['config'], function() {
       }
       else{
         header.classList.add("header--expanded");
-        TweenMax.to(header, 1, {height:'70vw'});
+        TweenMax.to(header, 1, {height:'80vw'});
       }
     }
 
