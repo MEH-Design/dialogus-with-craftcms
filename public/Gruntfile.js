@@ -47,12 +47,17 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: 'compressed',
+          style: 'expanded',
           require: 'susy'
         },
         files: {
           'app/css/main.css': 'app/sass/main.scss'
         }
+      }
+    },
+    csslint: {
+      strict: {
+        src: ['app/css/main.css']
       }
     },
     sassdown: {
@@ -79,7 +84,6 @@ module.exports = function(grunt) {
       }
     },
     autoprefixer: {
-
       options: {
         browsers: ['last 2 versions', 'ie 8', 'ie 9']
       },
@@ -102,6 +106,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -111,12 +116,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('sassdown');
 
   grunt.registerTask('default', [
-    'scsslint',
-    'jscs',
-    'jshint',
-    'sassdown',
-    'sass',
-    'autoprefixer'
+    'test',
+    'styles'
   ]);
 
   grunt.registerTask('styles', [
@@ -128,7 +129,9 @@ module.exports = function(grunt) {
   grunt.registerTask('test', [
     'jscs',
     'jshint',
-    'scsslint'
+    'scsslint',
+    'sass',
+    'csslint'
   ]);
 
   grunt.registerTask('server', [
