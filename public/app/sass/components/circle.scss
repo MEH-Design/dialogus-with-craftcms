@@ -42,7 +42,6 @@ $susy: (
 .circle-block {
   @include container;
   @include rem('padding-bottom', 1rem);
-  @include rem('min-width', 40rem);
 
   &__head {
     @include span(4 at 1);
@@ -55,9 +54,13 @@ $susy: (
   }
 
   &__element {
-    @include bp-up('small') {
+    @include bp('small') {
       @include span(1 of 2 split);
       padding-bottom: span(1 of 2 split);
+
+      &--last {
+        margin-left: (100% - span(1 of 2 split)) / 2;
+      }
     }
     @include bp-up('medium') {
       @include span(1 of 3 at 2 split);
@@ -91,12 +94,14 @@ $susy: (
       bottom: 0;
       z-index: 1;
       border-top: .3rem solid $shadow-light;
-      height: 49%; //1% for border
+      height: 50%;
+      width: 100%;
 
       &__heading,
       &__paragraph {
         @include rem('margin', .1rem 0);
       }
+
       &__heading {
         @include secondary-heading;
       }
