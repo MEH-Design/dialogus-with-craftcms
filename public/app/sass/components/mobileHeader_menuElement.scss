@@ -1,0 +1,23 @@
+/*
+MenuElement
+============
+MJAMJAMJAMJAMJAM... Menu Elements
+
+    <nav class="menu"><a href="#" type="button" class="header__menu__button">Zum Schmökern</a></nav></header>
+    <hr/>
+*/
+
+.menu {
+
+  &__button {
+    @include rem('font-size', 1.2rem);
+    @include rem("padding", 0 .5rem);
+    @include rem("border-radius", 1.75rem);
+    @include shadow-dark-thin();
+
+    background: $decent-secondary-background;
+    text-decoration: none;
+    color: $text;
+  }
+
+}
