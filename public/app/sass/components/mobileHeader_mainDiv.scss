@@ -46,4 +46,9 @@ $mobile-header-height: 22vw;
     font-size: $mobile-header-height / 6.5;
   }
 
+  &__menu {
+    width: 100%;
+    height: 0;
+  }
+
 }
