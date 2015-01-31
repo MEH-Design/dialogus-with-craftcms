@@ -9,8 +9,12 @@ requirejs(['config'], function() {
       }
       else{
         elem.classList.add("expanded");
-        TweenMax.to(elem, 1, {height:'70vw'});
+        TweenMax.to(elem, 1, {height:VWtoPX(77)});
       }
+    }
+
+    function VWtoPX(vw) {
+      return isNaN(window.innerWidth) ? window.clientWidth : window.innerWidth / 100 * vw;
     }
   });
 });
