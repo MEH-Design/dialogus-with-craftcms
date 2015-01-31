@@ -35,14 +35,12 @@ $mobile-header-height: 22vw;
 
   &__headline {
     @include primary-heading();
-
     margin-bottom: - $mobile-header-height / 6;
     font-size: $mobile-header-height / 2.8;
   }
 
   &__subline {
     @include sub-heading();
-    
     font-size: $mobile-header-height / 6.5;
   }
 
