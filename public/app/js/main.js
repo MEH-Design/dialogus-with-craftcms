@@ -13,5 +13,9 @@ requirejs(['config'], function() {
         TweenMax.to(header, 1, {height:'70vw'});
       }
     }
+
+    function VWtoPX(vw) {
+      return isNaN(window.innerWidth) ? window.clientWidth : window.innerWidth / 100 * vw;
+    }
   });
 });
