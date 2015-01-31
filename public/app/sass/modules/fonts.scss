@@ -32,6 +32,13 @@ Our brand font is **Champagne & Limousines**, our standard font **Open Sans**.
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Semibold'), url('/app/fonts/OpenSans-Semibold.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
 $heading-font: 'Champagne & Limousines', 'Helvetica Neue', sans-serif;
 $text-font: 'Open Sans', 'Arial', sans-serif;
 
