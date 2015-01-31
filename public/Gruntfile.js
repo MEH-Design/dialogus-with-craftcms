@@ -57,6 +57,9 @@ module.exports = function(grunt) {
     },
     csslint: {
       strict: {
+        options: {
+          floats: false
+        },
         src: ['app/css/main.css']
       }
     },
