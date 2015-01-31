@@ -4,7 +4,22 @@ Main Container
 Contains all page content except header and footer.
 The container contains blocks, which have a certain width.
 
-    <main class="main-container">
+    <main class="main-container main-container--first">
+      <section class="main-container__block main-container__block--span-1">
+        <h1>Section 1</h1>
+        <p>Some text goes here.</p>
+      </section>
+      <section class="main-container__block main-container__block--span-2">
+        <h1>Section 2</h1>
+        <p>Some text goes here.</p>
+      </section>
+      <section class="main-container__block main-container__block--span-3">
+        <h1>Section 3</h1>
+        <p>Some text goes here.</p>
+      </section>
+    </main>
+
+    <main class="main-container main-container--secondary">
       <section class="main-container__block main-container__block--span-1">
         <h1>Section 1</h1>
         <p>Some text goes here.</p>
@@ -32,12 +47,19 @@ $susy: (
 
 .main-container {
   @include container;
-
+  @include shadow-light();
   background-color: $decent-primary-background;
   padding-top: $mobile-header-height;
   width: 100%;
   min-height: 100%;
+  padding: 0 15%;
+  margin-top: $shadow-width;
 
+  /*TODO
+    1. Padding prozentual
+    2. --primary/--secondary (color)
+    3. shadows (thin)
+    4. Strich weglassen*/
   &__block {
     @include bp-up('medium') {
       @for $i from 1 through map-get($susy, columns) {
@@ -47,4 +69,13 @@ $susy: (
       }
     }
   }
+
+  &--secondary{
+    background-color: $decent-secondary-background;
+  }
+
+  &--first{
+    margin: 0;
+  }
+
 }
