@@ -6,30 +6,30 @@ The container contains blocks, which have a certain width.
 
     <main class="main-container main-container--first">
       <section class="main-container__block main-container__block--span-1">
-        <h1>Section 1</h1>
+        <h1 class="main-container__block__heading">Section 1</h1>
         <p>Some text goes here.</p>
       </section>
       <section class="main-container__block main-container__block--span-2">
-        <h1>Section 2</h1>
+        <h1 class="main-container__block__heading">Section 2</h1>
         <p>Some text goes here.</p>
       </section>
       <section class="main-container__block main-container__block--span-3">
-        <h1>Section 3</h1>
+        <h1 class="main-container__block__heading">Section 3</h1>
         <p>Some text goes here.</p>
       </section>
     </main>
 
     <main class="main-container main-container--secondary">
       <section class="main-container__block main-container__block--span-1">
-        <h1>Section 1</h1>
+        <h1 class="main-container__block__heading">Section 1</h1>
         <p>Some text goes here.</p>
       </section>
       <section class="main-container__block main-container__block--span-2">
-        <h1>Section 2</h1>
+        <h1 class="main-container__block__heading">Section 2</h1>
         <p>Some text goes here.</p>
       </section>
       <section class="main-container__block main-container__block--span-3">
-        <h1>Section 3</h1>
+        <h1 class="main-container__block__heading">Section 3</h1>
         <p>Some text goes here.</p>
       </section>
     </main>
@@ -46,12 +46,18 @@ $susy: (
 .main-container {
   @include container;
   @include shadow-light();
+  @include bp-up("medium") {
+    padding: 0 15%;
+  }
+  @include bp("small") {
+    padding: 0;
+  }
+
   background-color: $decent-primary-background;
   padding-top: $mobile-header-height;
   width: 100%;
   overflow: hidden;
   min-height: 100%;
-  padding: 0 15%;
   margin-top: $shadow-width;
 
   &__block {
@@ -69,7 +75,24 @@ $susy: (
   }
 
   &--first{
-    margin: 0;
+    margin-top: $mobile-header-height;
+    padding-top: $shadow-width;
+  }
+
+  &__block__heading--primary {
+    @include primary-heading;
+  }
+
+  &__block__heading--secondary {
+    @include secondary-heading;
+  }
+
+  &__block__heading--tertiary {
+    @include tertiary-heading;
+  }
+
+  &__block__heading--sub {
+    @include sub-heading;
   }
 
 }
