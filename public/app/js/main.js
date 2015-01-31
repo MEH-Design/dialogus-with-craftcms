@@ -2,14 +2,15 @@ requirejs(['config'], function() {
   requirejs(['modernizr']);
   requirejs(['gsap'], function() {
     document.getElementsByClassName("header__hamburger")[0].onclick=function(){
-      var elem = document.getElementsByClassName("header")[0];
-      if(elem.classList.contains("expanded")){
-        elem.classList.remove("expanded");
-        TweenMax.to(elem, 1, {height:'22vw'});
+      var header = document.getElementsByClassName("header")[0];
+      var nav = document.getElementsByClassName("header__menu")[0];
+      if(header.classList.contains("header--expanded")){
+        header.classList.remove("header--expanded");
+        TweenMax.to(header, 1, {height:'22vw'});
       }
       else{
-        elem.classList.add("expanded");
-        TweenMax.to(elem, 1, {height:VWtoPX(77)});
+        header.classList.add("header--expanded");
+        TweenMax.to(header, 1, {height:'70vw'});
       }
     }
 
