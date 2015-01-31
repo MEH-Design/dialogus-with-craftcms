@@ -34,7 +34,8 @@ $brand-colors: (
   'gray': #909090,
   'blumine': #1f5f80,
   'swiss-coffee': #e2dfdd,
-  'spring-wood': #f9f6f4
+  'spring-wood': #f9f6f4,
+  'white': #fff
 );
 
 //usage
@@ -42,7 +43,8 @@ $primary: map-get($brand-colors, 'lima');
 $secondary: map-get($brand-colors, 'blumine');
 $decent-primary-background: map-get($brand-colors, 'spring-wood');
 $decent-secondary-background: map-get($brand-colors, 'kidnapper');
-$strong-background: map-get($brand-colors, 'pearl-bush');
+$strong-primary-background: map-get($brand-colors, 'pearl-bush');
+$strong-secondary-background: map-get($brand-colors, 'white');
 $cell-background: map-get($brand-colors, 'gray');
 $text: map-get($brand-colors, 'gray');
 $shadow-dark: map-get($brand-colors, 'gray');

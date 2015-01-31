@@ -1,0 +1,86 @@
+/*
+Callout Block
+=============
+
+A block with an image, a simple heading and text. To place the image on the right, `callout-block__profile` and `callout-block__text` have to be swapped.
+Usally used for a simple welcome text.
+
+    <section class="callout-block">
+      <div class="callout-block__profile">
+      <img class="callout-block__profile__image" src="https://s3.amazonaws.com/uifaces/faces/twitter/zettt/128.jpg" width="128" height="128"/>
+      </div>
+      <div class="callout-block__text">
+        <h1>Welcome</h1>
+        <p>Thanks for visiting this awesome styleguide. This is a simple welcome message.</p>
+      </div>
+    </section>
+    <section class="callout-block callout-block--rounded">
+      <div class="callout-block__profile">
+      <img class="callout-block__profile__image" src="https://s3.amazonaws.com/uifaces/faces/twitter/zettt/128.jpg" width="128" height="128"/>
+      </div>
+      <div class="callout-block__text">
+        <h1>Welcome</h1>
+        <p>Thanks for visiting this awesome styleguide. This is a simple welcome message with rounded corners.</p>
+      </div>
+    </section>
+
+    <section class="callout-block callout-block--rounded callout-block--rounded--light-background">
+      <div class="callout-block__profile">
+      <img class="callout-block__profile__image" src="https://s3.amazonaws.com/uifaces/faces/twitter/zettt/128.jpg" width="128" height="128"/>
+      </div>
+      <div class="callout-block__text">
+        <h1>Welcome</h1>
+        <p>Thanks for visiting this awesome styleguide. This is a simple welcome message with rounded corners and a light background.</p>
+      </div>
+    </section>
+
+    <section class="callout-block">
+      <div class="callout-block__text">
+        <h1>Welcome</h1>
+        <p>Thanks for visiting this awesome styleguide. This is a simple welcome message with rounded corners and a light background.</p>
+      </div>
+      <div class="callout-block__profile">
+        <img class="callout-block__profile__image" src="https://s3.amazonaws.com/uifaces/faces/twitter/zettt/128.jpg" width="128" height="128"/>
+      </div>
+    </section>
+
+*/
+
+$susy: (
+  columns: 4,
+  gutters: 1/2,
+  gutter-position: inside
+);
+
+.callout-block {
+  @include container;
+  @include rem('min-width', 34rem);
+
+  &__profile {
+    @include span(1);
+    @include rem('padding', .5rem);
+
+    &__image {
+      @include rem('border-radius', 2rem);
+      @include shadow-light();
+    }
+  }
+
+  &__text {
+    @include span(3);
+  }
+
+  &--rounded {
+    @include rem('border-radius', 2rem);
+    @include rem('padding', .5rem 1rem);
+    @include rem('margin-bottom', .5rem);
+    @include shadow-light();
+
+    background-color: $decent-primary-background;
+
+    &--light-background {
+      background-color: $strong-secondary-background;
+    }
+  }
+
+}

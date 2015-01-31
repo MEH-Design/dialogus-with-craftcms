@@ -2,6 +2,7 @@
 @import 'susy';
 //normalize
 @import '/app/bower_components/normalize.css/normalize.css';
+@import 'modules/border-box';
 
 //modules
 @import 'modules/rem';
@@ -13,10 +14,10 @@
 //components
 @import 'components/mobileHeader_mainDiv';
 @import 'components/mobileHeader_hamburgerButton';
-@import 'components/mobileHeader_menuElement';
 @import 'components/main-container';
-@import 'components/welcome';
+@import 'components/callout';
 @import 'components/circle';
+@import 'components/rectangle';
 
 //dev
 @import 'dev/example-colors';
