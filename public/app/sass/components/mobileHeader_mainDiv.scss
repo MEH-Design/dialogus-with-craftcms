@@ -29,6 +29,7 @@ $mobile-header-height: 22vw;
 
   z-index: 1;
   position: fixed;
+  top: 0;
   background-color: $strong-secondary-background;
   padding-left: $mobile-header-height / 5;
   width: 100%;

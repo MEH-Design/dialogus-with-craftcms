@@ -50,6 +50,7 @@ $susy: (
 
     &__heading {
       @include span(2 of 4 at 1);
+      @include secondary-heading;
     }
   }
 
