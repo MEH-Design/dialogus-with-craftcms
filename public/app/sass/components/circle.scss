@@ -96,6 +96,8 @@ $susy: (
       &__heading,
       &__paragraph {
         @include rem('margin', .1rem 0);
+      }
+      &__heading {
         @include secondary-heading;
       }
     }
