@@ -3,11 +3,10 @@ MenuElement
 ============
 MJAMJAMJAMJAMJAM... Menu Elements
 
-    <nav class="menu"><a href="#" type="button" class="header__menu__button">Zum Schmökern</a></nav></header>
-    <hr/>
+    <nav class="header__menu header__menu--expanded"><a href="#" type="button" class="header__menu__button">Zum Schmökern</a></nav>
 */
 
-.menu {
+.header__menu {
 
   &__button {
     @include rem('font-size', 1.2rem);
@@ -18,6 +17,18 @@ MJAMJAMJAMJAMJAM... Menu Elements
     background: $decent-secondary-background;
     text-decoration: none;
     color: $text;
+
+    &--first {
+      margin-top: 15vw;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    height: 8vw;
   }
 
 }
