@@ -81,6 +81,7 @@ $susy: (
 
   &__block__heading--primary {
     @include primary-heading;
+    font-size: 1.8rem;
   }
 
   &__block__heading--secondary {

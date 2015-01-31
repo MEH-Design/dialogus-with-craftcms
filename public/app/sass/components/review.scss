@@ -33,6 +33,9 @@ $button-size: 3.5rem;
 
 .review-block {
   @include rem('padding', 0 $button-size + 2rem);
+  @include bp("small") {
+    @include rem('padding', 0 $button-size + .2rem);
+  }
   position: relative;
   text-align: center;
 
@@ -61,10 +64,11 @@ $button-size: 3.5rem;
   }
 
   &__footer {
-    @include container(2);
+    @include container();
+    margin-bottom: .5rem;
 
     &__rating {
-      @include span(1);
+      @include span(3 of 7);
       @include rem('height', 1rem);
 
       background: url('../svg/star.svg') 0 0 no-repeat, url('../svg/star.svg') 20% 0 no-repeat, url('../svg/star.svg') 40% 0 no-repeat, url('../svg/star.svg') 60% 0 no-repeat, url('../svg/star.svg') 80% 0 no-repeat;
@@ -87,6 +91,8 @@ $button-size: 3.5rem;
     }
 
     &__author {
+      @include span(4 of 7);
+      @include rem('font-size', .9rem);
       text-align: right;
       font-style: italic;
     }
