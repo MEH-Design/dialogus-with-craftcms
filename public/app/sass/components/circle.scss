@@ -48,7 +48,7 @@ $susy: (
     text-align: center;
 
     &__heading {
-      @include span(2 of 4 at 1);
+      width: 100%;
       @include secondary-heading;
     }
   }
@@ -104,6 +104,11 @@ $susy: (
 
       &__heading {
         @include secondary-heading;
+        font-size: 6vw;
+      }
+
+      &__paragraph {
+        font-size: 2.8vw;
       }
     }
   }
