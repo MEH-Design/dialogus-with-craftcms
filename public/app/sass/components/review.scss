@@ -33,6 +33,7 @@ $button-size: 3.5rem;
 
 .review-block {
   @include rem('padding', 0 $button-size + 2rem);
+  @include rem('margin-bottom', 3rem);
   @include bp("small") {
     @include rem('padding', 0 $button-size + .2rem);
   }
@@ -52,7 +53,7 @@ $button-size: 3.5rem;
     top: 50%;
     transform: translateY(-50%);
     border-radius: 100%;
-    background-color: $decent-primary-background;
+    background-color: $strong-secondary-background;
     background-position: center;
     background-size: 80%;
 
