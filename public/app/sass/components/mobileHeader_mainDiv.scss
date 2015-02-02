@@ -27,25 +27,27 @@ $mobile-header-height: 22vw;
 .header {
   @include shadow-light();
 
-  z-index: 1;
   position: fixed;
   top: 0;
-  overflow: hidden;
+  z-index: 1;
   background-color: $strong-secondary-background;
   width: 100%;
   height: $mobile-header-height;
+  overflow: hidden;
 
   &__headline {
-    @include primary-heading();
-    margin-left: $mobile-header-height / 5;
+    @include primary-heading;
+
     margin-bottom: - $mobile-header-height / 6;
+    margin-left: $mobile-header-height / 5;
     font-size: $mobile-header-height / 2.8;
   }
 
   &__subline {
-    @include sub-heading();
-    margin-left: $mobile-header-height / 5;
+    @include sub-heading;
+
     margin-bottom: 5vw;
+    margin-left: $mobile-header-height / 5;
     font-size: $mobile-header-height / 6.5;
   }
 

@@ -48,12 +48,24 @@ $susy: (
     text-align: center;
 
     &__heading {
-      width: 100%;
       @include secondary-heading;
+      width: 100%;
     }
   }
 
   &__element {
+    @include shadow-light;
+
+    position: relative;
+    border-radius: 100%;
+    background-color: $decent-primary-background;
+
+    //dirty hack, but works:
+    //http://www.cameronalcorn.com/maintain-element-aspect-ratio-using-css-only/
+    height: 0;
+
+    text-align: center;
+
     @include bp('small') {
       @include span(1 of 2 split);
       padding-bottom: span(1 of 2 split);
@@ -62,22 +74,11 @@ $susy: (
         margin-left: (100% - span(1 of 2 split)) / 2;
       }
     }
+
     @include bp-up('medium') {
       @include span(1 of 3 at 2 split);
       padding-bottom: span(1 of 3 split);
     }
-
-    //dirty hack, but works:
-    //http://www.cameronalcorn.com/maintain-element-aspect-ratio-using-css-only/
-    height: 0;
-
-    @include shadow-light();
-
-    position: relative;
-    border-radius: 100%;
-    background-color: $decent-primary-background;
-
-    text-align: center;
 
     &__image {
       position: absolute;
@@ -94,8 +95,8 @@ $susy: (
       bottom: 0;
       z-index: 1;
       border-top: .3rem solid $shadow-light;
-      height: 50%;
       width: 100%;
+      height: 50%;
 
       &__heading,
       &__paragraph {

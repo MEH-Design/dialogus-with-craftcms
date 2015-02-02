@@ -4,32 +4,32 @@ Main Container
 Contains all page content except header and footer.
 The container contains blocks, which have a certain width.
 
-    <main class="main-container main-container--first">
-      <section class="main-container__block main-container__block--span-1">
-        <h1 class="main-container__block__heading">Section 1</h1>
+    <main class='main-container main-container--first'>
+      <section class='main-container__block main-container__block--span-1'>
+        <h1 class='main-container__block__heading'>Section 1</h1>
         <p>Some text goes here.</p>
       </section>
-      <section class="main-container__block main-container__block--span-2">
-        <h1 class="main-container__block__heading">Section 2</h1>
+      <section class='main-container__block main-container__block--span-2'>
+        <h1 class='main-container__block__heading'>Section 2</h1>
         <p>Some text goes here.</p>
       </section>
-      <section class="main-container__block main-container__block--span-3">
-        <h1 class="main-container__block__heading">Section 3</h1>
+      <section class='main-container__block main-container__block--span-3'>
+        <h1 class='main-container__block__heading'>Section 3</h1>
         <p>Some text goes here.</p>
       </section>
     </main>
 
-    <main class="main-container main-container--secondary">
-      <section class="main-container__block main-container__block--span-1">
-        <h1 class="main-container__block__heading">Section 1</h1>
+    <main class='main-container main-container--secondary'>
+      <section class='main-container__block main-container__block--span-1'>
+        <h1 class='main-container__block__heading'>Section 1</h1>
         <p>Some text goes here.</p>
       </section>
-      <section class="main-container__block main-container__block--span-2">
-        <h1 class="main-container__block__heading">Section 2</h1>
+      <section class='main-container__block main-container__block--span-2'>
+        <h1 class='main-container__block__heading'>Section 2</h1>
         <p>Some text goes here.</p>
       </section>
-      <section class="main-container__block main-container__block--span-3">
-        <h1 class="main-container__block__heading">Section 3</h1>
+      <section class='main-container__block main-container__block--span-3'>
+        <h1 class='main-container__block__heading'>Section 3</h1>
         <p>Some text goes here.</p>
       </section>
     </main>
@@ -46,19 +46,21 @@ $susy: (
 .main-container {
   @include container;
   @include shadow-light();
-  @include bp-up("medium") {
-    padding: 0 15%;
-  }
-  @include bp("small") {
-    padding: 0;
-  }
 
+  margin-top: $shadow-width;
   background-color: $decent-primary-background;
   padding-top: $mobile-header-height;
   width: 100%;
-  overflow: hidden;
   min-height: 100%;
-  margin-top: $shadow-width;
+  overflow: hidden;
+
+  @include bp-up('medium') {
+    padding: 0 15%;
+  }
+
+  @include bp('small') {
+    padding: 0;
+  }
 
   &__block {
     @include bp-up('medium') {
@@ -70,11 +72,11 @@ $susy: (
     }
   }
 
-  &--secondary{
+  &--secondary {
     background-color: $decent-secondary-background;
   }
 
-  &--first{
+  &--first {
     margin-top: $mobile-header-height;
     padding-top: $shadow-width;
   }
