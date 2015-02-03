@@ -1,0 +1,12 @@
+{
+  "qualified-headings": true,
+  "unique-headings": true,
+
+  //no support for IE < 8
+  "box-sizing": false,
+
+  //susy uses floats
+  "floats": false,
+
+  "zero-units": 2
+}

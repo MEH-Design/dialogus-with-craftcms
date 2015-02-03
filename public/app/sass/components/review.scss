@@ -1,0 +1,106 @@
+/*
+Review Block
+============
+
+This block is used for displaying reviews from [gutgemacht.at](http://www.gutgemacht.at).
+The link that is marked up as a button leads to `example.com` if javascript is not activated.
+
+    <section class='review-block'>
+      <a href='http://example.com' class='review-block__button review-block__button--left' role='button'></a>
+      <a href='http://example.com' class='review-block__button review-block__button--right' role='button'></a>
+      <h1>example.com reviews</h1>
+      <p>I really like how those awesome developers code, I mean, they're just so good and amazing! I also think that their projects are <a href='example.com'>(read more...)</a></p>
+      <div class='review-block__footer'>
+        <div class='review-block__footer__rating'></div>
+        <div class='review-block__footer__author'><p>Heribert Unkown</p></div>
+      </div>
+    </section>
+
+    <section class='review-block'>
+      <a href='http://example.com' class='review-block__button review-block__button--left' role='button'></a>
+      <a href='http://example.com' class='review-block__button review-block__button--right' role='button'></a>
+      <h1 class='review-block__heading'>example.com reviews</h1>
+      <p>I really like how those awesome developers code, I mean, they're just so good and amazing! I also think that their projects are <a href='example.com'>(read more...)</a></p>
+      <div class='review-block__footer'>
+        <div class='review-block__footer__rating review-block__footer__rating--2-star'></div>
+        <div class='review-block__footer__author'><p>Heribert Unkown</p></div>
+      </div>
+    </section>
+
+*/
+
+$button-size: 3.5rem;
+
+.review-block {
+  @include rem('padding', 0 $button-size + 2rem);
+  @include rem('margin-bottom', 3rem);
+  position: relative;
+  text-align: center;
+
+  @include bp('small') {
+    @include rem('padding', 0 $button-size + .2rem);
+  }
+
+  &__heading {
+    @include primary-heading;
+  }
+
+  &__button {
+    @include shadow-light;
+    @include rem('width', $button-size);
+    @include rem('height', $button-size);
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    background-color: $strong-secondary-background;
+    background-position: center;
+    background-size: 80%;
+
+    &--left {
+      left: 0;
+      background-image: url('../svg/arrow-left.svg');
+    }
+
+    &--right {
+      right: 0;
+      background-image: url('../svg/arrow-right.svg');
+    }
+  }
+
+  &__footer {
+    @include container();
+    margin-bottom: .5rem;
+
+    &__rating {
+      @include span(3 of 7);
+      @include rem('height', 1rem);
+
+      background: url('../svg/star.svg') 0 0 no-repeat, url('../svg/star.svg') 20% 0 no-repeat, url('../svg/star.svg') 40% 0 no-repeat, url('../svg/star.svg') 60% 0 no-repeat, url('../svg/star.svg') 80% 0 no-repeat;
+
+      &--1-star {
+        background: url('../svg/star.svg') 0 0 no-repeat;
+      }
+
+      &--2-star {
+        background: url('../svg/star.svg') 0 0 no-repeat, url('../svg/star.svg') 20% 0 no-repeat;
+      }
+
+      &--3-star {
+        background: url('../svg/star.svg') 0 0 no-repeat, url('../svg/star.svg') 20% 0 no-repeat, url('../svg/star.svg') 40% 0 no-repeat;
+      }
+
+      &--4-star {
+        background: url('../svg/star.svg') 0 0 no-repeat, url('../svg/star.svg') 20% 0 no-repeat, url('../svg/star.svg') 40% 0 no-repeat, url('../svg/star.svg') 60% 0 no-repeat;
+      }
+    }
+
+    &__author {
+      @include span(4 of 7);
+      @include rem('font-size', .9rem);
+      text-align: right;
+      font-style: italic;
+    }
+  }
+}
