@@ -1,8 +1,8 @@
 Dialogus with Craft CMS and NPM
 ===============================
 
-[![build](https://api.travis-ci.org/MEH-Design/dialogus-with-craftcms.svg)](https://travis-ci.org/MEH-Design/dialogus-with-craftcms.svg?branch=master)
-![npm](https://img.shields.io/badge/npm-v2.2.0-blue.svg?style=flat)
+[![Build Status](https://travis-ci.org/MEH-Design/dialogus-with-craftcms.svg?branch=master)](https://travis-ci.org/MEH-Design/dialogus-with-craftcms)
+![npm](https://travis-ci.org/MEH-Design/dialogus-with-craftcms.svg?branch=master)
 
 Based on [MiniXC/vagrant-lamp-craft-npm](https://github.com/MiniXC/vagrant-lamp-craft.npm).
 
