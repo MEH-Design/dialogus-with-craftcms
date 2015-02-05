@@ -70,9 +70,9 @@ html {
 }
 
 body {
-  font-size: .9rem;
+  @include rem("font-size", .9rem);
 }
 
 p {
-  margin-top : .5em;
+  margin-top: .5em;
 }

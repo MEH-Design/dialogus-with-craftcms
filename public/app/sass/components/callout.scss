@@ -65,10 +65,10 @@ $susy: (
       @include rem('border-radius', 2rem);
       @include shadow-light();
 
-      border-radius: 5vw;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      border-radius: 5vw;
       width: span(1 of map-get($susy, columns));
       height: auto;
     }
