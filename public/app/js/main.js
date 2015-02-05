@@ -1,11 +1,13 @@
 require(['config'], function() {
   require(['modernizr']);
-  require(['clipPath'], function(clipPath) {
-    var clip = new clipPath();
-    clip.register();
-    window.onresize = function() {
-      clip.rerun();
-    };
+  require(['clipPath', 'browserdetect'], function(clipPath) {
+    if(BrowserDetect.browser != 'Chrome') {
+      var clip = new clipPath();
+      clip.register();
+      window.onresize = function() {
+        clip.rerun();
+      };
+    }
   });
   require(['gsap'], function() {
     document.getElementsByClassName('header__hamburger')[0].onclick =

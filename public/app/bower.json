@@ -14,7 +14,8 @@
     "modernizr": "~2.8.3",
     "normalize.css": "~3.0.2",
     "susy": "~2.2.1",
-    "polyfill.js": "philipwalton/polyfill"
+    "polyfill.js": "philipwalton/polyfill",
+    "browserdetect": "https://gist.github.com/5906833.git"
   },
   "ignore": {}
 }
