@@ -1,5 +1,5 @@
 define('clipPath', ['polyfill'], function() {
-  var rectVals, rectElements,
+  var rectVals, rectElements, //read by setRectOnElements, set by init
   polyfill = new Polyfill({
       declarations: ['clip-path:*']
   });
@@ -10,36 +10,49 @@ define('clipPath', ['polyfill'], function() {
     if ((value + '').indexOf('%') > -1) {
       return parseInt(value.replace('%')) / 100 * ref + 'px';
     } else {
+      //for auto 0 or a px value
       return value;
     }
   };
 
+  /*
+  * loops through all elements affected by clip-path
+  * and gives them a valid clip
+  */
   var setRectOnElements = function() {
     var len = rectElements.length;
 
     for (var i = 0; i < len; i++) {
+
       //calculate the values relative to the element
       var currentElement = rectElements[i],
       elemHeight = currentElement.offsetHeight,
       elemWidth = currentElement.offsetWidth,
-      //calculate clip-path to clip values
+
+      //calculate clip values from clip-path
       top = rectVals[0],
       left = elemWidth - parseInt(toPx(rectVals[1], elemWidth)
         .replace('px', '')) + 'px',
       bottom = rectVals[0] + rectVals[2],
       right = rectVals[3],
+
+      //convert %-values to px
       relTop = toPx(top, elemHeight),
       relLeft = toPx(left, elemWidth),
       relBottom = toPx(bottom, elemHeight),
       relRight = toPx(right, elemWidth),
-      d =  ', ',
-      rectString = (relTop + d + relLeft + d + relBottom + d + relRight);
 
+      //delimiter
+      d =  ', ',
+
+      //let's put everything together
+      rectString = (relTop + d + relLeft + d + relBottom + d + relRight);
       currentElement.style.clip = 'rect(' + rectString  + ')';
     }
   };
 
-  var convertRule = function(rule) {
+  //sets rectVals and rectElements to be used by setRectOnElements
+  var init = function(rule) {
     //read properties
     var prop = rule.getDeclaration()['clip-path'];
     if (prop.indexOf('inset') > -1) {
@@ -52,10 +65,11 @@ define('clipPath', ['polyfill'], function() {
     setRectOnElements();
   };
 
+  //registers the polyfill handler
   var register = function() {
     polyfill.doMatched(function(rules) {
       rules.each(function(rule) {
-        convertRule(rule);
+        init(rule);
       });
     });
   };
