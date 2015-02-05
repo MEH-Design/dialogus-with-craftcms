@@ -66,9 +66,9 @@ $susy: (
       @include shadow-light();
       position: absolute;
       top: 50%;
-      height: auto;
       transform: translateY(-50%);
       width: span(1 of map-get($susy, columns));
+      height: auto;
     }
   }
 
