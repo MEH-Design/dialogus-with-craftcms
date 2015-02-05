@@ -64,9 +64,11 @@ $susy: (
     &__image {
       @include rem('border-radius', 2rem);
       @include shadow-light();
+
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      border-radius: 5vw;
       width: span(1 of map-get($susy, columns));
       height: auto;
     }
@@ -76,7 +78,7 @@ $susy: (
     @include span(3);
 
     &__heading {
-      @include rem("font-size", 1.5rem);
+      @include rem("font-size", 1.2rem);
       @include tertiary-heading();
     }
   }
