@@ -4,9 +4,8 @@ require(['config'], function() {
     var clip = new clipPath();
     clip.register();
     window.onresize = function() {
-      console.log('test');
       clip.rerun();
-    }
+    };
   });
   require(['gsap'], function() {
     document.getElementsByClassName('header__hamburger')[0].onclick =

@@ -32,10 +32,13 @@ module.exports = function(grunt) {
       all: ['Gruntfile.js', 'app/js/*.js']
     },
     jscs: {
-      app: 'app/js/*.js',
-      gruntfile: 'Gruntfile.js',
-      options: {
-        preset: 'google'
+      all: {
+        options: {
+          config: 'jscs.json'
+        },
+        files: {
+          src: ['app/js/*.js', 'Gruntfile.js']
+        }
       }
     },
     scsslint: {
