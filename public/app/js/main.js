@@ -1,11 +1,13 @@
 require(['config'], function() {
   require(['modernizr']);
-  require(['clipPath'], function(clipPath) {
-    var clip = new clipPath();
-    clip.register();
-    window.onresize = function() {
-      clip.rerun();
-    };
+  require(['clipPath', 'browserdetect'], function(clipPath) {
+    if (BrowserDetect.browser != 'Chrome') {
+      var clip = new clipPath();
+      clip.register();
+      window.onresize = function() {
+        clip.rerun();
+      };
+    }
   });
   require(['gsap'], function() {
     document.getElementsByClassName('header__hamburger')[0].onclick =
@@ -14,10 +16,11 @@ require(['config'], function() {
       var nav = document.getElementsByClassName('header__menu')[0];
       if (header.classList.contains('header--expanded')) {
         header.classList.remove('header--expanded');
-        TweenMax.to(header, 1, {height:'22vw'});
+        var tween = TweenLite.to(header, 1, {height:'22vw'});
+        console.log(tween);
       } else {
         header.classList.add('header--expanded');
-        TweenMax.to(header, 1, {height:'80vw'});
+        TweenLite(header, 1, {height:'80vw'});
       }
     };
 
