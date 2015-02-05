@@ -46,15 +46,6 @@ define('clipPath', ['polyfill'], function() {
         convertRule(rule);
       });
     });
-
-    polyfill.undoUnmatched(function(rules) {
-      rules.each(function(rule) {
-        $(rule.getSelectors()).removeAttr('style')
-      })
-      localLinkPolyfill.getCurrentMatches().each(function(rule) {
-        $(rule.getSelectors()).css(rule.getDeclaration())
-      })
-    });
   };
 
   return function ClipPath() {
