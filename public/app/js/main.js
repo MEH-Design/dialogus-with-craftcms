@@ -1,7 +1,7 @@
 require(['config'], function() {
   require(['modernizr']);
   require(['clipPath', 'browserdetect'], function(clipPath) {
-    if (BrowserDetect.browser != 'Chrome') {
+    if (!(BrowserDetect.browser == 'Chrome' || BrowserDetect.browser == 'Safari')) {
       var clip = new clipPath();
       clip.register();
       window.onresize = function() {
