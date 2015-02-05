@@ -16,10 +16,11 @@ require(['config'], function() {
       var nav = document.getElementsByClassName('header__menu')[0];
       if (header.classList.contains('header--expanded')) {
         header.classList.remove('header--expanded');
-        TweenMax.to(header, 1, {height:'22vw'});
+        var tween = TweenLite.to(header, 1, {height:'22vw'});
+        console.log(tween);
       } else {
         header.classList.add('header--expanded');
-        TweenMax.to(header, 1, {height:'80vw'});
+        TweenLite(header, 1, {height:'80vw'});
       }
     };
 
