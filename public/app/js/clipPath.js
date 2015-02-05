@@ -1,4 +1,4 @@
-define('clipPath', ['polyfill'], function() {
+define(['polyfill'], function() {
   var rectVals, rectElements, //read by setRectOnElements, set by init
   polyfill = new Polyfill({
       declarations: ['clip-path:*']

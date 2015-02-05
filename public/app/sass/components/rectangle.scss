@@ -6,7 +6,7 @@ A block containing a rectangle with content and image.
 
     <section class="rectangle-block">
       <div class="rectangle-block__head">
-        <h1>Heading Uno</h1>
+        <h1 class="rectangle-block__head__heading">Heading Uno</h1>
       </div>
       <div class="rectangle-block__element">
         <div class="rectangle-block__element__text"><p>This is an awesome, rounded rectangle. This still is an awesome, rounded rectangle.</p></div>
