@@ -12,23 +12,15 @@ MJAMJAMJAMJAMJAM... Menu Elements
     @include rem('font-size', 1.2rem);
     @include rem("padding", 0 .5rem);
     @include rem("border-radius", 1.75rem);
-    @include shadow-dark-thin();
+    @include shadow-light-thin;
 
     background: $decent-secondary-background;
     text-decoration: none;
+height:9vw;
     color: $text;
 
     &--first {
       margin-top: 15vw;
     }
   }
-
-  ul {
-    list-style-type: none;
-  }
-
-  li {
-    height: 9vw;
-  }
-
 }
