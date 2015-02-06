@@ -3,24 +3,11 @@ require.config({
      TweenLite: '/app/bower_components/gsap/src/uncompressed/TweenLite',
      CSSPlugin: '/app/bower_components/gsap/src/uncompressed/plugins/CSSPlugin',
      EasePack: '/app/bower_components/gsap/src/uncompressed/easing/EasePack',
-     modernizr: '/app/bower_components/modernizr/modernizr',
-     polyfill: '/app/bower_components/polyfill.js/dist/polyfill',
-     browserdetect: '/app/bower_components/browserdetect/browserdetect'
+     modernizr: '/app/bower_components/modernizr/modernizr'
    }
 });
 
 require(['modernizr']);
-
-require(['ClipPath', 'browserdetect'], function(ClipPath) {
-  if (!(BrowserDetect.browser == 'Chrome' ||
-  BrowserDetect.browser == 'Safari')) {
-    var clip = new ClipPath();
-    clip.register();
-    window.onresize = function() {
-      clip.rerun();
-    };
-  }
-});
 
 require(['HeaderAnimation'], function(HeaderAnimation) {
   'use strict';
