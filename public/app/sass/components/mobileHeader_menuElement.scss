@@ -19,15 +19,16 @@ MJAMJAMJAMJAMJAM... Menu Elements
       @include rem('font-size', 1.2rem);
       @include rem("padding", 0 .5rem);
       @include rem("border-radius", 1.75rem);
-      @include shadow-light-thin();
+      @include shadow-light-thin;
 
       background: $decent-secondary-background;
-      text-decoration: none;
       color: $text;
       height: 9vw;
 
-      &--first {
-        margin-top: 15vw;
+      //this isn't BEM
+      //but more practical than header__menu__list__button__link
+      a {
+        text-decoration: none;
       }
     }
   }
