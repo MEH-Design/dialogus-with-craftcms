@@ -21,9 +21,9 @@ MJAMJAMJAMJAMJAM... Menu Elements
       @include rem("border-radius", 1.75rem);
       @include shadow-light-thin;
 
-      background: $decent-secondary-background;
-      color: $text;
+      background-color: $decent-secondary-background;
       height: 9vw;
+      color: $text;
 
       //this isn't BEM
       //but more practical than header__menu__list__button__link
