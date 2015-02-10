@@ -28,5 +28,5 @@ $shadow-thin-width: .1rem;
 }
 
 @mixin shadow-light-thin() {
-  @include rem('box-shadow', 0 $shadow-thin-width 0 0 $shadow-dark);
+  @include rem('box-shadow', 0 $shadow-thin-width 0 0 $shadow-light);
 }
