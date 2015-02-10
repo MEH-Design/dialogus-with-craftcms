@@ -35,6 +35,11 @@ $mobile-header-height: 22vw;
   height: $mobile-header-height;
   overflow: hidden;
 
+  .no-js & {
+    position: static;
+    height: auto;
+  }
+
   &__headline {
     @include primary-heading;
 
@@ -54,6 +59,10 @@ $mobile-header-height: 22vw;
   &__menu {
     width: 100%;
     height: 0;
+
+    .no-js & {
+      height: auto;
+    }
   }
 
 }

@@ -49,7 +49,6 @@ $susy: (
 
   margin-top: $shadow-width;
   background-color: $decent-primary-background;
-  padding-top: $mobile-header-height;
   width: 100%;
   min-height: 100%;
   overflow: hidden;
@@ -79,5 +78,9 @@ $susy: (
   &--first {
     margin-top: $mobile-header-height;
     padding-top: $shadow-width;
+
+    .no-js & {
+      margin-top: 0;
+    }
   }
 }
