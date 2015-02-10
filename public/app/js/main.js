@@ -1,3 +1,10 @@
+//cut the mustard - http://responsivenews.co.uk/post/18948466399/cutting-the-mustard
+var supports = !!document.querySelector && !!window.addEventListener;
+if ( !supports ) {
+  document.documentElement.className += 'no-js';
+  throw new Error('Browser doesn\'t support modern Javascript APIs!');
+}
+
 require.config({
    paths: {
      TweenLite: '/app/bower_components/gsap/src/uncompressed/TweenLite',
