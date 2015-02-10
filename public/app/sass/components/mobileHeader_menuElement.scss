@@ -3,32 +3,32 @@ MenuElement
 ============
 MJAMJAMJAMJAMJAM... Menu Elements
 
-    <nav class="header__menu header__menu--expanded"><a href="#" type="button" class="header__menu__button">Zum Schmökern</a></nav>
+    <nav class="header__menu header__menu--expanded">
+      <ul class="header__menu__list">
+        <li class="header__menu__list__button"><a href="#" type="button">Zum Schmökern</a></li>
+      </ul>
+    </nav>
 */
 
 .header__menu {
 
-  &__button {
-    @include rem('font-size', 1.2rem);
-    @include rem("padding", 0 .5rem);
-    @include rem("border-radius", 1.75rem);
-    @include shadow-dark-thin();
+  &__list {
+    list-style-type: none;
 
-    background: $decent-secondary-background;
-    text-decoration: none;
-    color: $text;
+    &__button {
+      @include rem('font-size', 1.2rem);
+      @include rem("padding", 0 .5rem);
+      @include rem("border-radius", 1.75rem);
+      @include shadow-light-thin();
 
-    &--first {
-      margin-top: 15vw;
+      background: $decent-secondary-background;
+      text-decoration: none;
+      color: $text;
+      height: 9vw;
+
+      &--first {
+        margin-top: 15vw;
+      }
     }
   }
-
-  ul {
-    list-style-type: none;
-  }
-
-  li {
-    height: 9vw;
-  }
-
 }
