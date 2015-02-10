@@ -24,7 +24,7 @@ define(['TweenLite', 'EasePack', 'CSSPlugin'], function() {
   };
 
   var expand = function() {
-    var height = initialHeight + PXtoVW(ul.offsetHeight);
+    var height = initialHeight + PXtoVW(ul.offsetHeight) + 3; //3vw "padding"
     body.appendChild(div);
     TweenLite.to(header, time, {height:height + 'vw', ease:ease});
     TweenLite.to(div, time, {opacity:time,
