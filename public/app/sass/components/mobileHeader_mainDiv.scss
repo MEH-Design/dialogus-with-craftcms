@@ -36,8 +36,8 @@ $mobile-header-height: 22vw;
   overflow: hidden;
 
   .no-js & {
-    height: auto;
     position: static;
+    height: auto;
   }
 
   &__headline {
