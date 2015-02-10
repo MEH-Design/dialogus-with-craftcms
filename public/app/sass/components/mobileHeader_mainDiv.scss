@@ -25,7 +25,7 @@ screen all the time.
 $mobile-header-height: 22vw;
 
 .header {
-  @include shadow-light();
+  @include shadow-light;
 
   position: fixed;
   top: 0;

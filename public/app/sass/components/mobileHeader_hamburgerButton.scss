@@ -9,7 +9,7 @@ MJAMJAMJAMJAMJAM... Hamburger (JS yet missing)
 
 .header__hamburger {
   @include rem("border-radius", 1rem);
-  @include shadow-light();
+  @include shadow-light-thin;
 
   display: block;
   position: absolute;
