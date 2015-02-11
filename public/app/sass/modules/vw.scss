@@ -15,5 +15,5 @@ The `vw($property, $vw-value, $rem-value)` mixin has to be used whenever using v
 
 @mixin vw($property, $vw-value, $rem-value) {
   @include rem($property, $rem-value);
-  //#{$property}: $vw-value;
+  #{$property}: $vw-value;
 }
