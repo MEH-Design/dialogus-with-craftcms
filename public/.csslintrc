@@ -8,5 +8,17 @@
   //susy uses floats
   "floats": false,
 
+  //we use it once for box-sizing
+  "universal-selector": false,
+
+  //we use border-box
+  "box-model": false,
+
+  //we use autoprefixer
+  "compatible-vendor-prefixes": false,
+
+  //we use the new h1-6 model
+  "font-sizes": false,
+
   "zero-units": 2
 }
