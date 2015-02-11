@@ -76,8 +76,8 @@ $susy: (
   }
 
   &--first {
-    margin-top: $mobile-header-height;
-    padding-top: $shadow-width;
+    @include vw('margin-top', $mobile-header-height, $mobile-header-height-rem);
+    @include rem('padding-top', 2rem);
 
     .no-js & {
       margin-top: 0;

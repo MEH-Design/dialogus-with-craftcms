@@ -23,16 +23,17 @@ screen all the time.
 */
 
 $mobile-header-height: 22vw;
+$mobile-header-height-rem: 5.5rem;
 
 .header {
   @include shadow-light;
+  @include vw('height', $mobile-header-height, $mobile-header-height-rem);
 
   position: fixed;
   top: 0;
   z-index: 20;
   background-color: $strong-secondary-background;
   width: 100%;
-  height: $mobile-header-height;
   overflow: hidden;
 
   .no-js & {
@@ -42,18 +43,16 @@ $mobile-header-height: 22vw;
 
   &__headline {
     @include primary-heading;
-
-    margin-bottom: - $mobile-header-height / 6;
-    margin-left: $mobile-header-height / 5;
-    font-size: $mobile-header-height / 2.8;
+    @include vw('margin-bottom', - $mobile-header-height / 6, - $mobile-header-height-rem / 6);
+    @include vw('margin-left', $mobile-header-height / 5, $mobile-header-height-rem / 5);
+    @include vw('font-size', $mobile-header-height / 2.8, $mobile-header-height-rem / 2.8);
   }
 
   &__subline {
     @include sub-heading;
-
-    margin-bottom: 5vw;
-    margin-left: $mobile-header-height / 5;
-    font-size: $mobile-header-height / 6.5;
+    @include vw('margin-bottom', $mobile-header-height / 4, $mobile-header-height-rem / 4);
+    @include vw('margin-left', $mobile-header-height / 5, $mobile-header-height-rem / 5);
+    @include vw('font-size', $mobile-header-height / 6.5, $mobile-header-height-rem / 6.5);
   }
 
   &__menu {
