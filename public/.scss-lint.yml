@@ -10,4 +10,5 @@ linters:
   PropertySortOrder:
     order: concentric
   SpaceAfterComma:
-    enabled: true
+    exclude:
+      - 'app/sass/modules/fonts.scss'

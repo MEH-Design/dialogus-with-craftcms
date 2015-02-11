@@ -20,5 +20,8 @@
   //we use the new h1-6 model
   "font-sizes": false,
 
+  //we use correct syntax
+  "bulletproof-font-face": false,
+
   "zero-units": 2
 }
