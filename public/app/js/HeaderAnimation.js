@@ -1,4 +1,4 @@
-define(['TweenLite', 'EasePack', 'CSSPlugin'], function() {
+define(['HamburgerAnimation', 'TweenLite', 'EasePack', 'CSSPlugin'], function(HamburgerAnimation) {
   var expanded = false,
   body = document.body,
   header = document.getElementsByClassName('header')[0],
@@ -8,7 +8,8 @@ define(['TweenLite', 'EasePack', 'CSSPlugin'], function() {
   ul = nav.getElementsByTagName('ul')[0],
   time = 0.5,
   ease = Circ.easeInOut,
-  initialHeight;
+  initialHeight,
+  hamburgerAnimation;
 
   var PXtoVW = function(px) {
     return 100 / (isNaN(window.innerWidth) ? window.clientWidth :
@@ -35,8 +36,10 @@ define(['TweenLite', 'EasePack', 'CSSPlugin'], function() {
     hamburger.onclick = function() {
       if (expanded) {
         collapse();
+        hamburgerAnimation.showList();
       } else {
         expand();
+        hamburgerAnimation.showX();
       }
       expanded = !expanded;
     };
@@ -48,6 +51,7 @@ define(['TweenLite', 'EasePack', 'CSSPlugin'], function() {
   };
 
   var init = function() {
+    hamburgerAnimation = new HamburgerAnimation();
     initialHeight = PXtoVW(header.offsetHeight);
     div.style.opacity = 0;
     div.style.position = 'fixed';

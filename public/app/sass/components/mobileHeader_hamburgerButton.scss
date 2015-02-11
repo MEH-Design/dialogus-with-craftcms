@@ -21,21 +21,11 @@ Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
   border: 1px solid $strong-primary-background;
   background-color: $strong-primary-background;
 
-  &__image {
-    position: relative;
-    top: 10%;
-    left: 10%;
-    background-color: $strong-primary-background;
-    background-image: url('../svg/menu.svg');
-    width: 80%;
-    height: 80%;
-  }
-
   &__icon,
   &__icon:before,
   &__icon:after {
-    @include vw('height', 1vw, .2rem);
-    @include vw('border-radius', 1vw, .6rem);
+    @include rem('height', .2rem);
+    @include vw('border-radius', 3vw, .6rem);
 
     display: block;
     position: absolute;
@@ -59,10 +49,6 @@ Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
   &__icon:after {
     @include vw('margin-top', 2vw, .8rem);
     width: 100%;
-  }
-
-  &__image--hit {
-    background-image: url('../svg/logo.svg');
   }
 
 }
