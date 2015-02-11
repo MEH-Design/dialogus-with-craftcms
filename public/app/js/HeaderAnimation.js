@@ -1,4 +1,5 @@
-define(['HamburgerAnimation', 'TweenLite', 'EasePack', 'CSSPlugin'], function(HamburgerAnimation) {
+define(['HamburgerAnimation', 'TweenLite', 'EasePack', 'CSSPlugin'],
+function(HamburgerAnimation) {
   var expanded = false,
   body = document.body,
   header = document.getElementsByClassName('header')[0],

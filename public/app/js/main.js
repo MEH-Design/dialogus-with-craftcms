@@ -7,11 +7,16 @@ if (!supports) {
 
 require.config({
    paths: {
-     TweenLite: '/app/bower_components/gsap/src/uncompressed/TweenLite',
-     CSSPlugin: '/app/bower_components/gsap/src/uncompressed/plugins/CSSPlugin',
-     CSSRulePlugin: '/app/bower_components/gsap/src/uncompressed/plugins/CSSRulePlugin',
-     EasePack: '/app/bower_components/gsap/src/uncompressed/easing/EasePack',
-     modernizr: '/app/bower_components/modernizr/modernizr'
+     TweenLite:
+     '/app/bower_components/gsap/src/uncompressed/TweenLite',
+     CSSPlugin:
+     '/app/bower_components/gsap/src/uncompressed/plugins/CSSPlugin',
+     CSSRulePlugin:
+     '/app/bower_components/gsap/src/uncompressed/plugins/CSSRulePlugin',
+     EasePack:
+     '/app/bower_components/gsap/src/uncompressed/easing/EasePack',
+     modernizr:
+     '/app/bower_components/modernizr/modernizr'
    }
 });
 
