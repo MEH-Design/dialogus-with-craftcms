@@ -1,4 +1,5 @@
-define(['TweenLite', 'EasePack', 'CSSPlugin'], function() {
+define(['HamburgerAnimation', 'TweenLite', 'EasePack', 'CSSPlugin'],
+function(HamburgerAnimation) {
   var expanded = false,
   body = document.body,
   header = document.getElementsByClassName('header')[0],
@@ -8,7 +9,8 @@ define(['TweenLite', 'EasePack', 'CSSPlugin'], function() {
   ul = nav.getElementsByTagName('ul')[0],
   time = 0.5,
   ease = Circ.easeInOut,
-  initialHeight;
+  initialHeight,
+  hamburgerAnimation;
 
   var PXtoVW = function(px) {
     return 100 / (isNaN(window.innerWidth) ? window.clientWidth :
@@ -21,6 +23,7 @@ define(['TweenLite', 'EasePack', 'CSSPlugin'], function() {
     TweenLite.to(div, time, {opacity:0,
       onComplete:function() {body.removeChild(div);},
       ease:ease});
+    hamburgerAnimation.showList();
   };
 
   var expand = function() {
@@ -29,6 +32,7 @@ define(['TweenLite', 'EasePack', 'CSSPlugin'], function() {
     TweenLite.to(header, time, {height:height + 'vw', ease:ease});
     TweenLite.to(div, time, {opacity:time,
     ease:ease});
+    hamburgerAnimation.showX();
   };
 
   var registerEvents = function() {
@@ -48,6 +52,7 @@ define(['TweenLite', 'EasePack', 'CSSPlugin'], function() {
   };
 
   var init = function() {
+    hamburgerAnimation = new HamburgerAnimation();
     initialHeight = PXtoVW(header.offsetHeight);
     div.style.opacity = 0;
     div.style.position = 'fixed';
