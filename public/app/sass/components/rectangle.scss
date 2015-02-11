@@ -34,6 +34,7 @@ $susy: (
 
 .rectangle-block {
   @include rem('padding-bottom', 1rem);
+  @include rem('margin', 0 1rem);
 
   &__head {
     text-align: center;

@@ -9,3 +9,6 @@ linters:
     max_depth: 4
   PropertySortOrder:
     order: concentric
+  SpaceAfterComma:
+    exclude:
+      - 'app/sass/modules/fonts.scss'

@@ -8,17 +8,17 @@ MJAMJAMJAMJAMJAM... Hamburger (JS yet missing)
 */
 
 .header__hamburger {
-  @include rem("border-radius", 1rem);
   @include shadow-light-thin;
+  @include rem('border-radius', 1rem);
+  @include vw('top', $mobile-header-height / 3, $mobile-header-height-rem / 3);
+  @include vw('right', $mobile-header-height / 5, $mobile-header-height-rem / 5);
+  @include vw('width', $mobile-header-height / 2, $mobile-header-height-rem / 2);
+  @include vw('height', $mobile-header-height / 2, $mobile-header-height-rem / 2);
 
   display: block;
   position: absolute;
-  top: $mobile-header-height * .3;
-  right: $mobile-header-height / 5;
   border: 1px solid $strong-primary-background;
   background-color: $strong-primary-background;
-  width: $mobile-header-height / 2;
-  height: $mobile-header-height / 2;
 
   &__image {
     position: relative;

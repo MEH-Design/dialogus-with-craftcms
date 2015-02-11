@@ -16,7 +16,7 @@ MJAMJAMJAMJAMJAM... Menu Elements
     list-style-type: none;
 
     &__button {
-      height: 9vw;
+      @include vw('height', 9vw, 2.5rem);
 
       //this isn't BEM
       //but more practical than header__menu__list__button__link
