@@ -22,6 +22,7 @@ define(['HamburgerAnimation', 'TweenLite', 'EasePack', 'CSSPlugin'], function(Ha
     TweenLite.to(div, time, {opacity:0,
       onComplete:function() {body.removeChild(div);},
       ease:ease});
+    hamburgerAnimation.showList();
   };
 
   var expand = function() {
@@ -30,16 +31,15 @@ define(['HamburgerAnimation', 'TweenLite', 'EasePack', 'CSSPlugin'], function(Ha
     TweenLite.to(header, time, {height:height + 'vw', ease:ease});
     TweenLite.to(div, time, {opacity:time,
     ease:ease});
+    hamburgerAnimation.showX();
   };
 
   var registerEvents = function() {
     hamburger.onclick = function() {
       if (expanded) {
         collapse();
-        hamburgerAnimation.showList();
       } else {
         expand();
-        hamburgerAnimation.showX();
       }
       expanded = !expanded;
     };
