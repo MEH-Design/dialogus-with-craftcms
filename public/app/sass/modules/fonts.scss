@@ -11,32 +11,56 @@ Our brand font is **Champagne & Limousines**, our standard font **Open Sans**.
 */
 
 @font-face {
+  $url: '/app/fonts/Champagne-Limousines';
   font-family: 'Champagne & Limousines';
   font-style: normal;
   font-weight: normal;
-  src: local('Champagne & Limousines'), url('/app/fonts/Champagne-Limousines.woff') format('woff');
+  src: url($url + '.eot');
+  src: local('Champagne & Limousines'),
+       url($url + '.eot?iefix'),
+       url($url + '.woff') format('woff'),
+       url($url + '.ttf') format('truetype'),
+       url($url + '.svg') format('svg');
 }
 
 @font-face {
+  $url: '/app/fonts/OpenSans-Regular';
   font-family: 'Open Sans';
   font-weight: normal;
   font-weight: 400;
   font-style: normal;
-  src: local('Open Sans Regular'), url('/app/fonts/OpenSans-Regular.woff') format('woff');
+  src: url($url + '.eot');
+  src: local('Open Sans Regular'),
+       url($url + '.eot?iefix'),
+       url($url + '.woff') format('woff'),
+       url($url + '.ttf') format('truetype'),
+       url($url + '.svg') format('svg');
 }
 
 @font-face {
+  $url: '/app/fonts/OpenSans-Light';
   font-family: 'Open Sans';
-  src: local('Open Sans Light'), url('/app/fonts/OpenSans-Light.woff') format('woff');
   font-weight: 200;
   font-style: normal;
+  src: url($url + '.eot');
+  src: local('Open Sans Light'),
+       url($url + '.eot?iefix'),
+       url($url + '.woff') format('woff'),
+       url($url + '.ttf') format('truetype'),
+       url($url + '.svg') format('svg');
 }
 
 @font-face {
+  $url: '/app/fonts/OpenSans-Semibold';
   font-family: 'Open Sans';
-  src: local('Open Sans Semibold'), url('/app/fonts/OpenSans-Semibold.woff') format('woff');
   font-weight: 500;
   font-style: normal;
+  src: url($url + '.eot');
+  src: local('Open Sans Semibold'),
+       url($url + '.eot?iefix'),
+       url($url + '.woff') format('woff'),
+       url($url + '.ttf') format('truetype'),
+       url($url + '.svg') format('svg');
 }
 
 $heading-font: 'Champagne & Limousines', 'Helvetica Neue', sans-serif;
