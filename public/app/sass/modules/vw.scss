@@ -1,14 +1,19 @@
 /*
 VW Function
 ===========
-The `to-vw($n)` function converts any value to vw. This is especially useful for susy's span function.
+The `vw($property, $vw-value, $rem-value)` mixin has to be used whenever using vw units.
 
     <p>This</p>
-    <code>height: to-vw(span(1 of 3));</code>
+    <code>height: unit('border', 1vw solid #000, .2rem solid #000);</code>
     <p>Compiles to..</p>
-    <code>height: 33.333333vw</code>
+    <code>
+      border: 3.2px solid #000<br/>
+      border: .2rem solid #000<br/>
+      border: 1vw solid #000
+    </code>
 */
 
-@function to-vw($n) {
-  @return ($n / ($n * 0 + 1))*1vw;
+@mixin vw($property, $vw-value, $rem-value) {
+  @include rem($property, $rem-value);
+  #{$property}: $vw-value;
 }
