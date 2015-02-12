@@ -109,11 +109,11 @@ $susy: (
 
       &__heading {
         @include secondary-heading;
-        font-size: 6vw;
+        @include vw('font-size', 6vw, 1.5rem);
       }
 
       &__paragraph {
-        font-size: 2.8vw;
+        @include vw('font-size', 2.8vw, .8rem);
       }
     }
   }

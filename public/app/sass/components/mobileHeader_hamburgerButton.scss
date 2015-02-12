@@ -2,36 +2,53 @@
 HeaderButton
 ============
 MJAMJAMJAMJAMJAM... Hamburger (JS yet missing)
+Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
 
-    <a href="#" type="button" class="header__hamburger"><div class="header__hamburger__image"></div></a>
+    <a href="#" role="button" class="header__hamburger"><span class="header__hamburger__icon"></span></a>
     <hr/>
 */
 
 .header__hamburger {
-  @include rem("border-radius", 1rem);
-  @include shadow-light();
+  @include shadow-light-thin;
+  @include rem('border-radius', 1rem);
+  @include vw('top', $mobile-header-height / 3, $mobile-header-height-rem / 3);
+  @include vw('right', $mobile-header-height / 5, $mobile-header-height-rem / 5);
+  @include vw('width', $mobile-header-height / 2, $mobile-header-height-rem / 2);
+  @include vw('height', $mobile-header-height / 2, $mobile-header-height-rem / 2);
 
   display: block;
   position: absolute;
-  top: $mobile-header-height * .3;
-  right: $mobile-header-height / 5;
   border: 1px solid $strong-primary-background;
   background-color: $strong-primary-background;
-  width: $mobile-header-height / 2;
-  height: $mobile-header-height / 2;
 
-  &__image {
-    position: relative;
-    top: 10%;
-    left: 10%;
-    background-color: $strong-primary-background;
-    background-image: url('../svg/menu.svg');
-    width: 80%;
-    height: 80%;
+  &__icon,
+  &__icon:before,
+  &__icon:after {
+    @include rem('height', .2rem);
+    @include vw('border-radius', 3vw, .6rem);
+
+    display: block;
+    position: absolute;
+    background-color: $primary;
+    cursor: pointer;
+    content: '';
   }
 
-  &__image--hit {
-    background-image: url('../svg/logo.svg');
+  &__icon {
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto 10%;
+    width: 80%;
+  }
+
+  &__icon:before {
+    @include vw('margin-top', -2vw, -.8rem);
+    width: 100%;
+  }
+
+  &__icon:after {
+    @include vw('margin-top', 2vw, .8rem);
+    width: 100%;
   }
 
 }
