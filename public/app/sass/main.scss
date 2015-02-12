@@ -1,5 +1,6 @@
 //normalize as link in html
-
+//Variable Declaration
+@import 'variables';
 //(Do not)Drop dad "Base" ಠ_ಠ
 @import 'susy';
 @import 'modules/border-box';
@@ -7,10 +8,10 @@
 //modules
 @import 'modules/rem';
 @import 'modules/breakpoints';
-@import 'modules/colors';
 @import 'modules/shadow';
 @import 'modules/vw';
 @import 'modules/fonts';
+@import 'modules/default-border';
 
 //components
 @import 'components/mobileHeader_mainDiv';

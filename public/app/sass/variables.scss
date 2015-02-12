@@ -1,0 +1,22 @@
+/*
+Variables
+============
+A File to organise every variable used in our project.
+Introduced in order to keep control over names and avoid doubles.
+
+*/
+
+//modules/colors
+@import 'modules/colors';
+//components/
+//    mobileHeader_mainDiv
+$mobile-header-height: 22vw;
+$mobile-header-height-rem: 5.5rem;
+//    review
+$button-size: 3.5rem;
+$arrow-left-url: '/app/svg/arrow-left.svg';
+$arrow-right-url: '/app/svg/arrow-right.svg';
+//modules/
+//    shadow
+$shadow-width: .3rem;
+$shadow-thin-width: .2rem;
