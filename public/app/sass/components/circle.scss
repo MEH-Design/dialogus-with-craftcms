@@ -1,0 +1,120 @@
+/*
+Circle Block
+============
+
+A block containing three circles with content.
+
+    <section class="circle-block">
+      <div class="circle-block__head">
+        <h1 class="circle-block__head__heading">Heading Uno</h1>
+        <h1 class="circle-block__head__heading">Heading Dos</h1>
+      </div>
+      <div class="circle-block__element">
+        <img class="circle-block__element__image" src="http://lorempixel.com/200/200/nature" width="200" height="200"/>
+        <div class="circle-block__element__text">
+        <p class="circle-block__element__text__paragraph">This is an awesome, round circle.</p>
+        <h1 class="circle-block__element__text__heading">Circle 1</h1>
+        </div>
+      </div>
+      <div class="circle-block__element">
+        <img class="circle-block__element__image" src="http://lorempixel.com/200/200/animals" width="200" height="200"/>
+        <div class="circle-block__element__text">
+        <p class="circle-block__element__text__paragraph">This is another awesome, round circle.</p>
+        <h1 class="circle-block__element__text__heading">Circle 2</h1>
+        </div>
+      </div>
+      <div class="circle-block__element">
+        <img class="circle-block__element__image" src="http://lorempixel.com/200/200/cats" width="200" height="200"/>
+        <div class="circle-block__element__text">
+        <p class="circle-block__element__text__paragraph">This is the third awesome, round circle.</p>
+        <h1 class="circle-block__element__text__heading">Circle 3</h1>
+        </div>
+      </div>
+    </section>
+
+*/
+
+$susy: (
+  gutters: 1/16,
+  gutter-position: split
+);
+
+.circle-block {
+  @include container;
+  @include rem('padding-bottom', 1rem);
+
+  &__head {
+    @include span(4 at 1);
+    text-align: center;
+
+    &__heading {
+      @include secondary-heading;
+      width: 100%;
+    }
+  }
+
+  &__element {
+    @include shadow-light;
+
+    position: relative;
+    border-radius: 100%;
+    background-color: $decent-primary-background;
+
+    //dirty hack, but works:
+    //http://www.cameronalcorn.com/maintain-element-aspect-ratio-using-css-only/
+    height: 0;
+
+    text-align: center;
+
+    @include bp('small') {
+      @include span(1 of 2 split);
+      padding-bottom: span(1 of 2 split);
+
+      &--last {
+        margin-left: (100% - span(1 of 2 split)) / 2;
+      }
+    }
+
+    @include bp-up('medium') {
+      @include span(1 of 3 at 2 split);
+      padding-bottom: span(1 of 3 split);
+    }
+
+    &__image {
+      position: absolute;
+      left: 0;
+      border-radius: 100%;
+      width: 100%;
+      height: 100%;
+
+    }
+
+    &__text {
+      @include rem('padding', 0 1.5rem);
+      @include rem('border-bottom-left-radius', 100rem);
+      @include rem('border-bottom-right-radius', 100rem);
+      @include rem('border', .1rem solid $decent-primary-background);
+      @include rem('border-top', .25rem solid $shadow-light);
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      background-color: $decent-primary-background;
+      width: 100%;
+      height: 50%;
+
+      &__heading,
+      &__paragraph {
+        @include rem('margin', .1rem 0);
+      }
+
+      &__heading {
+        @include secondary-heading;
+        @include vw('font-size', 6vw, 1.5rem);
+      }
+
+      &__paragraph {
+        @include vw('font-size', 2.8vw, .8rem);
+      }
+    }
+  }
+}
