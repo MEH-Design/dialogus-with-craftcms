@@ -1,0 +1,16 @@
+/*
+Default Border
+============
+in style tag: only non-important styles to show off in corporate design
+
+a with @include default-border($strong-primary-background);
+    <a style='top: 0; left: 0; margin: 30px;
+    ' href="#" role="button" class="header__hamburger"><span class="header__hamburger__icon"></span></a>
+    <hr/>
+    <br/>
+
+
+*/
+@mixin default-border($color) {
+  border: 1px solid $color;
+}

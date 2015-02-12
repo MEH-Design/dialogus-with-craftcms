@@ -12,8 +12,6 @@ The `@include shadow();` automatically applies a box-shadow on the current eleme
     box-shadow: 0 .3rem 0 0 #e2dfdd;</code>
 
 */
-$shadow-width: .3rem;
-$shadow-thin-width: .2rem;
 
 @mixin shadow-dark() {
   @include rem('box-shadow', 0 $shadow-width 0 0 $shadow-dark);
