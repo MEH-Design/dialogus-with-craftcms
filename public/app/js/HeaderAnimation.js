@@ -31,7 +31,7 @@ function(HamburgerAnimation) {
     body.appendChild(div);
     TweenLite.to(header, time, {height:height + 'vw', ease:ease});
     TweenLite.to(div, time, {opacity:time,
-    ease:ease});
+      ease:ease});
     hamburgerAnimation.showX();
   };
 
