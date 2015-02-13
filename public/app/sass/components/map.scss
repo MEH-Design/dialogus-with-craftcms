@@ -1,0 +1,44 @@
+/*
+Map Block
+=========
+
+A block with a Google Map, a link to that map, and another roundend block
+intended for contact information.
+
+     <section class="map">
+     <section class="callout-block callout-block--rounded">
+       <div class="callout-block__text">
+         <h1 class="callout-block__text__heading">Welcome</h1>
+         <p>Thanks for visiting this awesome styleguide. This is a simple welcome message.</p>
+       </div>
+     </section>
+     <p class="map__button"><a class="map__button__link" href="#">Open Map</a></p>
+     </section>
+
+*/
+
+.map {
+  @include rem('padding', 1rem);
+
+  background: url('http://maps.googleapis.com/maps/api/staticmap?center=47.01676,15.430443&zoom=13&scale=2&size=600x640&maptype=roadmap&sensor=false&key=AIzaSyA1wHDCtV5kCH11q_DIpQG--IGMbPhlfu0&format=png&visual_refresh=true&markers=size:mid%7Ccolor:red%7C47.01676,15.430443') no-repeat center 20% fixed;
+  background-size: cover;
+
+  &__button {
+    text-align: center;
+
+    &__link {
+      @include shadow-light;
+      @include rem('border-radius', 2rem);
+      @include rem('padding', 1rem);
+
+      background-color: $decent-primary-background;
+      text-decoration: none;
+      color: $text;
+    }
+  }
+
+  .callout-block {
+    @include vw('margin-top', 60vw, 15rem);
+    @include rem('margin-bottom', 2rem);
+  }
+}
