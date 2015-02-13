@@ -15,12 +15,17 @@ require.config({
      '/app/bower_components/gsap/src/uncompressed/plugins/CSSRulePlugin',
      EasePack:
      '/app/bower_components/gsap/src/uncompressed/easing/EasePack',
-     modernizr:
-     '/app/bower_components/modernizr/modernizr'
-   }
+     Modernizr:
+     '/app/bower_components/modernizr/custom',
+     CssVwunit:
+     '/app/bower_components/modernizr/feature-detects/css-vwunit'
+   },
+   shim: {
+      'Modernizr': {
+        exports: 'Modernizr'
+      }
+    }
 });
-
-require(['modernizr']);
 
 require(['HeaderAnimation'], function(HeaderAnimation) {
   'use strict';

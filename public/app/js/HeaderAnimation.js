@@ -1,5 +1,5 @@
-define(['HamburgerAnimation', 'TweenLite', 'EasePack', 'CSSPlugin'],
-function(HamburgerAnimation) {
+define(['VwUnit', 'HamburgerAnimation', 'TweenLite', 'EasePack', 'CSSPlugin'],
+function(VwUnit, HamburgerAnimation) {
   var expanded = false,
   body = document.body,
   header = document.getElementsByClassName('header')[0],
@@ -10,28 +10,39 @@ function(HamburgerAnimation) {
   time = 0.5,
   ease = Circ.easeInOut,
   initialHeight,
-  hamburgerAnimation;
-
-  var PXtoVW = function(px) {
-    return 100 / (isNaN(window.innerWidth) ? window.clientWidth :
-    window.innerWidth) * px;
-  };
+  hamburgerAnimation,
+  vw;
 
   var collapse = function() {
-    TweenLite.to(header, time, {height:initialHeight + 'vw',
-      ease:ease});
-    TweenLite.to(div, time, {opacity:0,
-      onComplete:function() {body.removeChild(div);},
-      ease:ease});
+    TweenLite.to(header, time, {
+        height: vw.fallback(initialHeight),
+        ease: ease
+      }
+    );
+    TweenLite.to(div, time, {
+        opacity: 0,
+        ease: ease,
+        onComplete: function() {
+          body.removeChild(div);
+        }
+      }
+    );
     hamburgerAnimation.showList();
   };
 
   var expand = function() {
-    var height = initialHeight + PXtoVW(ul.offsetHeight) + 3; //3vw "padding"
+    var height = initialHeight + vw.PXtoVW(ul.offsetHeight) + 3;
     body.appendChild(div);
-    TweenLite.to(header, time, {height:height + 'vw', ease:ease});
-    TweenLite.to(div, time, {opacity:time,
-      ease:ease});
+    TweenLite.to(header, time, {
+        height: vw.fallback(height),
+        ease: ease
+      }
+    );
+    TweenLite.to(div, time, {
+        opacity: time,
+        ease: ease
+      }
+    );
     hamburgerAnimation.showX();
   };
 
@@ -52,8 +63,9 @@ function(HamburgerAnimation) {
   };
 
   var init = function() {
+    vw = new VwUnit();
     hamburgerAnimation = new HamburgerAnimation();
-    initialHeight = PXtoVW(header.offsetHeight);
+    initialHeight = vw.PXtoVW(header.offsetHeight);
     div.style.opacity = 0;
     div.style.position = 'fixed';
     div.style.top = 0;
