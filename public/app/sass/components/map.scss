@@ -8,6 +8,7 @@ intended for contact information.
      <section class="map">
      <section class="callout-block callout-block--rounded">
        <div class="callout-block__text">
+         <a href="#" role="button" class="callout-block__hamburger"><span class="header__hamburger__icon"></span></a>
          <h1 class="callout-block__text__heading">Welcome</h1>
          <p>Thanks for visiting this awesome styleguide. This is a simple welcome message.</p>
        </div>
@@ -40,5 +41,10 @@ intended for contact information.
   .callout-block {
     @include vw('margin-top', 60vw, 15rem);
     @include rem('margin-bottom', 2rem);
+
+    opacity: 0.75;
+  }
+  &__hamburger{
+    top:0;
   }
 }
