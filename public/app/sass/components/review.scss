@@ -29,8 +29,6 @@ The link that is marked up as a button leads to `example.com` if javascript is n
 
 */
 
-$button-size: 3.5rem;
-
 .review-block {
   @include rem('padding', 0 $button-size + 2rem);
   @include rem('margin-bottom', 3rem);
@@ -60,18 +58,18 @@ $button-size: 3.5rem;
 
     &--left {
       left: 0;
-      background-image: url('../svg/arrow-left.svg');
+      background-image: url($arrow-left-url);
     }
 
     &--right {
       right: 0;
-      background-image: url('../svg/arrow-right.svg');
+      background-image: url($arrow-right-url);
     }
   }
 
   &__footer {
     @include container();
-    margin-bottom: .5rem;
+    @include rem('margin-bottom', .5rem);
 
     &__rating {
       @include span(3 of 7);
