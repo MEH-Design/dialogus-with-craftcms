@@ -1,3 +1,22 @@
+/*
+SCSS Equivalents
+  .header__hamburger__icon__before {
+    transform-origin: left top;
+    transform: rotate(45deg);
+    margin-left: 1.5vw;
+    top: -1vw;
+  }
+  .header__hamburger__icon__after {
+    transform-origin: left bottom;
+    transform: rotate(-45deg);
+    margin-left: 1.5vw;
+    top: 1vw;
+  }
+  .header__hamburger__icon{
+    background-color: rgba(0,0,0,0);
+  }
+*/
+
 define('HamburgerAnimation', ['TweenLite', 'EasePack', 'CSSPlugin'], function() {
   var icon = document.getElementsByClassName('header__hamburger__icon')[0],
   before = document.getElementsByClassName('header__hamburger__icon__before')[0],
