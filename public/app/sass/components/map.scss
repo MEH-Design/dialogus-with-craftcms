@@ -8,7 +8,7 @@ intended for contact information.
      <section class="map">
      <section class="callout-block callout-block--rounded">
        <div class="callout-block__text">
-         <a href="#" role="button" class="callout-block__hamburger"><span class="header__hamburger__icon"></span></a>
+         <a href="#" role="button" class="header__hamburger callout-block__hamburger"><span class="header__hamburger__icon callout-block__hamburger__icon"></span></a>
          <h1 class="callout-block__text__heading">Welcome</h1>
          <p>Thanks for visiting this awesome styleguide. This is a simple welcome message.</p>
        </div>
@@ -21,7 +21,7 @@ intended for contact information.
 .map {
   @include rem('padding', 1rem);
 
-  background: url('http://maps.googleapis.com/maps/api/staticmap?center=47.01676,15.430443&zoom=13&scale=2&size=600x640&maptype=roadmap&sensor=false&key=AIzaSyA1wHDCtV5kCH11q_DIpQG--IGMbPhlfu0&format=png&visual_refresh=true&markers=size:mid%7Ccolor:red%7C47.01676,15.430443') no-repeat center 20% fixed;
+  background: url($map-static-url) no-repeat center 20% fixed;
   background-size: cover;
 
   &__button {
@@ -38,13 +38,20 @@ intended for contact information.
     }
   }
 
-  .callout-block {
+.callout-block {
     @include vw('margin-top', 60vw, 15rem);
     @include rem('margin-bottom', 2rem);
 
     opacity: 0.75;
-  }
-  &__hamburger{
-    top:0;
+
+    &__hamburger{
+
+      right: 5%;
+      top: 25%;
+      width: 11%;
+
+      &__icon{
+      }
+    }
   }
 }
