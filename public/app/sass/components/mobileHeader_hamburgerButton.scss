@@ -56,4 +56,7 @@ Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
     width: 100%;
   }
 
+  .no-js & {
+    display: none;
+  }
 }
