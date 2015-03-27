@@ -15,10 +15,10 @@ Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
   @include vw('right', $mobile-header-height / 5, $mobile-header-height-rem / 5);
   @include vw('width', $mobile-header-height / 2, $mobile-header-height-rem / 2);
   @include vw('height', $mobile-header-height / 2, $mobile-header-height-rem / 2);
+  @include default-border($strong-primary-background);
 
   display: block;
   position: absolute;
-  border: 1px solid $strong-primary-background;
   background-color: $strong-primary-background;
 
   &__icon,
