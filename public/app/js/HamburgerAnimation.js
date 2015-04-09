@@ -17,10 +17,15 @@ SCSS Equivalents
   }
 */
 
-define('HamburgerAnimation', ['TweenLite', 'EasePack', 'CSSPlugin'], function() {
-  var icon = document.getElementsByClassName('header__hamburger__icon')[0],
-  before = document.getElementsByClassName('header__hamburger__icon__before')[0],
-  after = document.getElementsByClassName('header__hamburger__icon__after')[0],
+define('HamburgerAnimation',
+  ['TweenLite', 'EasePack', 'CSSPlugin'],
+  function() {
+  var icon =
+  document.getElementsByClassName('header__hamburger__icon')[0],
+  before =
+  document.getElementsByClassName('header__hamburger__icon__before')[0],
+  after =
+  document.getElementsByClassName('header__hamburger__icon__after')[0],
   time = 0.5,
   ease = Back.easeInOut,
   leftOffset = 5;
