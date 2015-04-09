@@ -6,24 +6,27 @@ if (!supports) {
 }
 
 require.config({
-   paths: {
-     TweenLite:
-     '/app/bower_components/gsap/src/uncompressed/TweenLite',
-     CSSPlugin:
-     '/app/bower_components/gsap/src/uncompressed/plugins/CSSPlugin',
-     CSSRulePlugin:
-     '/app/bower_components/gsap/src/uncompressed/plugins/CSSRulePlugin',
-     EasePack:
-     '/app/bower_components/gsap/src/uncompressed/easing/EasePack',
-     modernizr:
-     '/app/bower_components/modernizr/modernizr'
-   }
+  paths: {
+    TweenLite:
+    '/app/bower_components/gsap/src/uncompressed/TweenLite',
+    CSSPlugin:
+    '/app/bower_components/gsap/src/uncompressed/plugins/CSSPlugin',
+    CSSRulePlugin:
+    '/app/bower_components/gsap/src/uncompressed/plugins/CSSRulePlugin',
+    EasePack:
+    '/app/bower_components/gsap/src/uncompressed/easing/EasePack',
+    modernizr:
+    '/app/bower_components/modernizr/modernizr'
+  }
 });
 
 require(['modernizr']);
 
-require(['HeaderAnimation'], function(HeaderAnimation) {
+require(['HeaderAnimation', 'MapAnimation'],
+function(HeaderAnimation, MapAnimation) {
   'use strict';
   var header = new HeaderAnimation(0.5);
+  var map = new MapAnimation();
   header.init();
+  map.init();
 });

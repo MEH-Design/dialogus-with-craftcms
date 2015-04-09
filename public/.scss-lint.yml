@@ -12,3 +12,6 @@ linters:
   SpaceAfterComma:
     exclude:
       - 'app/sass/modules/fonts.scss'
+  ColorVariable:
+    exclude:
+      - 'app/sass/modules/colors.scss'

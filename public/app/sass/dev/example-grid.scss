@@ -26,7 +26,7 @@ $susy: (
 
   &__column {
     @include span(1);
-    border: 1px solid #000;
+    border: 1px solid $shadow-dark;
 
     &--narrow {
       @include span(3);

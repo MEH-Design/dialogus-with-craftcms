@@ -23,7 +23,6 @@ screen all the time.
 */
 
 
-
 .header {
   @include shadow-light;
   @include vw('height', $mobile-header-height, $mobile-header-height-rem);

@@ -21,8 +21,8 @@ MJAMJAMJAMJAMJAM... Menu Elements
       //but more practical than header__menu__list__button__link
       a {
         @include rem('font-size', 1.2rem);
-        @include rem("padding", 0 .5rem);
-        @include rem("border-radius", 1.75rem);
+        @include rem('padding', 0 .5rem);
+        @include rem('border-radius', 1.75rem);
         @include shadow-light-thin;
 
         background-color: $decent-secondary-background;

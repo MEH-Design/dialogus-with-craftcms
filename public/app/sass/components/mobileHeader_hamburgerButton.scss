@@ -4,7 +4,10 @@ HeaderButton
 MJAMJAMJAMJAMJAM... Hamburger (JS yet missing)
 Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
 
-    <a href="#" role="button" class="header__hamburger"><span class="header__hamburger__icon"></span></a>
+    <a href="#" role="button" class="header__hamburger"><span class="header__hamburger__icon">
+      <span class="header__hamburger__icon__before"></span>
+      <span class="header__hamburger__icon__after"></span>
+    </span></a>
     <hr/>
 */
 
@@ -22,10 +25,12 @@ Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
   background-color: $strong-primary-background;
 
   &__icon,
-  &__icon:before,
-  &__icon:after {
-    @include rem('height', .2rem);
+  &__icon__before,
+  &__icon__after {
     @include vw('border-radius', 3vw, .6rem);
+
+    //if higher than .1rem, some lines appear to be thicker than others...
+    @include rem('height', .1rem);
 
     display: block;
     position: absolute;
@@ -37,18 +42,21 @@ Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
   &__icon {
     top: 50%;
     transform: translateY(-50%);
-    margin: auto 10%;
+    margin: auto 8%;
     width: 80%;
   }
 
-  &__icon:before {
+  &__icon__before {
     @include vw('margin-top', -2vw, -.8rem);
     width: 100%;
   }
 
-  &__icon:after {
+  &__icon__after {
     @include vw('margin-top', 2vw, .8rem);
     width: 100%;
   }
 
+  .no-js & {
+    display: none;
+  }
 }
