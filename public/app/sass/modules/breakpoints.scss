@@ -36,11 +36,13 @@ $breakpoints: (
   'xlarge-min' : 100.063em,
   'xlarge-max' : 120em,
   'xxlarge-min': 120.063em,
+  'xxlarge-max': 0em
 );
 
 @mixin bp-up($breakpoint) {
   $value: map-get($breakpoints, #{$breakpoint}-min);
   @media (min-width: $value) {
+    $breakpoint: (map-get($breakpoints, #{$breakpoint}-min) + map-get($breakpoints, #{$breakpoint}-max)) / 2;
     @content;
   }
 }
@@ -48,6 +50,7 @@ $breakpoints: (
 @mixin bp-down($breakpoint) {
   $value: map-get($breakpoints, #{$breakpoint}-max);
   @media (max-width: $value) {
+    $breakpoint: (map-get($breakpoints, #{$breakpoint}-min) + map-get($breakpoints, #{$breakpoint}-max)) / 2;
     @content;
   }
 }
@@ -56,6 +59,7 @@ $breakpoints: (
   $value-min: map-get($breakpoints, #{$breakpoint}-min);
   $value-max: map-get($breakpoints, #{$breakpoint}-max);
   @media (min-width: $value-min) and (max-width: $value-max) {
+    $breakpoint: (map-get($breakpoints, #{$breakpoint}-min) + map-get($breakpoints, #{$breakpoint}-max)) / 2;
     @content;
   }
 }

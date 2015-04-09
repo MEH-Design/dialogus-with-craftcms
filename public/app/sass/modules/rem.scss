@@ -1,8 +1,8 @@
 /*
-REM Fallback
-============
-The `@include rem($property, $values)` mixin automatically creates a rem fallback, assuming a base font size of 16px.
-[Made by Hugo Giraudel.](http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/)
+REM/VW Fallback
+===============
+The `@include fallback($property, $values)` mixin automatically creates a rem and px fallback for vw, or a px fallback for rem, assuming a base font size of 16px and a viewport width/height of the minimim value of the specified viewport.
+The rem fallback was [made by Hugo Giraudel.](http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/)
     <p>This</p>
     <code>@include rem(padding, 1rem 2rem);</code>
     <p>Compiles to..</p>
@@ -14,9 +14,42 @@ The `@include rem($property, $values)` mixin automatically creates a rem fallbac
   @return $n / ($n * 0 + 1);
 }
 
-@mixin rem($property, $values) {
-  $px : ();
+@mixin vw($property, $values) {
+  $vw: ();
+  $px: ();
   $rem: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == auto or type-of($value) != number {
+      $vw: append($vw , $value);
+      $px: append($px , $value);
+      $rem: append($rem, $value);
+    } @else {
+      $unit: unit($value);
+      $val: parse-int($value);
+
+      @if $unit == 'vw' {
+        $vw: append($vw, $value);
+        $px: append($px, $breakpoint);
+        $rem: append($rem, ($val / 16 + rem));
+      }
+
+      @if $unit == 'px' {
+        $px: append($px, $value);
+        $rem: append($rem, ($val / 16 + rem));
+      }
+
+      @if $unit == 'rem' {
+        $px: append($px, ($val * 16 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+}
+
+@mixin rem($property, $values) {
+  $rem: ();
+  $px: ();
 
   @each $value in $values {
 
@@ -27,14 +60,14 @@ The `@include rem($property, $values)` mixin automatically creates a rem fallbac
       $unit: unit($value);
       $val: parse-int($value);
 
-      @if $unit == 'px' {
-        $px: append($px, $value);
-        $rem: append($rem, ($val / 16 + rem));
-      }
-
       @if $unit == 'rem' {
         $px: append($px, ($val * 16 + px));
         $rem: append($rem, $value);
+      }
+
+      @if $unit == 'px' {
+        $px: append($px, $value);
+        $rem: append($rem, ($val / 16 + rem));
       }
     }
   }
