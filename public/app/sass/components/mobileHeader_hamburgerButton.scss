@@ -4,7 +4,10 @@ HeaderButton
 MJAMJAMJAMJAMJAM... Hamburger (JS yet missing)
 Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
 
-    <a href="#" role="button" class="header__hamburger"><span class="header__hamburger__icon"></span></a>
+    <a href="#" role="button" class="header__hamburger"><span class="header__hamburger__icon">
+      <span class="header__hamburger__icon__before"></span>
+      <span class="header__hamburger__icon__after"></span>
+    </span></a>
     <hr/>
 */
 
@@ -53,4 +56,7 @@ Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
     width: 100%;
   }
 
+  .no-js & {
+    display: none;
+  }
 }
