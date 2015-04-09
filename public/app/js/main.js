@@ -22,7 +22,8 @@ require.config({
 
 require(['modernizr']);
 
-require(['HeaderAnimation', 'MapAnimation'], function(HeaderAnimation, MapAnimation) {
+require(['HeaderAnimation', 'MapAnimation'],
+function(HeaderAnimation, MapAnimation) {
   'use strict';
   var header = new HeaderAnimation(0.5);
   var map = new MapAnimation();

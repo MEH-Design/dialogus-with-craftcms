@@ -42,32 +42,32 @@ intended for contact information.
     }
   }
 
-.callout-block {
+  .callout-block {
     @include vw('margin-top', 60vw, 15rem);
     @include rem('margin-bottom', 2rem);
 
-    opacity: 0.75;
+    opacity: .75;
 
-    &__hamburger{
+    &__hamburger {
 
-      background-color: transparent;
-      box-shadow: none;
       position: absolute;
-      right: 2%;
       top: 3%;
+      right: 2%;
+      box-shadow: none;
+      background-color: transparent;
 
       &__icon__before {
-        transform-origin: left top;
+        top: -1vw;
         transform: rotate(45deg);
         margin-left: 1.5vw;
-        top: -1vw;
+        transform-origin: left top;
       }
 
       &__icon__after {
-        transform-origin: left bottom;
+        top: 1vw;
         transform: rotate(-45deg);
         margin-left: 1.5vw;
-        top: 1vw;
+        transform-origin: left bottom;
       }
 
       &__icon {
