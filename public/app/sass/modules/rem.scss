@@ -14,7 +14,7 @@ The rem fallback was [made by Hugo Giraudel.](http://hugogiraudel.com/2013/03/18
   @return $n / ($n * 0 + 1);
 }
 
-@mixin vw($property, $values) {
+@mixin fallback($property, $values, $breakpoint) {
   $vw: ();
   $px: ();
   $rem: ();
@@ -27,11 +27,12 @@ The rem fallback was [made by Hugo Giraudel.](http://hugogiraudel.com/2013/03/18
     } @else {
       $unit: unit($value);
       $val: parse-int($value);
+      $break: parse-int((map-get($breakpoints, #{$breakpoint}-min) + map-get($breakpoints, #{$breakpoint}-max)) / 2);
 
       @if $unit == 'vw' {
         $vw: append($vw, $value);
-        $px: append($px, $breakpoint);
-        $rem: append($rem, ($val / 16 + rem));
+        $px: append($px, ($break / 100 * $val * 16 + px));
+        $rem: append($rem, ($break / 100 * $val + rem));
       }
 
       @if $unit == 'px' {
@@ -43,6 +44,19 @@ The rem fallback was [made by Hugo Giraudel.](http://hugogiraudel.com/2013/03/18
         $px: append($px, ($val * 16 + px));
         $rem: append($rem, $value);
       }
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+    @if $unit == 'vw' {
+      #{$property}: $vw;
+    }
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+    @if $unit == 'vw' {
+      #{$property}: $vw;
     }
   }
 }

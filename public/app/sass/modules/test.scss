@@ -1,0 +1,28 @@
+$map: (
+ 1: ''
+);
+
+//mixins
+@mixin outer($value: '') {
+   $map: map-merge($map, (1: $value));
+   @debug map-get($map, 1);
+   @content;
+}
+
+@mixin inner() {
+   @debug map-get($map, 1);
+   some-property: map-get($map, 1);
+}
+
+//properties
+@include outer('something') {
+   .some-class {
+      @include inner();
+   }
+}
+
+@include outer('something else') {
+   .some-other-class {
+      @include inner();
+   }
+}

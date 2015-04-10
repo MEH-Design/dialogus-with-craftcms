@@ -18,7 +18,7 @@ SCSS Equivalents
 */
 
 define('HamburgerAnimation',
-  ['TweenLite', 'EasePack', 'CSSPlugin'],
+  ['TweenLite', 'EasePack', 'CSSPlugin', 'VwUnit'],
   function() {
   var icon =
   document.getElementsByClassName('header__hamburger__icon')[0],

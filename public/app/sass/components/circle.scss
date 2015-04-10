@@ -113,7 +113,7 @@ $susy: (
       }
 
       &__paragraph {
-        @include vw('font-size', 2.8vw, .8rem);
+        @include fallback('font-size', 2.8vw, 'small');
       }
     }
   }
