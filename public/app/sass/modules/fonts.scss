@@ -94,7 +94,7 @@ html {
 }
 
 body {
-  @include rem("font-size", .9rem);
+  @include fallback("font-size", .9rem, 'small');
 }
 
 p {

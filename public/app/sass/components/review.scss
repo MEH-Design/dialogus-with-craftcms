@@ -30,13 +30,13 @@ The link that is marked up as a button leads to `example.com` if javascript is n
 */
 
 .review-block {
-  @include rem('padding', 0 $button-size + 2rem);
-  @include rem('margin-bottom', 3rem);
+  @include fallback('padding', 0 $button-size + 2rem, 'small');
+  @include fallback('margin-bottom', 3rem, 'small');
   position: relative;
   text-align: center;
 
   @include bp('small') {
-    @include rem('padding', 0 $button-size + .2rem);
+    @include fallback('padding', 0 $button-size + .2rem, 'small');
   }
 
   &__heading {
@@ -45,8 +45,8 @@ The link that is marked up as a button leads to `example.com` if javascript is n
 
   &__button {
     @include shadow-light;
-    @include rem('width', $button-size);
-    @include rem('height', $button-size);
+    @include fallback('width', $button-size, 'small');
+    @include fallback('height', $button-size, 'small');
     display: block;
     position: absolute;
     top: 50%;
@@ -69,18 +69,18 @@ The link that is marked up as a button leads to `example.com` if javascript is n
 
   &__footer {
     @include container();
-    @include rem('margin-bottom', .5rem);
+    @include fallback('margin-bottom', .5rem, 'small');
 
     &__rating {
       @include span(3 of 7);
-      @include rem('height', 1rem);
+      @include fallback('height', 1rem, 'small');
 
       color: $primary;
     }
 
     &__author {
       @include span(4 of 7);
-      @include rem('font-size', .9rem);
+      @include fallback('font-size', .9rem, 'small');
       text-align: right;
       font-style: italic;
     }

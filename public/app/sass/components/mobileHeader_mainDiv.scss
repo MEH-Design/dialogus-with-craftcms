@@ -24,7 +24,7 @@ screen all the time.
 
 .header {
   @include shadow-light;
-  @include vw('height', $mobile-header-height, $mobile-header-height-rem);
+  @include fallback('height', $mobile-header-height, 'small');
 
   position: fixed;
   top: 0;
@@ -40,16 +40,16 @@ screen all the time.
 
   &__headline {
     @include primary-heading;
-    @include vw('margin-bottom', - $mobile-header-height / 6, - $mobile-header-height-rem / 6);
-    @include vw('margin-left', $mobile-header-height / 5, $mobile-header-height-rem / 5);
-    @include vw('font-size', $mobile-header-height / 2.8, $mobile-header-height-rem / 2.8);
+    @include fallback('margin-bottom', - $mobile-header-height / 6, 'small');
+    @include fallback('margin-left', $mobile-header-height / 5, 'small');
+    @include fallback('font-size', $mobile-header-height / 2.8, 'small');
   }
 
   &__subline {
     @include sub-heading;
-    @include vw('margin-bottom', $mobile-header-height / 4, $mobile-header-height-rem / 4);
-    @include vw('margin-left', $mobile-header-height / 5, $mobile-header-height-rem / 5);
-    @include vw('font-size', $mobile-header-height / 6.5, $mobile-header-height-rem / 6.5);
+    @include fallback('margin-bottom', $mobile-header-height / 4, 'small');
+    @include fallback('margin-left', $mobile-header-height / 5, 'small');
+    @include fallback('font-size', $mobile-header-height / 6.5, 'small');
   }
 
   &__menu {

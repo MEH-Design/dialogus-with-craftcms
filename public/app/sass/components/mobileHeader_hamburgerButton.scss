@@ -13,11 +13,11 @@ Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
 
 .header__hamburger {
   @include shadow-light-thin;
-  @include rem('border-radius', 1rem);
-  @include vw('top', $mobile-header-height / 3, $mobile-header-height-rem / 3);
-  @include vw('right', $mobile-header-height / 5, $mobile-header-height-rem / 5);
-  @include vw('width', $mobile-header-height / 2, $mobile-header-height-rem / 2);
-  @include vw('height', $mobile-header-height / 2, $mobile-header-height-rem / 2);
+  @include fallback('border-radius', 1rem, 'small');
+  @include fallback('top', $mobile-header-height / 3, 'small');
+  @include fallback('right', $mobile-header-height / 5, 'small');
+  @include fallback('width', $mobile-header-height / 2, 'small');
+  @include fallback('height', $mobile-header-height / 2, 'small');
   @include default-border($strong-primary-background);
 
   display: block;
@@ -27,10 +27,10 @@ Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
   &__icon,
   &__icon__before,
   &__icon__after {
-    @include vw('border-radius', 3vw, .6rem);
+    @include fallback('border-radius', 3vw, 'small');
 
     //if higher than .1rem, some lines appear to be thicker than others...
-    @include rem('height', .1rem);
+    @include fallback('height', .1rem, 'small');
 
     display: block;
     position: absolute;
@@ -47,12 +47,12 @@ Inspired by http://www.elijahmanor.com/css-animated-hamburger-icon/
   }
 
   &__icon__before {
-    @include vw('margin-top', -2vw, -.8rem);
+    @include fallback('margin-top', -2vw, 'small');
     width: 100%;
   }
 
   &__icon__after {
-    @include vw('margin-top', 2vw, .8rem);
+    @include fallback('margin-top', 2vw, 'small');
     width: 100%;
   }
 

@@ -33,8 +33,8 @@ $susy: (
 );
 
 .rectangle-block {
-  @include rem('padding-bottom', 1rem);
-  @include rem('margin', 0 1rem);
+  @include fallback('padding-bottom', 1rem, 'small');
+  @include fallback('margin', 0 1rem, 'small');
 
   &__head {
     text-align: center;
@@ -46,8 +46,8 @@ $susy: (
 
   &__element {
     @include container;
-    @include rem('border-radius', 2rem);
-    @include rem('padding', 1rem);
+    @include fallback('border-radius', 2rem, 'small');
+    @include fallback('padding', 1rem, 'small');
     @include shadow-light();
 
     position: relative;
