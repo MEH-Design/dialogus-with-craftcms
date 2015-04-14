@@ -121,18 +121,18 @@ module.exports = function(grunt) {
         'devFile' : 'app/bower_components/modernizr/modernizr.js',
         'outputFile' : 'app/bower_components/modernizr/custom.js',
         'extensibility' : {
-            'addtest' : false,
-            'prefixed' : false,
-            'teststyles' : true,
-            'testprops' : false,
-            'testallprops' : false,
-            'hasevents' : false,
-            'prefixes' : false,
-            'domprefixes' : false,
-            'cssclassprefix': ''
+          'addtest' : false,
+          'prefixed' : false,
+          'teststyles' : true,
+          'testprops' : false,
+          'testallprops' : false,
+          'hasevents' : false,
+          'prefixes' : false,
+          'domprefixes' : false,
+          'cssclassprefix': ''
         },
         'files' : {
-            'src': ['app/sass/**/*.scss', 'app/js/**/*.js']
+          'src': ['app/sass/**/*.scss', 'app/js/**/*.js']
         },
         'matchCommunityTests' : true
       }

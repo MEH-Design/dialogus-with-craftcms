@@ -3,7 +3,7 @@ linters:
     enabled: false
   SelectorFormat:
     enabled: true
-    convention: BEM
+    convention: hyphenated_BEM
   NestingDepth:
     enabled: true
     max_depth: 4
