@@ -81,7 +81,7 @@ define('HamburgerAnimation',
 
   var init = function(VwUnit) {
     vw = VwUnit;
-  }
+  };
 
   return function HamburgerAnimation() {
     this.showX = showX;
