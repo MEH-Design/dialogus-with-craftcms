@@ -1,5 +1,5 @@
-define(['VwUnit', 'HamburgerAnimation', 'TweenLite', 'EasePack', 'CSSPlugin'],
-function(VwUnit, HamburgerAnimation) {
+define(['HamburgerAnimation', 'TweenLite', 'EasePack', 'CSSPlugin'],
+function(HamburgerAnimation) {
   var expanded = false,
   body = document.body,
   header = document.getElementsByClassName('header')[0],
@@ -62,9 +62,10 @@ function(VwUnit, HamburgerAnimation) {
     };
   };
 
-  var init = function() {
-    vw = new VwUnit();
+  var init = function(VwUnit) {
+    vw = VwUnit;
     hamburgerAnimation = new HamburgerAnimation();
+    hamburgerAnimation.init(VwUnit);
     initialHeight = vw.PXtoVW(header.offsetHeight);
     div.style.opacity = 0;
     div.style.position = 'fixed';

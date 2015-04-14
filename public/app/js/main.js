@@ -18,11 +18,11 @@ require.config({
 
 require(['Modernizr']);
 
-require(['HeaderAnimation', 'MapAnimation'],
-function(HeaderAnimation, MapAnimation) {
+require(['HeaderAnimation', 'MapAnimation', 'VwUnit'],
+function(HeaderAnimation, MapAnimation, VwUnit) {
   'use strict';
-  var header = new HeaderAnimation(0.5);
-  var map = new MapAnimation();
-  header.init();
+  var header = new HeaderAnimation(0.5),
+  map = new MapAnimation();
+  header.init(new VwUnit());
   map.init();
 });

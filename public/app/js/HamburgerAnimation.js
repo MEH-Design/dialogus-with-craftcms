@@ -19,7 +19,7 @@ SCSS Equivalents
 
 define('HamburgerAnimation',
   ['TweenLite', 'EasePack', 'CSSPlugin', 'VwUnit'],
-  function() {
+  function(VwUnit) {
   var icon =
   document.getElementsByClassName('header__hamburger__icon')[0],
   before =
@@ -29,7 +29,7 @@ define('HamburgerAnimation',
   time = 0.5,
   ease = Back.easeInOut,
   leftOffset = 5,
-  vw = new VwUnit();
+  vw;
 
   var showX = function() {
     TweenLite.to(icon, time, {
@@ -79,8 +79,13 @@ define('HamburgerAnimation',
     );
   };
 
+  var init = function(VwUnit) {
+    vw = VwUnit;
+  }
+
   return function HamburgerAnimation() {
     this.showX = showX;
     this.showList = showList;
+    this.init = init;
   };
 });
