@@ -15,14 +15,14 @@ MJAMJAMJAMJAMJAM... Menu Elements
     list-style-type: none;
 
     &__button {
-      @include vw('height', 9vw, 2.5rem);
+      @include fallback('height', 9vw, 'small');
 
       //this isn't BEM
       //but more practical than header__menu__list__button__link
       a {
-        @include rem('font-size', 1.2rem);
-        @include rem('padding', 0 .5rem);
-        @include rem('border-radius', 1.75rem);
+        @include fallback('font-size', 1.2rem, 'small');
+        @include fallback('padding', 0 .5rem, 'small');
+        @include fallback('border-radius', 1.75rem, 'small');
         @include shadow-light-thin;
 
         background-color: $decent-secondary-background;

@@ -23,7 +23,7 @@ intended for contact information.
 */
 
 .map {
-  @include rem('padding', 1rem);
+  @include fallback('padding', 1rem, 'small');
 
   background: url($map-static-url) no-repeat center 20% fixed;
   background-size: cover;
@@ -33,8 +33,8 @@ intended for contact information.
 
     &__link {
       @include shadow-light;
-      @include rem('border-radius', 2rem);
-      @include rem('padding', 1rem);
+      @include fallback('border-radius', 2rem, 'small');
+      @include fallback('padding', 1rem, 'small');
 
       background-color: $decent-primary-background;
       text-decoration: none;
@@ -43,8 +43,8 @@ intended for contact information.
   }
 
   .callout-block {
-    @include vw('margin-top', 60vw, 15rem);
-    @include rem('margin-bottom', 2rem);
+    @include fallback('margin-top', 60vw, 'small');
+    @include fallback('margin-bottom', 2rem, 'small');
 
     opacity: .75;
 

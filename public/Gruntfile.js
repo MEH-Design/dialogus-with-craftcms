@@ -107,8 +107,36 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         }
+      },
+      scripts: {
+        files: ['app/js/**/*.js'],
+        tasks: ['scripts'],
+        options: {
+          livereload: true
+        }
       }
     },
+    modernizr: {
+      dist: {
+        'devFile' : 'app/bower_components/modernizr/modernizr.js',
+        'outputFile' : 'app/bower_components/modernizr/custom.js',
+        'extensibility' : {
+          'addtest' : false,
+          'prefixed' : false,
+          'teststyles' : true,
+          'testprops' : false,
+          'testallprops' : false,
+          'hasevents' : false,
+          'prefixes' : false,
+          'domprefixes' : false,
+          'cssclassprefix': ''
+        },
+        'files' : {
+          'src': ['app/sass/**/*.scss', 'app/js/**/*.js']
+        },
+        'matchCommunityTests' : true
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-requirejs');
@@ -117,6 +145,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('sassdown');
@@ -124,6 +153,10 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'test',
     'styles'
+  ]);
+
+  grunt.registerTask('scripts', [
+    'modernizr'
   ]);
 
   grunt.registerTask('styles', [

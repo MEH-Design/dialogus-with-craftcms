@@ -41,7 +41,7 @@ $susy: (
 
 .circle-block {
   @include container;
-  @include rem('padding-bottom', 1rem);
+  @include fallback('padding-bottom', 1rem, 'small');
 
   &__head {
     @include span(4 at 1);
@@ -90,10 +90,10 @@ $susy: (
     }
 
     &__text {
-      @include rem('padding', 0 1.5rem);
-      @include rem('border-bottom-left-radius', 100rem);
-      @include rem('border-bottom-right-radius', 100rem);
-      @include rem('border', .25rem solid $decent-primary-background);
+      @include fallback('padding', 0 1.5rem, 'small');
+      @include fallback('border-bottom-left-radius', 100rem, 'small');
+      @include fallback('border-bottom-right-radius', 100rem, 'small');
+      @include fallback('border', .25rem solid $decent-primary-background, 'small');
 
       position: absolute;
       bottom: 0;
@@ -104,16 +104,16 @@ $susy: (
 
       &__heading,
       &__paragraph {
-        @include rem('margin', .1rem 0);
+        @include fallback('margin', .1rem 0, 'small');
       }
 
       &__heading {
         @include secondary-heading;
-        @include vw('font-size', 6vw, 1.5rem);
+        @include fallback('font-size', 6vw, 'small');
       }
 
       &__paragraph {
-        @include vw('font-size', 2.8vw, .8rem);
+        @include fallback('font-size', 2.8vw, 'small');
       }
     }
   }

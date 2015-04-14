@@ -58,11 +58,11 @@ $susy: (
 
   &__profile {
     @include span(1);
-    @include rem('padding', .5rem);
+    @include fallback('padding', .5rem, 'small');
     overflow: hidden;
 
     &__image {
-      @include vw('border-radius', 5vw, 2rem);
+      @include fallback('border-radius', 5vw, 'small');
       @include shadow-light();
 
       position: absolute;
@@ -77,15 +77,15 @@ $susy: (
     @include span(3);
 
     &__heading {
-      @include rem("font-size", 1.2rem);
+      @include fallback('font-size', 1.2rem, 'small');
       @include tertiary-heading();
     }
   }
 
   &--rounded {
-    @include rem('border-radius', 2rem);
-    @include rem('padding', .5rem 1rem);
-    @include rem('margin-bottom', .5rem);
+    @include fallback('border-radius', 2rem, 'small');
+    @include fallback('padding', .5rem 1rem, 'small');
+    @include fallback('margin-bottom', .5rem, 'small');
     @include shadow-light();
 
     background-color: $decent-primary-background;

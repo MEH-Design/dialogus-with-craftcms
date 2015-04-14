@@ -6,7 +6,7 @@ The `@include shadow();` automatically applies a box-shadow on the current eleme
     <p>This</p>
     <code>@include shadow();</code>
     <p>Returns...</p>
-    <code>@include rem('box-shadow', 0 .3rem 0 0 $shadow);</code>
+    <code>@include fallback('box-shadow', 0 .3rem 0 0 $shadow);</code>
     <p>Which compiles to...</p>
     <code>box-shadow: 0 4px 0 0 #e2dfdd;
     box-shadow: 0 .3rem 0 0 #e2dfdd;</code>
@@ -14,17 +14,17 @@ The `@include shadow();` automatically applies a box-shadow on the current eleme
 */
 
 @mixin shadow-dark() {
-  @include rem('box-shadow', 0 $shadow-width 0 0 $shadow-dark);
+  @include fallback('box-shadow', 0 $shadow-width 0 0 $shadow-dark, 'small');
 }
 
 @mixin shadow-dark-thin() {
-  @include rem('box-shadow', 0 $shadow-thin-width 0 0 $shadow-dark);
+  @include fallback('box-shadow', 0 $shadow-thin-width 0 0 $shadow-dark, 'small');
 }
 
 @mixin shadow-light() {
-  @include rem('box-shadow', 0 $shadow-width 0 0 $shadow-light);
+  @include fallback('box-shadow', 0 $shadow-width 0 0 $shadow-light, 'small');
 }
 
 @mixin shadow-light-thin() {
-  @include rem('box-shadow', 0 $shadow-thin-width 0 0 $shadow-light);
+  @include fallback('box-shadow', 0 $shadow-thin-width 0 0 $shadow-light, 'small');
 }

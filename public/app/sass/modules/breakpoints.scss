@@ -36,7 +36,10 @@ $breakpoints: (
   'xlarge-min' : 100.063em,
   'xlarge-max' : 120em,
   'xxlarge-min': 120.063em,
+  'xxlarge-max': 0
 );
+
+$breakpoint: 0;
 
 @mixin bp-up($breakpoint) {
   $value: map-get($breakpoints, #{$breakpoint}-min);
