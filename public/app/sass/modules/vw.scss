@@ -1,0 +1,19 @@
+/*
+VW Function
+===========
+The `vw($property, $vw-value, $rem-value)` mixin has to be used whenever using vw units.
+
+    <p>This</p>
+    <code>height: unit('border', 1vw solid #000, .2rem solid #000);</code>
+    <p>Compiles to..</p>
+    <code>
+      border: 3.2px solid #000<br/>
+      border: .2rem solid #000<br/>
+      border: 1vw solid #000
+    </code>
+*/
+
+@mixin vw($property, $vw-value, $rem-value) {
+  @include rem($property, $rem-value);
+  #{$property}: $vw-value;
+}
