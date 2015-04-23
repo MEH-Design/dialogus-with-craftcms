@@ -2,7 +2,7 @@ define(['Modernizr'], function() {
 
   //returns vw if supported, elsewise returns px
   var fallback = function(number) {
-    if (!Modernizr.cssvwunit) {
+    if (Modernizr.cssvwunit) {
       return number + 'vw';
     } else {
       return VWtoPX(number) + 'px';
