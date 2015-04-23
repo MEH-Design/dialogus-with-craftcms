@@ -58,15 +58,15 @@ intended for contact information.
 
       &__icon__before {
         @include fallback('top', -1vw, 'small');
-        transform: rotate(45deg);
         @include fallback('margin-left', 1.5vw, 'small');
+        transform: rotate(45deg);
         transform-origin: left top;
       }
 
       &__icon__after {
         @include fallback('top', 1vw, 'small');
-        transform: rotate(-45deg);
         @include fallback('margin-left', 1.5vw, 'small');
+        transform: rotate(-45deg);
         transform-origin: left bottom;
       }
 
