@@ -4,7 +4,7 @@ php_config_file="/etc/php5/apache2/php.ini"
 xdebug_config_file="/etc/php5/mods-available/xdebug.ini"
 mysql_config_file="/etc/mysql/my.cnf"
 craft_version="2.3"
-craft_build="2621"
+craft_build="2644"
 mysql_db="craft"
 mysql_pass="root"
 
