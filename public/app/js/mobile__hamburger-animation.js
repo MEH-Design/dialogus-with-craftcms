@@ -17,7 +17,7 @@ SCSS Equivalents
   }
 */
 
-define('HamburgerAnimation',
+define('mobile__hamburger-animation',
   ['TweenLite', 'EasePack', 'CSSPlugin', 'VwUnit'],
   function(VwUnit) {
   var icon =

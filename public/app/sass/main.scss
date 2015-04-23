@@ -12,19 +12,22 @@
 @import 'modules/fonts';
 @import 'modules/default-border';
 
-//components
-@import 'components/mobileHeader_mainDiv';
-@import 'components/mobileHeader_hamburgerButton';
-@import 'components/mobileHeader_menuElement';
-@import 'components/main-container';
-@import 'components/callout';
-@import 'components/circle';
-@import 'components/rectangle';
-@import 'components/review';
-@import 'components/map';
+//components all
+@import 'components/all__header__main-div';
+@import 'components/all__header__menu-element';
+@import 'components/all__main-container';
+@import 'components/all__callout';
+@import 'components/all__circle';
+@import 'components/all__rectangle';
+@import 'components/all__review';
+
+//components mobile
+@import 'components/mobile__map';
+@import 'components/mobile__header__hamburger-button';
+
+//components desktop
 
 //dev
 @import 'dev/example-colors';
 @import 'dev/example-grid';
 @import 'dev/example-breakpoints';
-//@import 'dev/main-container__block';

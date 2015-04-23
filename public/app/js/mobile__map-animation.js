@@ -1,4 +1,4 @@
-define('MapAnimation', ['TweenLite', 'EasePack', 'CSSPlugin'], function() {
+define('mobile__map-animation', ['TweenLite', 'EasePack', 'CSSPlugin'], function() {
   var icon = document.getElementsByClassName('callout-block__hamburger')[0],
   block = icon.parentNode.parentNode, //Leichter Pfusch
   map = document.getElementsByClassName('map')[0],
