@@ -14,15 +14,15 @@
 
 //components all
 @import 'components/all__header__main-div';
-@import 'components/all__header__menu-element';
 @import 'components/all__main-container';
-@import 'components/all__callout';
 @import 'components/all__circle';
 @import 'components/all__rectangle';
 @import 'components/all__review';
 
 //components mobile
 @import 'components/mobile__map';
+@import 'components/mobile__callout';
+@import 'components/mobile__header__menu-element';
 @import 'components/mobile__header__hamburger-button';
 
 //components desktop
