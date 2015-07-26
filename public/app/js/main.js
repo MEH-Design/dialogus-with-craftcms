@@ -18,7 +18,15 @@ require.config({
     Modernizr:
       '/app/bower_components/modernizr/custom',
     CssVwunit:
-      '/app/bower_components/modernizr/feature-detects/css-vwunit'
+      '/app/bower_components/modernizr/feature-detects/css-vwunit',
+    HeaderAnimation:
+      'mobile__header-animation',
+    MapAnimation:
+      'mobile__map-animation',
+    VwUnit:
+      'all__vw-unit',
+    HamburgerAnimation:
+      'mobile__hamburger-animation',
   }
 });
 

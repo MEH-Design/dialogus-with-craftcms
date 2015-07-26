@@ -1,4 +1,4 @@
-define(['mobile__hamburger-animation', 'TweenLite', 'EasePack', 'CSSPlugin'],
+define(['HamburgerAnimation', 'TweenLite', 'EasePack', 'CSSPlugin'],
 function(HamburgerAnimation) {
   var expanded = false,
   body = document.body,
