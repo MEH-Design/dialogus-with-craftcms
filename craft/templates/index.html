@@ -19,15 +19,93 @@
 
 {% extends "_layout" %}
 
+{% if entry is not defined %}
+    {% set entry = craft.entries.section('pages') %}
+{% endif %}
+
 {% block content %}
-	<h1>{{ entry.title }}</h1>
 
-	{{ entry.body }}
+  {% set hasContainer = false %}
+  {% set hasSpan = false %}
+  {% set isFirst = true %}
 
-	<h2>Recent News</h2>
-	<ul>
-		{% for entry in craft.entries.section('news').limit(5).find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-		{% endfor %}
-	</ul>
+  {% for block in entry.mainContent %}
+
+      {% switch block.type %}
+
+        {% case "container" %}
+
+          {% if hasContainer %}
+            </main>
+          {% else %}
+            {% set hasContainer = true %}
+          {% endif %}
+
+          <main class="main-container main-container--{{ block.color }} {% if isFirst %}main-container--first{% endif %}">
+          {% set isFirst = false %}
+
+        {% case "span" %}
+          {% set hasSpan = true %}
+          <section class="main-container__block main-container__block--span-{{ block.width }}">
+
+        {% default %}
+
+          {% if not hasContainer %}
+            <!-- TODO: add color default -->
+            <main class="main-container {% if isFirst %}main-container--first{% endif %}">
+            {% set isFirst = false %}
+          {% endif %}
+
+          {% if not hasSpan %}
+            <!-- TODO: add span default -->
+            <section class="main-container__block main-container__block--span-3">
+          {% endif %}
+
+          {% switch block.type %}
+
+            {% case "callout" %}
+              <section class="callout-block {{ block.style }}">
+                {% if block.orientation is null or block.orientation == "left" %}
+                  {% if block.profile.first() is not null %}
+                    <div class="callout-block__profile">
+                    <img class="callout-block__profile__image" src="http://{{ block.profile.first().url }}" width="128" height="128"/>
+                    </div>
+                  {% endif %}
+                {% endif %}
+                <div class="callout-block__text">
+                  <h1 class="callout-block__text__heading">{{ block.heading }}</h1>
+                  <p>{{ block.text }}</p>
+                </div>
+                {% if block.orientation == "right" %}
+                  {% if block.profile.first() is not null %}
+                    <div class="callout-block__profile">
+                    <img class="callout-block__profile__image" src="http://{{ block.profile.first().url }}" width="128" height="128"/>
+                    </div>
+                  {% endif %}
+                {% endif %}
+              </section>
+
+            {% case "review" d%}
+              <section class="review-block">
+                <a href="http://example.com" class="review-block__button review-block__button--left" role="button"></a>
+                <a href="http://example.com" class="review-block__button review-block__button--right" role="button"></a>
+                <h1 class="review-block__heading">gutgemacht.at</h1>
+                <p>Christine ist so ein wunderbarer Mensch - sie hat mir so gut weitergeholfen bei meiner Einstellung zu mir selber - es war und ist <a href="example.com">(weiterlesen...)</a></p
+                <div class="review-block__footer">
+                  <div class="review-block__footer__rating">★★★★★</div>
+                  <div class="review-block__footer__author">B.W.</div>
+                </div>
+              </section>
+
+          {% endswitch %}
+
+
+          </section>
+          {% set hasContainer = true %}
+          {% set hasSpan = false %}
+
+      {% endswitch %}
+
+  {% endfor %}
+  </main>
 {% endblock %}

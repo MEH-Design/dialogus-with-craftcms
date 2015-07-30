@@ -68,7 +68,9 @@ $susy: (
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: span(1 of map-get($susy, columns));
+      max-width: span(1 of map-get($susy, columns));
+      max-height: 80%;
+      width: auto;
       height: auto;
     }
   }

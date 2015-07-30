@@ -1,6 +1,6 @@
 define('MapAnimation', ['TweenLite', 'EasePack', 'CSSPlugin'], function() {
-  var icon = document.getElementsByClassName('callout-block__hamburger')[0],
-  block = icon.parentNode.parentNode, //Leichter Pfusch
+  var icon = document.querySelector('.map .callout-block__hamburger'),
+  block = document.querySelector('.map .callout-block'), // FIXME: select by class
   map = document.getElementsByClassName('map')[0],
   time = 0.5,
   ease = Back.easeInOut;

@@ -85,4 +85,8 @@ The link that is marked up as a button leads to `example.com` if javascript is n
       font-style: italic;
     }
   }
+
+  &__data {
+    display: none;
+  }
 }
